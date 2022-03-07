@@ -1,12 +1,31 @@
-extern crate savefile;
-use savefile::prelude::*;
+#[macro_use]
+extern crate lazy_static;
 
 #[macro_use]
 extern crate savefile_derive;
 
-use rust_nmap;
+extern crate savefile;
 
+use savefile::prelude::*;
+use rust_nmap;
 use serde::Serialize;
+use dirs::data_dir;
+use mkdirp::mkdirp;
+use std::path::PathBuf;
+use std::fs;
+use std::io;
+use std::collections::HashMap;
+use sha2::{Sha256, Digest};
+use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder, Result, Error};
+use actix_multipart::Multipart;
+use futures_util::stream::StreamExt as _;
+use actix_web::HttpRequest;
+use actix_files::NamedFile;
+use actix_web::dev::ServiceRequest;
+use actix_web_httpauth::extractors::bearer::{BearerAuth, Config};
+use actix_web_httpauth::extractors::AuthenticationError;
+use actix_web_httpauth::middleware::HttpAuthentication;
+use std::env;
 
 #[derive(Savefile, Debug, Serialize)]
 struct Address {
@@ -100,10 +119,6 @@ type BoxResult<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 extern crate serde;
 extern crate serde_xml_rs;
 
-use dirs::data_dir;
-use mkdirp::mkdirp;
-use std::path::PathBuf;
-
 pub fn load_from_path(filename: &str) -> BoxResult<String> {
     let xml_info = match std::fs::read_to_string(filename) {
         Ok(xml_info) => xml_info,
@@ -111,10 +126,6 @@ pub fn load_from_path(filename: &str) -> BoxResult<String> {
     };
     Ok(xml_info)
 }
-
-use std::fs;
-use std::io;
-use std::collections::HashMap;
 
 fn load_all_scans() -> HashMap<String, ScanResult> {
   let dir = data_dir().unwrap();
@@ -135,12 +146,6 @@ fn load_all_scans() -> HashMap<String, ScanResult> {
     for entry in entries {
         hm.insert(entry.clone(), load_scanresult(entry));
     }
-
-    // let list_versions: Vec<ScanResult> = entries
-    //     .clone()
-    //     .into_iter()
-    //     .map(|filename| load_scanresult(filename))
-    //     .collect();
 
     return hm
 }
@@ -226,12 +231,6 @@ fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
     scanresult
 }
 
-use sha2::{Sha256, Digest};
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder, Result, Error};
-use actix_multipart::Multipart;
-use futures_util::stream::StreamExt as _;
-// use serde::Deserialize;
-
 #[post("/submit")]
 async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
     while let Some(item) = payload.next().await {
@@ -273,18 +272,15 @@ async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
 }
 
 #[get("/scans")]
-async fn get_scans() -> Result<impl Responder> {
+async fn get_scans(_req: HttpRequest) -> Result<impl Responder> {
+    // let auth = Authorization::<Bearer>::parse(&req).unwrap();
     let scans = load_all_scans();
-    // HttpResponse::Ok().body(scan)
-    // HttpResponse::Ok().body("Hello world!")
     Ok(web::Json(scans))
 }
 
 #[get("/scans/{id}")]
 async fn get_scan(id: web::Path<String>) -> Result<impl Responder> {
     let scan = load_scanresult(id.to_string());
-    // HttpResponse::Ok().body(scan)
-    // HttpResponse::Ok().body("Hello world!")
     Ok(web::Json(scan))
 }
 
@@ -293,22 +289,8 @@ async fn hello() -> impl Responder {
     HttpResponse::Ok().body("Hello world!")
 }
 
-// use actix_web::http::StatusCode;
-use actix_web::HttpRequest;
-use actix_files::NamedFile;
-
 #[get("/")]
 async fn get_index(_req: HttpRequest) -> Result<impl Responder> {
-    // let conn_info = req.connection_info().clone();
-    // if conn_info.scheme() == "http" {
-    //     let host = conn_info.host();
-    //     let path = req.uri();
-    //     let new_location = format!("https://{}{}", host, path);
-    //     println!("Redirect to {:?} {:?}", host, path);
-    //     return Ok(HttpResponse::Ok().status(StatusCode::MOVED_PERMANENTLY).append_header(("Location", new_location)).body(""))
-    // }
-
-
     Ok(NamedFile::open("./web/index.html"))
 
     // let bytes = include_bytes!("../web/index.html");
@@ -322,16 +304,6 @@ async fn get_index(_req: HttpRequest) -> Result<impl Responder> {
 
 #[get("/app.js")]
 async fn get_app_js(_req: HttpRequest) -> Result<impl Responder> {
-    // let conn_info = req.connection_info().clone();
-    // if conn_info.scheme() == "http" {
-    //     let host = conn_info.host();
-    //     let path = req.uri();
-    //     let new_location = format!("https://{}{}", host, path);
-    //     println!("Redirect to {:?} {:?}", host, path);
-    //     return Ok(HttpResponse::Ok().status(StatusCode::MOVED_PERMANENTLY).append_header(("Location", new_location)).body(""))
-    // }
-
-
     Ok(NamedFile::open("./web/app.js"))
 
     // let bytes = include_bytes!("../web/index.html");
@@ -343,40 +315,67 @@ async fn get_app_js(_req: HttpRequest) -> Result<impl Responder> {
     // )
 }
 
-// fn main() {
-//     let file_str = load_from_path("./example-output/scanme.nmap.org.xml").unwrap();
-// 
-//     let mut hasher = Sha256::new();
-//     hasher.update(file_str.clone());
-//     let hash = hasher.finalize();
-//     let hex_hash = base16ct::lower::encode_string(&hash);
-// 
-//     let result = parse_nmap_xml(file_str);
-// 
-//     let result: rust_nmap::nmap_run = result.unwrap();
-//     println!("{:#?}", result);
-// 
-// 
-//     save_scanresult(&scanresult);
-// 
-//     let reloaded_player = load_scanresult();
-// 
-//     println!("{:#?}", reloaded_player);
-//     println!("{:?}", hex_hash);
-// }
+lazy_static! {
+    static ref TOKENS: Vec<String> = {
+        let mut tokens: Vec<String> = vec![];
+        match env::var("DMAP_TOKENS") {
+            Ok(str_tokens) => {
+                let splitted_tokens: Vec<&str> = str_tokens.split(",").collect::<Vec<&str>>();
+                for t in splitted_tokens {
+                    tokens.push(t.to_string())
+                }
+            },
+            Err(_) => {
+                tokens.push("dev".to_string())
+            }
+        }
+        tokens
+    };
+}
+
+fn validate_token(token: &str) -> Result<bool, std::io::Error> {
+    if TOKENS.contains(&token.to_string()) {
+        return Ok(true);
+    }
+    return Err(std::io::Error::new(std::io::ErrorKind::Other, "Authentication failed!"));
+}
+
+async fn bearer_auth_validator(req: ServiceRequest, credentials: BearerAuth) -> Result<ServiceRequest, Error> {
+    println!("Bearer auth validator");
+    let config = req
+        .app_data::<Config>()
+        .map(|data| data.clone())
+        .unwrap_or_else(Default::default);
+    let is_authed_path = req.path().starts_with("/scans");
+    println!("{:?}", is_authed_path);
+    if is_authed_path {
+        match validate_token(credentials.token()) {
+            Ok(res) => {
+                if res == true {
+                    Ok(req)
+                } else {
+                    Err(AuthenticationError::from(config).into())
+                }
+            }
+            Err(_) => Err(AuthenticationError::from(config).into()),
+        }
+    } else {
+        Ok(req)
+    }
+}
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     create_data_dir();
     HttpServer::new(|| {
+        let auth = HttpAuthentication::bearer(bearer_auth_validator);
         App::new()
+            .wrap(auth)
             .service(get_index)
             .service(get_app_js)
             .service(post_submit)
             .service(get_scan)
             .service(get_scans)
-            // .service(echo)
-            // .route("/hey", web::get().to(manual_hello))
     })
     .bind(("127.0.0.1", 2625))?
         .run()
