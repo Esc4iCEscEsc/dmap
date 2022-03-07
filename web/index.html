@@ -1,38 +1,34 @@
 <html>
   <head>
     <title>dmap</title>
-    <style>
-html, body {
-  margin: 0px;
-  padding: 0px;
-  background-color: black;
-  color: white;
-  font-family: sans-serif;
-}
-
-#auth {
-  position: absolute;
-  top: 0px; right: 0px; bottom: 0px; left: 0px;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.25s;
-}
-    </style>
+    <link rel="stylesheet" href="./app.css">
   </head>
   <body>
     <div id="app">
-      <h1>Submit nmap output here</h1>
-      <p>Example:</p>
-      <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
-      <form action="/submit" method="POST"  enctype="multipart/form-data">
-        <input type="file" name="file"/>
-        <button type="submit">Submit</button>
-      </form>
-      <div id="scan-result">
+      <div>
+        <h1>dmap - Distributed nmap scanning</h1>
       </div>
-      <div id="scans">
+      <div id="submission">
+        <h3>Scan submissions</h3>
+        <p>Example nmap command to get output:</p>
+        <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
+        <p>
+          First, select the .xml file you want to upload.<br/>
+          Second, press "Upload"
+        </p>
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+          <input type="file" name="file" accept=".xml"/>
+          <button type="submit">Upload</button>
+        </form>
+      </div>
+      <div id="viewer">
+        <div id="scan-result">
+        </div>
+        <div id="scans-wrapper">
+          <h3>Uploaded scans</h3>
+          <div id="scans">
+          </div>
+        </div>
       </div>
     </div>
     <div id="auth">

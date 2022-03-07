@@ -1,0 +1,116 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+#auth {
+  position: absolute;
+  top: 0px; right: 0px; bottom: 0px; left: 0px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.25s;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#submission {
+  border: 3px solid lightblue;
+  color: lightblue;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#submission form {
+  margin: 10px;
+}
+
+#submission form input, #submission form button{
+  display: block;
+}
+
+#submission form input {
+  margin-bottom: 10px;
+}
+
+#submission form button {
+  border: 1px solid lightblue;
+  color: lightblue;
+  background-color: black;
+  font-family: sans-serif;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+#submission form button:hover {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+#scans-wrapper {
+  position: sticky;
+  position: -webkit-sticky;
+  top: -1px;
+  align-self: flex-start;
+}
+
+#scans a {
+  display: block;
+  border: 1px solid black;
+  padding: 3px;
+  margin: 3px;
+  text-decoration: none;
+}
+
+#scans a .summary {
+  color: lightgrey;
+}
+
+#scans a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: lightblue;
+}
+
+#scans a.active {
+  border: 1px solid lightblue;
+  color: lightblue;
+}
+
+#scans a.active .link, #scans a.active .summary{
+  color: lightblue;
+}
+
+#scans a:visited.active .link, #scans a:visited.active .summary{
+  color: lightblue;
+}
+
+#scans a .link {
+  color: lightblue;
+}
+
+#scans a:visited .link {
+  color: rgb(100, 100, 200);
+}
+
+#viewer {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+#scan-result {
+  max-width: 600px;
+  overflow-x: scroll;
+}

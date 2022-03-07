@@ -2,10 +2,12 @@ function $(selector) {
   return document.querySelector(selector)
 }
 
+function $$(selector) {
+  return document.querySelectorAll(selector)
+}
+
 $scans = $('#scans')
 $scan = $('#scan-result')
-
-
 
 function renderScans(scans) {
   const arr = Object.keys(scans).reduce((acc, curr) => {
@@ -21,23 +23,28 @@ function renderScans(scans) {
   })
 
   sorted.forEach((scan) => {
-    const $el = document.createElement('div')
+    const $el = document.createElement('a')
     const hash = scan.id.substr(0,8)
+    $el.href = '#' + scan.id
 
-    $link = document.createElement('a')
+    $link = document.createElement('span')
+    $link.classList = 'link'
     $link.innerText = hash + '...'
-    $link.href = '#' + scan.id
 
     $summary = document.createElement('span')
+    $summary.classList = 'summary'
     $summary.style.fontStyle = 'italic'
     $summary.style.marginLeft = '10px'
-    $summary.innerText = scan.summary
+    $summary.innerText = scan.args
 
     $el.appendChild($link)
     $el.appendChild($summary)
 
+    $el.id = 'scan-' + scan.id
+
     $scans.appendChild($el)
   })
+  onHashChange()
 }
 
 function main() {
@@ -54,11 +61,16 @@ function $info($parent_el, label, value) {
   const $title = document.createElement('span')
   $title.innerText = label + ': '
   $title.style.fontWeight = 'bold'
+
   const $value = document.createElement('span')
+  $value.style.fontFamily = 'monospace'
   $value.innerText = value
 
   $el.appendChild($title)
   $el.appendChild($value)
+
+  $el.style.marginBottom = '5px'
+
   $parent_el.appendChild($el)
 }
 
@@ -66,8 +78,8 @@ function renderScan(scan) {
   const $el = document.createElement('div')
   $el.style.marginBottom = '15px'
 
-  const $title = document.createElement('h3')
-  $title.innerText = 'Summary: "' + scan.summary + '"'
+  const $title = document.createElement('h5')
+  $title.innerText = scan.id
 
   $el.appendChild($title)
 
@@ -90,8 +102,9 @@ function renderScan(scan) {
   $hosts.innerText = JSON.stringify(scan.hosts, null, 2)
   $el.appendChild($hosts)
 
-  $scan.innerHTML = ''
-  $scan.appendChild($el)
+  $scan.innerHTML = $el.innerHTML
+  // $scan.innerHTML = ''
+  // $scan.appendChild($el)
 }
 
 var currentHash = ""
@@ -103,18 +116,24 @@ function onHashChange() {
 
 
     const scanID = currentHash.substr(1)
+
+    const $scanListItem = $('#scan-' + scanID)
+    Array.from($$('.active')).forEach(($el) => {
+      $el.classList = ''
+    })
+    if ($scanListItem) {
+      $scanListItem.classList = 'active'
+    }
+
     const token = localStorage.getItem('token')
     fetch('/api/scans/' + scanID, {
       headers: {'Authorization': 'Bearer ' + token}
     }).then(res => res.json())
-      .then(renderScan)
+      .then((res) => renderScan(Object.assign(res, {id: scanID})))
   }
 }
 
 window.onhashchange = onHashChange
-
-// main()
-onHashChange()
 
 // Authentication part
 $auth = $('#auth')

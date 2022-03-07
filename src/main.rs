@@ -315,6 +315,19 @@ async fn get_app_js(_req: HttpRequest) -> Result<impl Responder> {
     // )
 }
 
+#[get("/app.css")]
+async fn get_app_css(_req: HttpRequest) -> Result<impl Responder> {
+    Ok(NamedFile::open("./web/app.css"))
+
+    // let bytes = include_bytes!("../web/index.html");
+    // Ok(
+    // HttpResponse::Ok()
+    //     .content_type("text/html")
+    //     .append_header(("Cache-Control", "max-age=86400"))
+    //     .body(String::from_utf8(bytes.to_vec()).unwrap())
+    // )
+}
+
 lazy_static! {
     static ref TOKENS: Vec<String> = {
         let mut tokens: Vec<String> = vec![];
@@ -379,6 +392,7 @@ async fn main() -> std::io::Result<()> {
             )
             .service(get_index)
             .service(get_app_js)
+            .service(get_app_css)
     })
     .bind(("127.0.0.1", 2625))?
         .run()
