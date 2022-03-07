@@ -8,7 +8,7 @@ extern crate savefile;
 
 use savefile::prelude::*;
 use rust_nmap;
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use dirs::data_dir;
 use mkdirp::mkdirp;
 use std::path::PathBuf;
@@ -27,18 +27,18 @@ use actix_web_httpauth::extractors::AuthenticationError;
 use actix_web_httpauth::middleware::HttpAuthentication;
 use std::env;
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct Address {
     addr: String,
 }
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct Hostname {
     name: String,
     r#type: String,
 }
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct Service {
     name: String,
     method: String,
@@ -47,7 +47,7 @@ struct Service {
     extrainfo: String,
 }
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct Port {
     protocol: String,
     port: u16,
@@ -57,7 +57,7 @@ struct Port {
     // service: Service,
 }
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct Host {
     status: String,
     status_reason: String,
@@ -66,7 +66,7 @@ struct Host {
     ports: Vec<Port>,
 }
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct ScanInfo {
     r#type: String,
     protocol: String,
@@ -74,7 +74,7 @@ struct ScanInfo {
     services: String
 }
 
-#[derive(Savefile, Debug, Serialize)]
+#[derive(Savefile, Debug, Serialize, Deserialize)]
 struct ScanResult {
     scanner: String,
     args: String,
@@ -88,7 +88,23 @@ struct ScanResult {
     hosts: Vec<Host>
 }
 
-pub fn create_data_dir() {
+pub fn create_raw_data_dir() {
+  let dir = data_dir().unwrap();
+  let p: PathBuf = [dir, PathBuf::from("joint-nmap"), PathBuf::from("raw")]
+    .iter()
+    .collect();
+  mkdirp(p.clone()).expect("Impossible to create storage path");
+}
+
+pub fn get_raw_data_dir(id: String) -> String {
+  let dir = data_dir().unwrap();
+  let p: PathBuf = [dir, PathBuf::from("joint-nmap"), PathBuf::from("raw"), PathBuf::from(id + ".xml")]
+    .iter()
+    .collect();
+  return p.clone().into_os_string().into_string().unwrap();
+}
+
+pub fn create_scans_data_dir() {
   let dir = data_dir().unwrap();
   let p: PathBuf = [dir, PathBuf::from("joint-nmap"), PathBuf::from("scans")]
     .iter()
@@ -96,7 +112,7 @@ pub fn create_data_dir() {
   mkdirp(p.clone()).expect("Impossible to create storage path");
 }
 
-pub fn get_data_dir(id: String) -> String {
+pub fn get_scans_data_dir(id: String) -> String {
   let dir = data_dir().unwrap();
   let p: PathBuf = [dir, PathBuf::from("joint-nmap"), PathBuf::from("scans"), PathBuf::from(id)]
     .iter()
@@ -106,13 +122,20 @@ pub fn get_data_dir(id: String) -> String {
 
 
 fn save_scanresult(hash: String, player: &ScanResult) {
-    let path = get_data_dir(hash);
+    let path = get_scans_data_dir(hash);
     save_file(path, 0, player).unwrap();
 }
 
-fn load_scanresult(hash: String) -> ScanResult {
-    let path = get_data_dir(hash);
-    load_file(path, 0).unwrap()
+fn load_scanresult(hash: String) -> Option<ScanResult> {
+    let path = get_scans_data_dir(hash);
+    match load_file(path.clone(), 0) {
+        Ok(file) => Some(file),
+        Err(err) => {
+            println!("Encountered error when loading path {}", path);
+            println!("{:#?}", err);
+            None
+        }
+    }
 }
 
 type BoxResult<T> = std::result::Result<T, Box<dyn std::error::Error>>;
@@ -144,23 +167,18 @@ fn load_all_scans() -> HashMap<String, ScanResult> {
     let mut hm: HashMap<String, ScanResult> = HashMap::new();
 
     for entry in entries {
-        hm.insert(entry.clone(), load_scanresult(entry));
+        hm.insert(entry.clone(), load_scanresult(entry).unwrap());
     }
 
     return hm
 }
 
 
-pub fn parse_nmap_xml(xml_info: String) -> BoxResult<rust_nmap::nmap_run> {
-    let nmap_run_info = match serde_xml_rs::from_str(&xml_info) {
-        Ok(nmap_run_info) => nmap_run_info,
-        Err(err) => return Err(Box::new(err) as Box<dyn std::error::Error>),
-    };
-    Ok(nmap_run_info)
-}
-
 fn parse_xml_bytes(xml_info: actix_web::web::Bytes) -> BoxResult<rust_nmap::nmap_run> {
-    let nmap_run_info = match serde_xml_rs::from_reader(&*xml_info) {
+    let mut deserializer = serde_xml_rs::Deserializer::new_from_reader(&*xml_info)
+        .non_contiguous_seq_elements(true);
+    // let nmap_run_info = match serde_xml_rs::from_reader(&*xml_info) {
+    let nmap_run_info = match rust_nmap::nmap_run::deserialize(&mut deserializer) {
         Ok(nmap_run_info) => nmap_run_info,
         Err(err) => return Err(Box::new(err) as Box<dyn std::error::Error>),
     };
@@ -185,12 +203,21 @@ fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
                         addr: address.addr.unwrap()
                     }
                 }).collect();
-                let hostnames = host.hostnames.unwrap().hostname.unwrap().into_iter().map(|hostname| {
-                    Hostname {
-                        name: hostname.name.unwrap(),
-                        r#type: hostname.r#type.unwrap(),
-                    }
-                }).collect();
+                // Confusing/janky hostname/hostnames setup here
+                // Blame author of rust_nmap
+                let hostnames = host.hostnames.unwrap();
+                let hostname = hostnames.hostname;
+                let hostnames = match hostname{
+                    Some(hostname) => {
+                        hostname.into_iter().map(|hostname| {
+                            Hostname {
+                                name: hostname.name.unwrap(),
+                                r#type: hostname.r#type.unwrap(),
+                            }
+                        }).collect()
+                    },
+                    None => vec![]
+                };
                 let ports = host.ports.unwrap().port.unwrap().into_iter().map(|port| {
                     let state = port.state.unwrap();
                     Port {
@@ -231,6 +258,9 @@ fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
     scanresult
 }
 
+use std::fs::File;
+use std::io::Write;
+
 #[post("/submit")]
 async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
     while let Some(item) = payload.next().await {
@@ -239,7 +269,16 @@ async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
         // Field in turn is stream of *Bytes* object
         while let Some(chunk) = field.next().await {
             let chunk = chunk?;
-            // println!("-- CHUNK: \n{:?}", std::str::from_utf8(&chunk));
+
+            let mut hasher = Sha256::new();
+            hasher.update(chunk.clone());
+            let hash = hasher.finalize();
+            let hex_hash = base16ct::lower::encode_string(&hash);
+
+            // persist actual file too, in case we get better at something in the future
+            let mut file = File::create(get_raw_data_dir(hex_hash.clone())).unwrap();
+
+            file.write(&chunk.clone()).unwrap();
 
             match parse_xml_bytes(chunk.clone()) {
                 Ok(result) => {
@@ -247,10 +286,6 @@ async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
 
                     println!("{:#?}", nice_res);
 
-                    let mut hasher = Sha256::new();
-                    hasher.update(chunk.clone());
-                    let hash = hasher.finalize();
-                    let hex_hash = base16ct::lower::encode_string(&hash);
 
                     save_scanresult(hex_hash.clone(), &nice_res);
                     break;
@@ -379,7 +414,8 @@ async fn bearer_auth_validator(req: ServiceRequest, credentials: BearerAuth) -> 
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    create_data_dir();
+    create_raw_data_dir();
+    create_scans_data_dir();
     HttpServer::new(|| {
         let auth = HttpAuthentication::bearer(bearer_auth_validator);
         App::new()
