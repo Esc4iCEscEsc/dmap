@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Mon Mar  7 05:14:30 2022 as: nmap -T5 -A -p 80,443 -oX - scanme.nmap.org -->
+<nmaprun scanner="nmap" args="nmap -T5 -A -p 80,443 -oX - scanme.nmap.org" start="1646648070" startstr="Mon Mar  7 05:14:30 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="80,443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="45.33.32.156" addrtype="ipv4"/>
+<hostnames>
+<hostname name="scanme.nmap.org" type="user"/>
+</hostnames>
+</hosthint>
+<host starttime="1646648070" endtime="1646648085"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="45.33.32.156" addrtype="ipv4"/>
+<hostnames>
+<hostname name="scanme.nmap.org" type="user"/>
+<hostname name="scanme.nmap.org" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.7" extrainfo="(Ubuntu)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.7</cpe></service><script id="http-server-header" output="Apache/2.4.7 (Ubuntu)"><elem>Apache/2.4.7 (Ubuntu)</elem>
+</script><script id="http-title" output="Go ahead and ScanMe!"><elem key="title">Go ahead and ScanMe!</elem>
+</script><script id="http-favicon" output="Nmap Project"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="295141" rttvar="166116" to="300000"/>
+</host>
+<runstats><finished time="1646648085" timestr="Mon Mar  7 05:14:45 2022" summary="Nmap done at Mon Mar  7 05:14:45 2022; 1 IP address (1 host up) scanned in 15.62 seconds" elapsed="15.62" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
