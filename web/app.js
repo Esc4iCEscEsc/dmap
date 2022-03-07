@@ -1,8 +1,13 @@
-$scans = document.querySelector('#scans')
-$scan = document.querySelector('#scan-result')
+function $(selector) {
+  return document.querySelector(selector)
+}
+
+$scans = $('#scans')
+$scan = $('#scan-result')
+
+
 
 function renderScans(scans) {
-
   const arr = Object.keys(scans).reduce((acc, curr) => {
     acc.push(Object.assign(
       scans[curr],
@@ -36,14 +41,13 @@ function renderScans(scans) {
 }
 
 function main() {
-  fetch('/scans')
+  token = localStorage.getItem('token')
+  fetch('/api/scans', {
+    headers: {'Authorization': 'Bearer ' + token}
+  })
     .then(res => res.json())
     .then(renderScans)
 }
-
-document.addEventListener("DOMContentLoaded", function(event) { 
-  main()
-});
 
 function $info($parent_el, label, value) {
   const $el = document.createElement('div')
@@ -99,11 +103,71 @@ function onHashChange() {
 
 
     const scanID = currentHash.substr(1)
-    fetch('/scans/' + scanID)
-      .then(res => res.json())
+    const token = localStorage.getItem('token')
+    fetch('/api/scans/' + scanID, {
+      headers: {'Authorization': 'Bearer ' + token}
+    }).then(res => res.json())
       .then(renderScan)
   }
 }
 
 window.onhashchange = onHashChange
+
+// main()
 onHashChange()
+
+// Authentication part
+$auth = $('#auth')
+$authError = $('#auth-error')
+$authSuccess = $('#auth-success')
+$authToken = $('#api-token')
+$loginBtn = $('#login-btn')
+
+function tryAuth() {
+  let tokenToTry = $authToken.value
+  console.log(tokenToTry)
+  fetch('/api/scans', {
+    headers: {"Authorization": "Bearer " + tokenToTry}
+  })
+    .then((res) => {
+      console.log(res)
+      if (res.status === 401) {
+        $authError.style.display = 'block'
+        console.log('wrong key')
+        $authToken.focus();
+        $authToken.select();
+        return
+      }
+      if (res.status === 200) {
+        $authError.style.display = 'none'
+        $authSuccess.style.display = 'block'
+        window.localStorage.setItem('token', tokenToTry)
+        setTimeout(() => {
+          $auth.style.opacity = '0'
+          setTimeout(() => {
+            $auth.style.display = 'none'
+            main()
+          }, 250)
+        }, 250)
+        return
+      }
+      throw new Error('Didnt handle this kind of statuscode, what gives?')
+    })
+}
+
+$authToken.onkeypress = function tokenChange(ev) {
+  if ($authError.style.display === "block") {
+    $authError.style.display = "none"
+  }
+  if (ev.keyCode === 13) {
+    tryAuth()
+  }
+}
+
+$loginBtn.onclick = tryAuth
+
+if (localStorage.getItem('token')) {
+  $authToken.value = localStorage.getItem('token')
+  tryAuth();
+  $authToken.value = '*************************'
+}

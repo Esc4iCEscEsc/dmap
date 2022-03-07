@@ -346,22 +346,22 @@ async fn bearer_auth_validator(req: ServiceRequest, credentials: BearerAuth) -> 
         .app_data::<Config>()
         .map(|data| data.clone())
         .unwrap_or_else(Default::default);
-    let is_authed_path = req.path().starts_with("/scans");
-    println!("{:?}", is_authed_path);
-    if is_authed_path {
-        match validate_token(credentials.token()) {
-            Ok(res) => {
-                if res == true {
-                    Ok(req)
-                } else {
-                    Err(AuthenticationError::from(config).into())
-                }
+    // let is_authed_path = req.path().starts_with("/scans");
+    // println!("{:?}", is_authed_path);
+    // if is_authed_path {
+    match validate_token(credentials.token()) {
+        Ok(res) => {
+            if res == true {
+                Ok(req)
+            } else {
+                Err(AuthenticationError::from(config).into())
             }
-            Err(_) => Err(AuthenticationError::from(config).into()),
         }
-    } else {
-        Ok(req)
+        Err(_) => Err(AuthenticationError::from(config).into()),
     }
+    // } else {
+    //     Ok(req)
+    // }
 }
 
 #[actix_web::main]
@@ -370,12 +370,15 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         let auth = HttpAuthentication::bearer(bearer_auth_validator);
         App::new()
-            .wrap(auth)
+            .service(
+                web::scope("/api")
+                    .wrap(auth)
+                    .service(post_submit)
+                    .service(get_scan)
+                    .service(get_scans)
+            )
             .service(get_index)
             .service(get_app_js)
-            .service(post_submit)
-            .service(get_scan)
-            .service(get_scans)
     })
     .bind(("127.0.0.1", 2625))?
         .run()

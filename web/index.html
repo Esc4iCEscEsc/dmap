@@ -1,17 +1,50 @@
 <html>
-  <title></title>
+  <head>
+    <title>dmap</title>
+    <style>
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+#auth {
+  position: absolute;
+  top: 0px; right: 0px; bottom: 0px; left: 0px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.25s;
+}
+    </style>
+  </head>
   <body>
-    <h1>Submit nmap output here</h1>
-    <p>Example:</p>
-    <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
-    <form action="/submit" method="POST"  enctype="multipart/form-data">
-      <input type="file" name="file"/>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="scan-result">
+    <div id="app">
+      <h1>Submit nmap output here</h1>
+      <p>Example:</p>
+      <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
+      <form action="/submit" method="POST"  enctype="multipart/form-data">
+        <input type="file" name="file"/>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="scan-result">
+      </div>
+      <div id="scans">
+      </div>
     </div>
-    <div id="scans">
+    <div id="auth">
+      <div>
+        <h1>Not Authorized</h1>
+        <p>Please enter your key below to login</p>
+        <input type="text" id="api-token">
+        <button id="login-btn">Login</button>
+        <p id="auth-error" style="color: red; display: none">Wrong token, try again! Or don't...</p>
+        <p id="auth-success" style="color: lightgreen; display: none"><strong>Welcome!</strong></p>
+      </div>
     </div>
-    <script src="./app.js"></script>
+    <script src="./app.js" defer></script>
   </body>
 </html>
