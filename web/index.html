@@ -1,17 +1,17 @@
 <html>
-	<title></title>
-	<body>
-		<h1>Submit nmap output here</h1>
-		<p>Example:</p>
-		<code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
-		<form action="/submit" method="POST"  enctype="multipart/form-data">
-			<input type="file" name="file"/>
-			<button type="submit">Submit</button>
-		</form>
-		<div id="scan-result">
-		</div>
-		<div id="scans">
-		</div>
-		<script src="./app.js"></script>
-	</body>
+  <title></title>
+  <body>
+    <h1>Submit nmap output here</h1>
+    <p>Example:</p>
+    <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
+    <form action="/submit" method="POST"  enctype="multipart/form-data">
+      <input type="file" name="file"/>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="scan-result">
+    </div>
+    <div id="scans">
+    </div>
+    <script src="./app.js"></script>
+  </body>
 </html>
