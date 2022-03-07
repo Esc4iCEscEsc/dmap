@@ -24,3 +24,7 @@ fi
 if [ ! -f "$OUT_DIR/service-detection.xml" ]; then
 	nmap -T5 -sV -oX - scanme.nmap.org > $OUT_DIR/service-detection.xml
 fi
+
+if [ ! -f "$OUT_DIR/subnet.xml" ]; then
+	nmap -T5 -A -p 80,443 -oX - 91.220.57.0/24 > $OUT_DIR/subnet.xml
+fi

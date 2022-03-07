@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Mon Mar  7 13:30:04 2022 as: nmap -T5 -A -p 80,443 -oX - 91.220.57.0/24 -->
+<nmaprun scanner="nmap" args="nmap -T5 -A -p 80,443 -oX - 91.220.57.0/24" start="1646677804" startstr="Mon Mar  7 13:30:04 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="2" services="80,443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.10" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.3" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.8" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.9" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.21" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.25" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.29" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.105" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.101" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.107" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.109" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.61" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.15" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.11" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.20" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.132" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.131" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.12" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.97" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.99" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.126" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.102" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.14" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="91.220.57.130" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.3" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ftp.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.51" extrainfo="(FreeBSD) OpenSSL/1.1.1h-freebsd" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.51</cpe></service><script id="http-server-header" output="Apache/2.4.51 (FreeBSD) OpenSSL/1.1.1h-freebsd"><elem>Apache/2.4.51 (FreeBSD) OpenSSL/1.1.1h-freebsd</elem>
+</script><script id="http-ls" output="Volume /&#xa;  maxfiles limit reached (10)&#xa;SIZE  TIME              FILENAME&#xa;-     2016-04-29 19:24  ADDON/&#xa;-     2021-11-02 11:30  ADO/&#xa;498K  2005-06-22 10:50  ADO/50comupd.exe&#xa;1.2M  2001-05-18 14:44  ADO/DCOM98.EXE&#xa;3.7M  2005-10-27 18:04  ADO/Jet40SP8_9xNT.exe&#xa;5.8M  2005-10-27 18:09  ADO/MDAC_TYP_28SP1.EXE&#xa;4.3M  2005-05-24 11:46  ADO/MsXML30.zip&#xa;-     2007-06-07 14:25  ADO/SP2%20for%20Win98/&#xa;-     2010-02-15 12:58  ADO/Win2000/&#xa;483K  2001-05-18 14:44  ADO/cc.exe&#xa;&#xa;"><table key="volumes">
+<table>
+<table key="files">
+<table>
+<elem key="size">-</elem>
+<elem key="time">2016-04-29 19:24</elem>
+<elem key="filename">ADDON/</elem>
+</table>
+<table>
+<elem key="size">-</elem>
+<elem key="time">2021-11-02 11:30</elem>
+<elem key="filename">ADO/</elem>
+</table>
+<table>
+<elem key="size">498K</elem>
+<elem key="time">2005-06-22 10:50</elem>
+<elem key="filename">ADO/50comupd.exe</elem>
+</table>
+<table>
+<elem key="size">1.2M</elem>
+<elem key="time">2001-05-18 14:44</elem>
+<elem key="filename">ADO/DCOM98.EXE</elem>
+</table>
+<table>
+<elem key="size">3.7M</elem>
+<elem key="time">2005-10-27 18:04</elem>
+<elem key="filename">ADO/Jet40SP8_9xNT.exe</elem>
+</table>
+<table>
+<elem key="size">5.8M</elem>
+<elem key="time">2005-10-27 18:09</elem>
+<elem key="filename">ADO/MDAC_TYP_28SP1.EXE</elem>
+</table>
+<table>
+<elem key="size">4.3M</elem>
+<elem key="time">2005-05-24 11:46</elem>
+<elem key="filename">ADO/MsXML30.zip</elem>
+</table>
+<table>
+<elem key="size">-</elem>
+<elem key="time">2007-06-07 14:25</elem>
+<elem key="filename">ADO/SP2%20for%20Win98/</elem>
+</table>
+<table>
+<elem key="size">-</elem>
+<elem key="time">2010-02-15 12:58</elem>
+<elem key="filename">ADO/Win2000/</elem>
+</table>
+<table>
+<elem key="size">483K</elem>
+<elem key="time">2001-05-18 14:44</elem>
+<elem key="filename">ADO/cc.exe</elem>
+</table>
+</table>
+<table key="info">
+<elem>maxfiles limit reached (10)</elem>
+</table>
+<elem key="volume">/</elem>
+</table>
+</table>
+<table key="total">
+<elem key="bytes">16502998</elem>
+<elem key="files">10</elem>
+</table>
+</script><script id="http-title" output="Index of /"><elem key="title">Index of /</elem>
+</script><script id="http-robots.txt" output="1 disallowed entry &#xa;/Letters/"/><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="tls-nextprotoneg" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=*.ctm.ru&#xa;Subject Alternative Name: DNS:*.ctm.ru, DNS:ctm.ru&#xa;Not valid before: 2021-10-04T00:00:00&#xa;Not valid after:  2022-11-04T23:59:59"><table key="subject">
+<elem key="commonName">*.ctm.ru</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00F1AFA76406C6415B48760BF528CA89CE36ED8FE7C1E7755DB6769E5EC324DDD2D028CA7707CFA12FE9406AA81B2086BF6CDDA8CFA0AFCAA83C1C5E68C261ECF5B8E49F75928AF9CC4299475ACD63AC2BD57BFE5D1EA35FC5A086876C71FDF8EB7544156194F2F39B5EFAEB4DA973CA98C95CEAE576A960F9E6B566BA4A1E18E2A6179CB3218F8505D6A1C9E426639C6F5581851949048CA2C29C6B7DB93A67A181EE177BFA53E45950A559020B64056D06E7A099C9DF4DFFC0241E9E1AA1ADCD624C067425B96E1E1D4764E9DCCB1578EFC3D45730231BF9CBEB8DB711E638651FBC73BED4462EF3A2A9496E752667369BE50C1F4EE8A19FDEF2C8787D2E9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">9B:E9:A9:F0:AD:5C:17:DC:74:33:E8:25:09:FC:5E:66:5F:19:0C:F9</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.ctm.ru, DNS:ctm.ru</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Oct  4 07:50:12.502 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:DD:3A:F0:20:93:C7:62:AB:C2:F9:AB:&#xa;                9F:88:BF:EC:DC:C2:0B:C4:10:45:FD:E2:1C:78:EF:18:&#xa;                FE:17:DD:20:F8:02:21:00:E4:EF:52:89:CC:53:45:60:&#xa;                22:73:9C:C3:EF:60:FF:CF:1D:21:23:D7:76:13:70:58:&#xa;                57:A0:75:E0:17:54:4A:F6&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Oct  4 07:50:12.439 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:5A:48:8F:7E:7D:6D:62:08:47:31:9D:FB:&#xa;                E6:55:10:8B:A2:FF:F7:E5:65:9C:41:1E:61:EC:6D:D9:&#xa;                39:8E:39:68:02:20:4E:88:BF:A2:3A:9F:D0:BE:3E:1D:&#xa;                DE:69:6C:CF:01:7B:FD:D2:58:F9:41:CB:B9:C2:EF:16:&#xa;                B3:BE:4A:C6:92:9A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Oct  4 07:50:12.401 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:5F:92:7F:30:8F:C2:16:A0:73:95:9E:CF:&#xa;                1B:51:C3:C7:22:AD:C9:72:C7:A4:0A:13:6A:B3:40:B4:&#xa;                8E:DC:4D:4B:02:21:00:9D:0C:E5:2F:B1:E8:DF:60:29:&#xa;                C4:E4:27:52:4E:4F:EA:9F:4E:10:7D:5A:9D:36:9B:16:&#xa;                97:46:17:FA:71:4B:87</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-10-04T00:00:00</elem>
+<elem key="notAfter">2022-11-04T23:59:59</elem>
+</table>
+<elem key="md5">5a1f104f92f855ef0205d5de09e63ce1</elem>
+<elem key="sha1">60db3706b37650975fe58f0533e6cf47ccd5336d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGIjCCBQqgAwIBAgIRAJMaKCZH8uA+ZOONtd5nojAwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yMTEwMDQwMDAwMDBaFw0yMjExMDQyMzU5NTlaMBMxETAPBgNVBAMMCCou&#xa;Y3RtLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA8a+nZAbGQV&#xa;tIdgv1KMqJzjbtj+fB53VdtnaeXsMk3dLQKMp3B8+hL+lAaqgbIIa/bN2oz6Cvyq&#xa;g8HF5owmHs9bjkn3WSivnMQplHWs1jrCvVe/5dHqNfxaCGh2xx/fjrdUQVYZTy85&#xa;te+utNqXPKmMlc6uV2qWD55rVmukoeGOKmF5yzIY+FBdahyeQmY5xvVYGFGUkEjK&#xa;LCnGt9uTpnoYHuF3v6U+RZUKVZAgtkBW0G56CZyd9N/8AkHp4aoa3NYkwGdCW5bh&#xa;4dR2Tp3MsVeO/D1FcwIxv5y+uNtxHmOGUfvHO+1EYu86KpSW51Jmc2m+UMH07ooZ&#xa;/e8sh4fS6QIDAQABo4IC8jCCAu4wHwYDVR0jBBgwFoAUjYxexFStiuF36Zv5mwXh&#xa;uAGNYeEwHQYDVR0OBBYEFJvpqfCtXBfcdDPoJQn8XmZfGQz5MA4GA1UdDwEB/wQE&#xa;AwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD&#xa;AjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEWF2h0dHBz&#xa;Oi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEEeDB2ME8G&#xa;CCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FEb21h&#xa;aW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzABhhdodHRw&#xa;Oi8vb2NzcC5zZWN0aWdvLmNvbTAbBgNVHREEFDASgggqLmN0bS5ydYIGY3RtLnJ1&#xa;MIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdwBGpVXrdfqRIDC1oolp9PN9ESxB&#xa;dL79SbiFq/L8cP5tRwAAAXxKSB0WAAAEAwBIMEYCIQDdOvAgk8diq8L5q5+Iv+zc&#xa;wgvEEEX94hx47xj+F90g+AIhAOTvUonMU0VgInOcw+9g/88dISPXdhNwWFegdeAX&#xa;VEr2AHUAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8Skgc1wAA&#xa;BAMARjBEAiBaSI9+fW1iCEcxnfvmVRCLov/35WWcQR5h7G3ZOY45aAIgToi/ojqf&#xa;0L4+Hd5pbM8Be/3SWPlBy7nC7xazvkrGkpoAdgApeb7wnjk5IfBWc59jpXflvld9&#xa;nGAK+PlNXSZcJV3HhAAAAXxKSByxAAAEAwBHMEUCIF+SfzCPwhagc5WezxtRw8ci&#xa;rclyx6QKE2qzQLSO3E1LAiEAnQzlL7Ho32ApxOQnUk5P6p9OEH1anTabFpdGF/px&#xa;S4cwDQYJKoZIhvcNAQELBQADggEBAK8tmpSr8xxfE/93qrHqPw6De1XwQ+gqAs9q&#xa;tuUq8HhR5c7S7gTIycuCbj1h0sTP8DOvogEMuxGrXPMPSajiYcv8HFuy8O236qtX&#xa;tyeufTJ+VQ24fCoAvXEpFPO8Gt2QU4nbSdhBmq7ZMCE130NRy/t7VYqugzLFheEp&#xa;5r19zVWi9XWQAxnc71XlzWnnU6sCcav+3QViqIMQueNmBJcicSFwndi8inQzIkW8&#xa;ZSc1P/VupkPskG8nC0mOaebvHQoIEMYXrXit57HNzzKvs5AZNi9T3F4D7zP/e50a&#xa;XhKXhmmbBbL+D1VAtZjfpgf3lx3zeHb5NlTvahLp0dumujRl8FI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="http-ls" output="Volume /&#xa;  maxfiles limit reached (10)&#xa;SIZE     TIME               FILENAME&#xa;-        29-Apr-2016 16:24  ADDON/&#xa;-        02-Nov-2021 08:30  ADO/&#xa;-        07-Jun-2007 10:25  ADO/SP2%20for%20Win98/&#xa;-        15-Feb-2010 09:58  ADO/Win2000/&#xa;509984   22-Jun-2005 06:50  ADO/50comupd.exe&#xa;1222368  18-May-2001 10:44  ADO/DCOM98.EXE&#xa;3872168  27-Oct-2005 14:04  ADO/Jet40SP8_9xNT.exe&#xa;6100504  27-Oct-2005 14:09  ADO/MDAC_TYP_28SP1.EXE&#xa;4475117  24-May-2005 07:46  ADO/MsXML30.zip&#xa;495048   18-May-2001 10:44  ADO/cc.exe&#xa;&#xa;"><table key="volumes">
+<table>
+<table key="files">
+<table>
+<elem key="size">-</elem>
+<elem key="time">29-Apr-2016 16:24</elem>
+<elem key="filename">ADDON/</elem>
+</table>
+<table>
+<elem key="size">-</elem>
+<elem key="time">02-Nov-2021 08:30</elem>
+<elem key="filename">ADO/</elem>
+</table>
+<table>
+<elem key="size">-</elem>
+<elem key="time">07-Jun-2007 10:25</elem>
+<elem key="filename">ADO/SP2%20for%20Win98/</elem>
+</table>
+<table>
+<elem key="size">-</elem>
+<elem key="time">15-Feb-2010 09:58</elem>
+<elem key="filename">ADO/Win2000/</elem>
+</table>
+<table>
+<elem key="size">509984</elem>
+<elem key="time">22-Jun-2005 06:50</elem>
+<elem key="filename">ADO/50comupd.exe</elem>
+</table>
+<table>
+<elem key="size">1222368</elem>
+<elem key="time">18-May-2001 10:44</elem>
+<elem key="filename">ADO/DCOM98.EXE</elem>
+</table>
+<table>
+<elem key="size">3872168</elem>
+<elem key="time">27-Oct-2005 14:04</elem>
+<elem key="filename">ADO/Jet40SP8_9xNT.exe</elem>
+</table>
+<table>
+<elem key="size">6100504</elem>
+<elem key="time">27-Oct-2005 14:09</elem>
+<elem key="filename">ADO/MDAC_TYP_28SP1.EXE</elem>
+</table>
+<table>
+<elem key="size">4475117</elem>
+<elem key="time">24-May-2005 07:46</elem>
+<elem key="filename">ADO/MsXML30.zip</elem>
+</table>
+<table>
+<elem key="size">495048</elem>
+<elem key="time">18-May-2001 10:44</elem>
+<elem key="filename">ADO/cc.exe</elem>
+</table>
+</table>
+<table key="info">
+<elem>maxfiles limit reached (10)</elem>
+</table>
+<elem key="volume">/</elem>
+</table>
+</table>
+<table key="total">
+<elem key="bytes">16675189</elem>
+<elem key="files">10</elem>
+</table>
+</script><script id="http-title" output="Index of /"><elem key="title">Index of /</elem>
+</script><script id="http-robots.txt" output="1 disallowed entry &#xa;/Letters/"/></port>
+</ports>
+<times srtt="152308" rttvar="85980" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.8" addrtype="ipv4"/>
+<hostnames>
+<hostname name="srv.otvt.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.20.2" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.20.2</cpe></service><script id="http-title" output="Did not follow redirect to https://srv.otvt.ru/"><elem key="redirect_url">https://srv.otvt.ru/</elem>
+</script><script id="http-server-header" output="nginx/1.20.2"><elem>nginx/1.20.2</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.20.2" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.20.2</cpe></service><script id="http-git" output="&#xa;  91.220.57.8:443/.git/&#xa;    Git repository found!&#xa;    Repository description: Unnamed repository; edit this file &apos;description&apos; to name the...&#xa;    Last commit message: \xD0\x9C\xD0\xBE\xD0\xB4\xD0\xB8\xD1\x84\xD0\xB8\xD0\xBA\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F \xD0\xBF\xD0\xBE\xD0\xB4 \xD0\xB7\xD0\xB0\xD0\xB4\xD0\xB0\xD1\x87\xD1\x83 #69978 \xD0\x98\xD0\xB7\xD0\xBC\xD0\xB5\xD0\xBD...&#xa;    Remotes:&#xa;      http://192.168.14.92/kest/Regs-backend.git&#xa;"><table key="91.220.57.8:443/.git/">
+<elem key="last-commit-message">\xD0\x9C\xD0\xBE\xD0\xB4\xD0\xB8\xD1\x84\xD0\xB8\xD0\xBA\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F \xD0\xBF\xD0\xBE\xD0\xB4 \xD0\xB7\xD0\xB0\xD0\xB4\xD0\xB0\xD1\x87\xD1\x83 #69978 \xD0\x98\xD0\xB7\xD0\xBC\xD0\xB5\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \xD0\xBF\xD1\x80\xD0\xBE\xD1\x86\xD0\xB5\xD0\xB4\xD1\x83\xD1\x80\xD1\x83 \xD0\xBF\xD0\xB0\xD1\x80\xD1\x81\xD0\xB8\xD0\xBD\xD0\xB3\xD0\xB0 xml-\xD1\x84\xD0\xB0\xD0\xB9\xD0\xBB\xD0\xB0 \xD1\x81 \xD0\xB7\xD0\xB0\xD0\xBF\xD1\x80\xD0\xBE\xD1\x81\xD0\xBE\xD0\xBC \xD0\xB4\xD0\xB5\xD0\xBC\xD0\xBE-\xD0\xBA\xD0\xBE\xD0\xB4\xD0\xB0 \xD0\xB4\xD0\xBB\xD1\x8F \xD0\xBE\xD0\xB1\xD1\x80\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x82\xD0\xBA\xD0\xB8 \xD0\xB8 \xD0\xBF\xD0\xB5\xD1\x80\xD0\xB5\xD0\xB4\xD0\xB0\xD1\x87\xD0\xB8 \xD0\xB2 \xD0\xB1\xD0\xB0\xD0\xB7\xD1\x83 \xD0\xB4\xD0\xB0\xD0\xBD\xD0\xBD\xD1\x8B\xD1\x85 \xD0\x9A\xD0\xBB. \xD0\xBF\xD1\x80\xD0\xBE\xD0\xB3\xD1\x80\xD0\xB0\xD0\xBC\xD0\xBC\xD1\x8B \xD0\xBF\xD0\xBE\xD0\xBB\xD1\x8F \xD1\x82\xD0\xB5\xD0\xBB\xD0\xB5\xD1\x84\xD0\xBE\xD0\xBD&#xa;\xD0\x9E\xD0\xB6\xD0\xB8\xD0\xB4\xD0\xB0\xD0\xB5\xD0\xBC\xD0\xBE\xD0\xB5 \xD0\xBF\xD0\xBE\xD0\xBB\xD0\xB5 - &lt;PHONE&gt;&#xa;# Please enter the commit message for your changes. Lines starting&#xa;# with &apos;#&apos; will be ignored, and an empty message aborts the commit.&#xa;# On branch master&#xa;# Your branch is up-to-date with &apos;origin/master&apos;.&#xa;#&#xa;# Changes to be committed:&#xa;#&#x9;modified:   send.php&#xa;#&#xa;</elem>
+<table key="files-found">
+<elem key=".git/COMMIT_EDITMSG">true</elem>
+<elem key=".gitignore">false</elem>
+<elem key=".git/description">true</elem>
+<elem key=".git/config">true</elem>
+<elem key=".git/info/exclude">true</elem>
+</table>
+<table key="remotes">
+<elem>http://192.168.14.92/kest/Regs-backend.git</elem>
+</table>
+<elem key="repository-description">Unnamed repository; edit this file &apos;description&apos; to name the repository.&#xa;</elem>
+</table>
+</script><script id="tls-nextprotoneg" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="tls-alpn" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script><script id="ssl-cert" output="Subject: commonName=*.ctm.ru&#xa;Subject Alternative Name: DNS:*.ctm.ru, DNS:ctm.ru&#xa;Not valid before: 2021-10-04T00:00:00&#xa;Not valid after:  2022-11-04T23:59:59"><table key="subject">
+<elem key="commonName">*.ctm.ru</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00F1AFA76406C6415B48760BF528CA89CE36ED8FE7C1E7755DB6769E5EC324DDD2D028CA7707CFA12FE9406AA81B2086BF6CDDA8CFA0AFCAA83C1C5E68C261ECF5B8E49F75928AF9CC4299475ACD63AC2BD57BFE5D1EA35FC5A086876C71FDF8EB7544156194F2F39B5EFAEB4DA973CA98C95CEAE576A960F9E6B566BA4A1E18E2A6179CB3218F8505D6A1C9E426639C6F5581851949048CA2C29C6B7DB93A67A181EE177BFA53E45950A559020B64056D06E7A099C9DF4DFFC0241E9E1AA1ADCD624C067425B96E1E1D4764E9DCCB1578EFC3D45730231BF9CBEB8DB711E638651FBC73BED4462EF3A2A9496E752667369BE50C1F4EE8A19FDEF2C8787D2E9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">9B:E9:A9:F0:AD:5C:17:DC:74:33:E8:25:09:FC:5E:66:5F:19:0C:F9</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.ctm.ru, DNS:ctm.ru</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Oct  4 07:50:12.502 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:DD:3A:F0:20:93:C7:62:AB:C2:F9:AB:&#xa;                9F:88:BF:EC:DC:C2:0B:C4:10:45:FD:E2:1C:78:EF:18:&#xa;                FE:17:DD:20:F8:02:21:00:E4:EF:52:89:CC:53:45:60:&#xa;                22:73:9C:C3:EF:60:FF:CF:1D:21:23:D7:76:13:70:58:&#xa;                57:A0:75:E0:17:54:4A:F6&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Oct  4 07:50:12.439 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:5A:48:8F:7E:7D:6D:62:08:47:31:9D:FB:&#xa;                E6:55:10:8B:A2:FF:F7:E5:65:9C:41:1E:61:EC:6D:D9:&#xa;                39:8E:39:68:02:20:4E:88:BF:A2:3A:9F:D0:BE:3E:1D:&#xa;                DE:69:6C:CF:01:7B:FD:D2:58:F9:41:CB:B9:C2:EF:16:&#xa;                B3:BE:4A:C6:92:9A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Oct  4 07:50:12.401 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:5F:92:7F:30:8F:C2:16:A0:73:95:9E:CF:&#xa;                1B:51:C3:C7:22:AD:C9:72:C7:A4:0A:13:6A:B3:40:B4:&#xa;                8E:DC:4D:4B:02:21:00:9D:0C:E5:2F:B1:E8:DF:60:29:&#xa;                C4:E4:27:52:4E:4F:EA:9F:4E:10:7D:5A:9D:36:9B:16:&#xa;                97:46:17:FA:71:4B:87</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-10-04T00:00:00</elem>
+<elem key="notAfter">2022-11-04T23:59:59</elem>
+</table>
+<elem key="md5">5a1f104f92f855ef0205d5de09e63ce1</elem>
+<elem key="sha1">60db3706b37650975fe58f0533e6cf47ccd5336d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGIjCCBQqgAwIBAgIRAJMaKCZH8uA+ZOONtd5nojAwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yMTEwMDQwMDAwMDBaFw0yMjExMDQyMzU5NTlaMBMxETAPBgNVBAMMCCou&#xa;Y3RtLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA8a+nZAbGQV&#xa;tIdgv1KMqJzjbtj+fB53VdtnaeXsMk3dLQKMp3B8+hL+lAaqgbIIa/bN2oz6Cvyq&#xa;g8HF5owmHs9bjkn3WSivnMQplHWs1jrCvVe/5dHqNfxaCGh2xx/fjrdUQVYZTy85&#xa;te+utNqXPKmMlc6uV2qWD55rVmukoeGOKmF5yzIY+FBdahyeQmY5xvVYGFGUkEjK&#xa;LCnGt9uTpnoYHuF3v6U+RZUKVZAgtkBW0G56CZyd9N/8AkHp4aoa3NYkwGdCW5bh&#xa;4dR2Tp3MsVeO/D1FcwIxv5y+uNtxHmOGUfvHO+1EYu86KpSW51Jmc2m+UMH07ooZ&#xa;/e8sh4fS6QIDAQABo4IC8jCCAu4wHwYDVR0jBBgwFoAUjYxexFStiuF36Zv5mwXh&#xa;uAGNYeEwHQYDVR0OBBYEFJvpqfCtXBfcdDPoJQn8XmZfGQz5MA4GA1UdDwEB/wQE&#xa;AwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD&#xa;AjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEWF2h0dHBz&#xa;Oi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEEeDB2ME8G&#xa;CCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FEb21h&#xa;aW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzABhhdodHRw&#xa;Oi8vb2NzcC5zZWN0aWdvLmNvbTAbBgNVHREEFDASgggqLmN0bS5ydYIGY3RtLnJ1&#xa;MIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdwBGpVXrdfqRIDC1oolp9PN9ESxB&#xa;dL79SbiFq/L8cP5tRwAAAXxKSB0WAAAEAwBIMEYCIQDdOvAgk8diq8L5q5+Iv+zc&#xa;wgvEEEX94hx47xj+F90g+AIhAOTvUonMU0VgInOcw+9g/88dISPXdhNwWFegdeAX&#xa;VEr2AHUAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8Skgc1wAA&#xa;BAMARjBEAiBaSI9+fW1iCEcxnfvmVRCLov/35WWcQR5h7G3ZOY45aAIgToi/ojqf&#xa;0L4+Hd5pbM8Be/3SWPlBy7nC7xazvkrGkpoAdgApeb7wnjk5IfBWc59jpXflvld9&#xa;nGAK+PlNXSZcJV3HhAAAAXxKSByxAAAEAwBHMEUCIF+SfzCPwhagc5WezxtRw8ci&#xa;rclyx6QKE2qzQLSO3E1LAiEAnQzlL7Ho32ApxOQnUk5P6p9OEH1anTabFpdGF/px&#xa;S4cwDQYJKoZIhvcNAQELBQADggEBAK8tmpSr8xxfE/93qrHqPw6De1XwQ+gqAs9q&#xa;tuUq8HhR5c7S7gTIycuCbj1h0sTP8DOvogEMuxGrXPMPSajiYcv8HFuy8O236qtX&#xa;tyeufTJ+VQ24fCoAvXEpFPO8Gt2QU4nbSdhBmq7ZMCE130NRy/t7VYqugzLFheEp&#xa;5r19zVWi9XWQAxnc71XlzWnnU6sCcav+3QViqIMQueNmBJcicSFwndi8inQzIkW8&#xa;ZSc1P/VupkPskG8nC0mOaebvHQoIEMYXrXit57HNzzKvs5AZNi9T3F4D7zP/e50a&#xa;XhKXhmmbBbL+D1VAtZjfpgf3lx3zeHb5NlTvahLp0dumujRl8FI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-server-header" output="nginx/1.20.2"><elem>nginx/1.20.2</elem>
+</script></port>
+</ports>
+<times srtt="157525" rttvar="88873" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.9" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.20.2" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.20.2</cpe></service><script id="http-title" output="Did not follow redirect to https://91.220.57.9/"><elem key="redirect_url">https://91.220.57.9/</elem>
+</script><script id="http-server-header" output="nginx/1.20.2"><elem>nginx/1.20.2</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.20.2" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.20.2</cpe></service><script id="tls-nextprotoneg" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-server-header" output="nginx/1.20.2"><elem>nginx/1.20.2</elem>
+</script><script id="http-git" output="&#xa;  91.220.57.9:443/.git/&#xa;    Git repository found!&#xa;    Repository description: Unnamed repository; edit this file &apos;description&apos; to name the...&#xa;    Last commit message: \xD0\x9C\xD0\xBE\xD0\xB4\xD0\xB8\xD1\x84\xD0\xB8\xD0\xBA\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F \xD0\xBF\xD0\xBE\xD0\xB4 \xD0\xB7\xD0\xB0\xD0\xB4\xD0\xB0\xD1\x87\xD1\x83 #69978 \xD0\x98\xD0\xB7\xD0\xBC\xD0\xB5\xD0\xBD...&#xa;    Remotes:&#xa;      http://192.168.14.92/kest/Regs-backend.git&#xa;"><table key="91.220.57.9:443/.git/">
+<elem key="last-commit-message">\xD0\x9C\xD0\xBE\xD0\xB4\xD0\xB8\xD1\x84\xD0\xB8\xD0\xBA\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F \xD0\xBF\xD0\xBE\xD0\xB4 \xD0\xB7\xD0\xB0\xD0\xB4\xD0\xB0\xD1\x87\xD1\x83 #69978 \xD0\x98\xD0\xB7\xD0\xBC\xD0\xB5\xD0\xBD\xD0\xB8\xD1\x82\xD1\x8C \xD0\xBF\xD1\x80\xD0\xBE\xD1\x86\xD0\xB5\xD0\xB4\xD1\x83\xD1\x80\xD1\x83 \xD0\xBF\xD0\xB0\xD1\x80\xD1\x81\xD0\xB8\xD0\xBD\xD0\xB3\xD0\xB0 xml-\xD1\x84\xD0\xB0\xD0\xB9\xD0\xBB\xD0\xB0 \xD1\x81 \xD0\xB7\xD0\xB0\xD0\xBF\xD1\x80\xD0\xBE\xD1\x81\xD0\xBE\xD0\xBC \xD0\xB4\xD0\xB5\xD0\xBC\xD0\xBE-\xD0\xBA\xD0\xBE\xD0\xB4\xD0\xB0 \xD0\xB4\xD0\xBB\xD1\x8F \xD0\xBE\xD0\xB1\xD1\x80\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x82\xD0\xBA\xD0\xB8 \xD0\xB8 \xD0\xBF\xD0\xB5\xD1\x80\xD0\xB5\xD0\xB4\xD0\xB0\xD1\x87\xD0\xB8 \xD0\xB2 \xD0\xB1\xD0\xB0\xD0\xB7\xD1\x83 \xD0\xB4\xD0\xB0\xD0\xBD\xD0\xBD\xD1\x8B\xD1\x85 \xD0\x9A\xD0\xBB. \xD0\xBF\xD1\x80\xD0\xBE\xD0\xB3\xD1\x80\xD0\xB0\xD0\xBC\xD0\xBC\xD1\x8B \xD0\xBF\xD0\xBE\xD0\xBB\xD1\x8F \xD1\x82\xD0\xB5\xD0\xBB\xD0\xB5\xD1\x84\xD0\xBE\xD0\xBD&#xa;\xD0\x9E\xD0\xB6\xD0\xB8\xD0\xB4\xD0\xB0\xD0\xB5\xD0\xBC\xD0\xBE\xD0\xB5 \xD0\xBF\xD0\xBE\xD0\xBB\xD0\xB5 - &lt;PHONE&gt;&#xa;# Please enter the commit message for your changes. Lines starting&#xa;# with &apos;#&apos; will be ignored, and an empty message aborts the commit.&#xa;# On branch master&#xa;# Your branch is up-to-date with &apos;origin/master&apos;.&#xa;#&#xa;# Changes to be committed:&#xa;#&#x9;modified:   send.php&#xa;#&#xa;</elem>
+<table key="files-found">
+<elem key=".git/COMMIT_EDITMSG">true</elem>
+<elem key=".gitignore">false</elem>
+<elem key=".git/description">true</elem>
+<elem key=".git/config">true</elem>
+<elem key=".git/info/exclude">true</elem>
+</table>
+<table key="remotes">
+<elem>http://192.168.14.92/kest/Regs-backend.git</elem>
+</table>
+<elem key="repository-description">Unnamed repository; edit this file &apos;description&apos; to name the repository.&#xa;</elem>
+</table>
+</script><script id="tls-alpn" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script><script id="ssl-cert" output="Subject: commonName=*.ctm.ru&#xa;Subject Alternative Name: DNS:*.ctm.ru, DNS:ctm.ru&#xa;Not valid before: 2021-10-04T00:00:00&#xa;Not valid after:  2022-11-04T23:59:59"><table key="subject">
+<elem key="commonName">*.ctm.ru</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00F1AFA76406C6415B48760BF528CA89CE36ED8FE7C1E7755DB6769E5EC324DDD2D028CA7707CFA12FE9406AA81B2086BF6CDDA8CFA0AFCAA83C1C5E68C261ECF5B8E49F75928AF9CC4299475ACD63AC2BD57BFE5D1EA35FC5A086876C71FDF8EB7544156194F2F39B5EFAEB4DA973CA98C95CEAE576A960F9E6B566BA4A1E18E2A6179CB3218F8505D6A1C9E426639C6F5581851949048CA2C29C6B7DB93A67A181EE177BFA53E45950A559020B64056D06E7A099C9DF4DFFC0241E9E1AA1ADCD624C067425B96E1E1D4764E9DCCB1578EFC3D45730231BF9CBEB8DB711E638651FBC73BED4462EF3A2A9496E752667369BE50C1F4EE8A19FDEF2C8787D2E9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">9B:E9:A9:F0:AD:5C:17:DC:74:33:E8:25:09:FC:5E:66:5F:19:0C:F9</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.ctm.ru, DNS:ctm.ru</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Oct  4 07:50:12.502 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:DD:3A:F0:20:93:C7:62:AB:C2:F9:AB:&#xa;                9F:88:BF:EC:DC:C2:0B:C4:10:45:FD:E2:1C:78:EF:18:&#xa;                FE:17:DD:20:F8:02:21:00:E4:EF:52:89:CC:53:45:60:&#xa;                22:73:9C:C3:EF:60:FF:CF:1D:21:23:D7:76:13:70:58:&#xa;                57:A0:75:E0:17:54:4A:F6&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Oct  4 07:50:12.439 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:5A:48:8F:7E:7D:6D:62:08:47:31:9D:FB:&#xa;                E6:55:10:8B:A2:FF:F7:E5:65:9C:41:1E:61:EC:6D:D9:&#xa;                39:8E:39:68:02:20:4E:88:BF:A2:3A:9F:D0:BE:3E:1D:&#xa;                DE:69:6C:CF:01:7B:FD:D2:58:F9:41:CB:B9:C2:EF:16:&#xa;                B3:BE:4A:C6:92:9A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Oct  4 07:50:12.401 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:5F:92:7F:30:8F:C2:16:A0:73:95:9E:CF:&#xa;                1B:51:C3:C7:22:AD:C9:72:C7:A4:0A:13:6A:B3:40:B4:&#xa;                8E:DC:4D:4B:02:21:00:9D:0C:E5:2F:B1:E8:DF:60:29:&#xa;                C4:E4:27:52:4E:4F:EA:9F:4E:10:7D:5A:9D:36:9B:16:&#xa;                97:46:17:FA:71:4B:87</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-10-04T00:00:00</elem>
+<elem key="notAfter">2022-11-04T23:59:59</elem>
+</table>
+<elem key="md5">5a1f104f92f855ef0205d5de09e63ce1</elem>
+<elem key="sha1">60db3706b37650975fe58f0533e6cf47ccd5336d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGIjCCBQqgAwIBAgIRAJMaKCZH8uA+ZOONtd5nojAwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yMTEwMDQwMDAwMDBaFw0yMjExMDQyMzU5NTlaMBMxETAPBgNVBAMMCCou&#xa;Y3RtLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA8a+nZAbGQV&#xa;tIdgv1KMqJzjbtj+fB53VdtnaeXsMk3dLQKMp3B8+hL+lAaqgbIIa/bN2oz6Cvyq&#xa;g8HF5owmHs9bjkn3WSivnMQplHWs1jrCvVe/5dHqNfxaCGh2xx/fjrdUQVYZTy85&#xa;te+utNqXPKmMlc6uV2qWD55rVmukoeGOKmF5yzIY+FBdahyeQmY5xvVYGFGUkEjK&#xa;LCnGt9uTpnoYHuF3v6U+RZUKVZAgtkBW0G56CZyd9N/8AkHp4aoa3NYkwGdCW5bh&#xa;4dR2Tp3MsVeO/D1FcwIxv5y+uNtxHmOGUfvHO+1EYu86KpSW51Jmc2m+UMH07ooZ&#xa;/e8sh4fS6QIDAQABo4IC8jCCAu4wHwYDVR0jBBgwFoAUjYxexFStiuF36Zv5mwXh&#xa;uAGNYeEwHQYDVR0OBBYEFJvpqfCtXBfcdDPoJQn8XmZfGQz5MA4GA1UdDwEB/wQE&#xa;AwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD&#xa;AjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEWF2h0dHBz&#xa;Oi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEEeDB2ME8G&#xa;CCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FEb21h&#xa;aW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzABhhdodHRw&#xa;Oi8vb2NzcC5zZWN0aWdvLmNvbTAbBgNVHREEFDASgggqLmN0bS5ydYIGY3RtLnJ1&#xa;MIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdwBGpVXrdfqRIDC1oolp9PN9ESxB&#xa;dL79SbiFq/L8cP5tRwAAAXxKSB0WAAAEAwBIMEYCIQDdOvAgk8diq8L5q5+Iv+zc&#xa;wgvEEEX94hx47xj+F90g+AIhAOTvUonMU0VgInOcw+9g/88dISPXdhNwWFegdeAX&#xa;VEr2AHUAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8Skgc1wAA&#xa;BAMARjBEAiBaSI9+fW1iCEcxnfvmVRCLov/35WWcQR5h7G3ZOY45aAIgToi/ojqf&#xa;0L4+Hd5pbM8Be/3SWPlBy7nC7xazvkrGkpoAdgApeb7wnjk5IfBWc59jpXflvld9&#xa;nGAK+PlNXSZcJV3HhAAAAXxKSByxAAAEAwBHMEUCIF+SfzCPwhagc5WezxtRw8ci&#xa;rclyx6QKE2qzQLSO3E1LAiEAnQzlL7Ho32ApxOQnUk5P6p9OEH1anTabFpdGF/px&#xa;S4cwDQYJKoZIhvcNAQELBQADggEBAK8tmpSr8xxfE/93qrHqPw6De1XwQ+gqAs9q&#xa;tuUq8HhR5c7S7gTIycuCbj1h0sTP8DOvogEMuxGrXPMPSajiYcv8HFuy8O236qtX&#xa;tyeufTJ+VQ24fCoAvXEpFPO8Gt2QU4nbSdhBmq7ZMCE130NRy/t7VYqugzLFheEp&#xa;5r19zVWi9XWQAxnc71XlzWnnU6sCcav+3QViqIMQueNmBJcicSFwndi8inQzIkW8&#xa;ZSc1P/VupkPskG8nC0mOaebvHQoIEMYXrXit57HNzzKvs5AZNi9T3F4D7zP/e50a&#xa;XhKXhmmbBbL+D1VAtZjfpgf3lx3zeHb5NlTvahLp0dumujRl8FI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="163926" rttvar="93411" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.10" addrtype="ipv4"/>
+<hostnames>
+<hostname name="www.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-title" output="Did not follow redirect to https://www.ctm.ru/"><elem key="redirect_url">https://www.ctm.ru/</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="ssl-cert" output="Subject: commonName=*.ctm.ru&#xa;Subject Alternative Name: DNS:*.ctm.ru, DNS:ctm.ru&#xa;Not valid before: 2021-10-04T00:00:00&#xa;Not valid after:  2022-11-04T23:59:59"><table key="subject">
+<elem key="commonName">*.ctm.ru</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00F1AFA76406C6415B48760BF528CA89CE36ED8FE7C1E7755DB6769E5EC324DDD2D028CA7707CFA12FE9406AA81B2086BF6CDDA8CFA0AFCAA83C1C5E68C261ECF5B8E49F75928AF9CC4299475ACD63AC2BD57BFE5D1EA35FC5A086876C71FDF8EB7544156194F2F39B5EFAEB4DA973CA98C95CEAE576A960F9E6B566BA4A1E18E2A6179CB3218F8505D6A1C9E426639C6F5581851949048CA2C29C6B7DB93A67A181EE177BFA53E45950A559020B64056D06E7A099C9DF4DFFC0241E9E1AA1ADCD624C067425B96E1E1D4764E9DCCB1578EFC3D45730231BF9CBEB8DB711E638651FBC73BED4462EF3A2A9496E752667369BE50C1F4EE8A19FDEF2C8787D2E9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">9B:E9:A9:F0:AD:5C:17:DC:74:33:E8:25:09:FC:5E:66:5F:19:0C:F9</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.ctm.ru, DNS:ctm.ru</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Oct  4 07:50:12.502 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:DD:3A:F0:20:93:C7:62:AB:C2:F9:AB:&#xa;                9F:88:BF:EC:DC:C2:0B:C4:10:45:FD:E2:1C:78:EF:18:&#xa;                FE:17:DD:20:F8:02:21:00:E4:EF:52:89:CC:53:45:60:&#xa;                22:73:9C:C3:EF:60:FF:CF:1D:21:23:D7:76:13:70:58:&#xa;                57:A0:75:E0:17:54:4A:F6&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Oct  4 07:50:12.439 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:5A:48:8F:7E:7D:6D:62:08:47:31:9D:FB:&#xa;                E6:55:10:8B:A2:FF:F7:E5:65:9C:41:1E:61:EC:6D:D9:&#xa;                39:8E:39:68:02:20:4E:88:BF:A2:3A:9F:D0:BE:3E:1D:&#xa;                DE:69:6C:CF:01:7B:FD:D2:58:F9:41:CB:B9:C2:EF:16:&#xa;                B3:BE:4A:C6:92:9A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Oct  4 07:50:12.401 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:5F:92:7F:30:8F:C2:16:A0:73:95:9E:CF:&#xa;                1B:51:C3:C7:22:AD:C9:72:C7:A4:0A:13:6A:B3:40:B4:&#xa;                8E:DC:4D:4B:02:21:00:9D:0C:E5:2F:B1:E8:DF:60:29:&#xa;                C4:E4:27:52:4E:4F:EA:9F:4E:10:7D:5A:9D:36:9B:16:&#xa;                97:46:17:FA:71:4B:87</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-10-04T00:00:00</elem>
+<elem key="notAfter">2022-11-04T23:59:59</elem>
+</table>
+<elem key="md5">5a1f104f92f855ef0205d5de09e63ce1</elem>
+<elem key="sha1">60db3706b37650975fe58f0533e6cf47ccd5336d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGIjCCBQqgAwIBAgIRAJMaKCZH8uA+ZOONtd5nojAwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yMTEwMDQwMDAwMDBaFw0yMjExMDQyMzU5NTlaMBMxETAPBgNVBAMMCCou&#xa;Y3RtLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA8a+nZAbGQV&#xa;tIdgv1KMqJzjbtj+fB53VdtnaeXsMk3dLQKMp3B8+hL+lAaqgbIIa/bN2oz6Cvyq&#xa;g8HF5owmHs9bjkn3WSivnMQplHWs1jrCvVe/5dHqNfxaCGh2xx/fjrdUQVYZTy85&#xa;te+utNqXPKmMlc6uV2qWD55rVmukoeGOKmF5yzIY+FBdahyeQmY5xvVYGFGUkEjK&#xa;LCnGt9uTpnoYHuF3v6U+RZUKVZAgtkBW0G56CZyd9N/8AkHp4aoa3NYkwGdCW5bh&#xa;4dR2Tp3MsVeO/D1FcwIxv5y+uNtxHmOGUfvHO+1EYu86KpSW51Jmc2m+UMH07ooZ&#xa;/e8sh4fS6QIDAQABo4IC8jCCAu4wHwYDVR0jBBgwFoAUjYxexFStiuF36Zv5mwXh&#xa;uAGNYeEwHQYDVR0OBBYEFJvpqfCtXBfcdDPoJQn8XmZfGQz5MA4GA1UdDwEB/wQE&#xa;AwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD&#xa;AjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEWF2h0dHBz&#xa;Oi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEEeDB2ME8G&#xa;CCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FEb21h&#xa;aW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzABhhdodHRw&#xa;Oi8vb2NzcC5zZWN0aWdvLmNvbTAbBgNVHREEFDASgggqLmN0bS5ydYIGY3RtLnJ1&#xa;MIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdwBGpVXrdfqRIDC1oolp9PN9ESxB&#xa;dL79SbiFq/L8cP5tRwAAAXxKSB0WAAAEAwBIMEYCIQDdOvAgk8diq8L5q5+Iv+zc&#xa;wgvEEEX94hx47xj+F90g+AIhAOTvUonMU0VgInOcw+9g/88dISPXdhNwWFegdeAX&#xa;VEr2AHUAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8Skgc1wAA&#xa;BAMARjBEAiBaSI9+fW1iCEcxnfvmVRCLov/35WWcQR5h7G3ZOY45aAIgToi/ojqf&#xa;0L4+Hd5pbM8Be/3SWPlBy7nC7xazvkrGkpoAdgApeb7wnjk5IfBWc59jpXflvld9&#xa;nGAK+PlNXSZcJV3HhAAAAXxKSByxAAAEAwBHMEUCIF+SfzCPwhagc5WezxtRw8ci&#xa;rclyx6QKE2qzQLSO3E1LAiEAnQzlL7Ho32ApxOQnUk5P6p9OEH1anTabFpdGF/px&#xa;S4cwDQYJKoZIhvcNAQELBQADggEBAK8tmpSr8xxfE/93qrHqPw6De1XwQ+gqAs9q&#xa;tuUq8HhR5c7S7gTIycuCbj1h0sTP8DOvogEMuxGrXPMPSajiYcv8HFuy8O236qtX&#xa;tyeufTJ+VQ24fCoAvXEpFPO8Gt2QU4nbSdhBmq7ZMCE130NRy/t7VYqugzLFheEp&#xa;5r19zVWi9XWQAxnc71XlzWnnU6sCcav+3QViqIMQueNmBJcicSFwndi8inQzIkW8&#xa;ZSc1P/VupkPskG8nC0mOaebvHQoIEMYXrXit57HNzzKvs5AZNi9T3F4D7zP/e50a&#xa;XhKXhmmbBbL+D1VAtZjfpgf3lx3zeHb5NlTvahLp0dumujRl8FI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="tls-nextprotoneg" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="http-title" output="400 The plain HTTP request was sent to HTTPS port"><elem key="title">400 The plain HTTP request was sent to HTTPS port</elem>
+</script><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script></port>
+</ports>
+<times srtt="153220" rttvar="87674" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.11" addrtype="ipv4"/>
+<hostnames>
+<hostname name="customs.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="157876" rttvar="89216" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.12" addrtype="ipv4"/>
+<hostnames>
+<hostname name="rail.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.18.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.18.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-server-header" output="nginx/1.18.0 (Ubuntu)"><elem>nginx/1.18.0 (Ubuntu)</elem>
+</script><script id="http-cookie-flags" output="&#xa;  /: &#xa;    PHPSESSID: &#xa;      httponly flag not set"><table key="/">
+<table key="PHPSESSID">
+<elem>httponly flag not set</elem>
+</table>
+</table>
+</script><script id="http-title" output="\xD0\x90\xD0\xB2\xD1\x82\xD0\xBE\xD1\x80\xD0\xB8\xD0\xB7\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F"><elem key="title">\xD0\x90\xD0\xB2\xD1\x82\xD0\xBE\xD1\x80\xD0\xB8\xD0\xB7\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="158543" rttvar="90243" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.14" addrtype="ipv4"/>
+<hostnames>
+<hostname name="rail-server.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.13.5" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.13.5</cpe></service><script id="tls-nextprotoneg" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="ssl-cert" output="Subject: commonName=*.ctm.ru&#xa;Subject Alternative Name: DNS:*.ctm.ru, DNS:ctm.ru&#xa;Not valid before: 2021-10-04T00:00:00&#xa;Not valid after:  2022-11-04T23:59:59"><table key="subject">
+<elem key="commonName">*.ctm.ru</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00F1AFA76406C6415B48760BF528CA89CE36ED8FE7C1E7755DB6769E5EC324DDD2D028CA7707CFA12FE9406AA81B2086BF6CDDA8CFA0AFCAA83C1C5E68C261ECF5B8E49F75928AF9CC4299475ACD63AC2BD57BFE5D1EA35FC5A086876C71FDF8EB7544156194F2F39B5EFAEB4DA973CA98C95CEAE576A960F9E6B566BA4A1E18E2A6179CB3218F8505D6A1C9E426639C6F5581851949048CA2C29C6B7DB93A67A181EE177BFA53E45950A559020B64056D06E7A099C9DF4DFFC0241E9E1AA1ADCD624C067425B96E1E1D4764E9DCCB1578EFC3D45730231BF9CBEB8DB711E638651FBC73BED4462EF3A2A9496E752667369BE50C1F4EE8A19FDEF2C8787D2E9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">9B:E9:A9:F0:AD:5C:17:DC:74:33:E8:25:09:FC:5E:66:5F:19:0C:F9</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.ctm.ru, DNS:ctm.ru</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Oct  4 07:50:12.502 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:DD:3A:F0:20:93:C7:62:AB:C2:F9:AB:&#xa;                9F:88:BF:EC:DC:C2:0B:C4:10:45:FD:E2:1C:78:EF:18:&#xa;                FE:17:DD:20:F8:02:21:00:E4:EF:52:89:CC:53:45:60:&#xa;                22:73:9C:C3:EF:60:FF:CF:1D:21:23:D7:76:13:70:58:&#xa;                57:A0:75:E0:17:54:4A:F6&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Oct  4 07:50:12.439 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:5A:48:8F:7E:7D:6D:62:08:47:31:9D:FB:&#xa;                E6:55:10:8B:A2:FF:F7:E5:65:9C:41:1E:61:EC:6D:D9:&#xa;                39:8E:39:68:02:20:4E:88:BF:A2:3A:9F:D0:BE:3E:1D:&#xa;                DE:69:6C:CF:01:7B:FD:D2:58:F9:41:CB:B9:C2:EF:16:&#xa;                B3:BE:4A:C6:92:9A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Oct  4 07:50:12.401 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:5F:92:7F:30:8F:C2:16:A0:73:95:9E:CF:&#xa;                1B:51:C3:C7:22:AD:C9:72:C7:A4:0A:13:6A:B3:40:B4:&#xa;                8E:DC:4D:4B:02:21:00:9D:0C:E5:2F:B1:E8:DF:60:29:&#xa;                C4:E4:27:52:4E:4F:EA:9F:4E:10:7D:5A:9D:36:9B:16:&#xa;                97:46:17:FA:71:4B:87</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-10-04T00:00:00</elem>
+<elem key="notAfter">2022-11-04T23:59:59</elem>
+</table>
+<elem key="md5">5a1f104f92f855ef0205d5de09e63ce1</elem>
+<elem key="sha1">60db3706b37650975fe58f0533e6cf47ccd5336d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGIjCCBQqgAwIBAgIRAJMaKCZH8uA+ZOONtd5nojAwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yMTEwMDQwMDAwMDBaFw0yMjExMDQyMzU5NTlaMBMxETAPBgNVBAMMCCou&#xa;Y3RtLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA8a+nZAbGQV&#xa;tIdgv1KMqJzjbtj+fB53VdtnaeXsMk3dLQKMp3B8+hL+lAaqgbIIa/bN2oz6Cvyq&#xa;g8HF5owmHs9bjkn3WSivnMQplHWs1jrCvVe/5dHqNfxaCGh2xx/fjrdUQVYZTy85&#xa;te+utNqXPKmMlc6uV2qWD55rVmukoeGOKmF5yzIY+FBdahyeQmY5xvVYGFGUkEjK&#xa;LCnGt9uTpnoYHuF3v6U+RZUKVZAgtkBW0G56CZyd9N/8AkHp4aoa3NYkwGdCW5bh&#xa;4dR2Tp3MsVeO/D1FcwIxv5y+uNtxHmOGUfvHO+1EYu86KpSW51Jmc2m+UMH07ooZ&#xa;/e8sh4fS6QIDAQABo4IC8jCCAu4wHwYDVR0jBBgwFoAUjYxexFStiuF36Zv5mwXh&#xa;uAGNYeEwHQYDVR0OBBYEFJvpqfCtXBfcdDPoJQn8XmZfGQz5MA4GA1UdDwEB/wQE&#xa;AwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD&#xa;AjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEWF2h0dHBz&#xa;Oi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEEeDB2ME8G&#xa;CCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FEb21h&#xa;aW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzABhhdodHRw&#xa;Oi8vb2NzcC5zZWN0aWdvLmNvbTAbBgNVHREEFDASgggqLmN0bS5ydYIGY3RtLnJ1&#xa;MIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdwBGpVXrdfqRIDC1oolp9PN9ESxB&#xa;dL79SbiFq/L8cP5tRwAAAXxKSB0WAAAEAwBIMEYCIQDdOvAgk8diq8L5q5+Iv+zc&#xa;wgvEEEX94hx47xj+F90g+AIhAOTvUonMU0VgInOcw+9g/88dISPXdhNwWFegdeAX&#xa;VEr2AHUAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8Skgc1wAA&#xa;BAMARjBEAiBaSI9+fW1iCEcxnfvmVRCLov/35WWcQR5h7G3ZOY45aAIgToi/ojqf&#xa;0L4+Hd5pbM8Be/3SWPlBy7nC7xazvkrGkpoAdgApeb7wnjk5IfBWc59jpXflvld9&#xa;nGAK+PlNXSZcJV3HhAAAAXxKSByxAAAEAwBHMEUCIF+SfzCPwhagc5WezxtRw8ci&#xa;rclyx6QKE2qzQLSO3E1LAiEAnQzlL7Ho32ApxOQnUk5P6p9OEH1anTabFpdGF/px&#xa;S4cwDQYJKoZIhvcNAQELBQADggEBAK8tmpSr8xxfE/93qrHqPw6De1XwQ+gqAs9q&#xa;tuUq8HhR5c7S7gTIycuCbj1h0sTP8DOvogEMuxGrXPMPSajiYcv8HFuy8O236qtX&#xa;tyeufTJ+VQ24fCoAvXEpFPO8Gt2QU4nbSdhBmq7ZMCE130NRy/t7VYqugzLFheEp&#xa;5r19zVWi9XWQAxnc71XlzWnnU6sCcav+3QViqIMQueNmBJcicSFwndi8inQzIkW8&#xa;ZSc1P/VupkPskG8nC0mOaebvHQoIEMYXrXit57HNzzKvs5AZNi9T3F4D7zP/e50a&#xa;XhKXhmmbBbL+D1VAtZjfpgf3lx3zeHb5NlTvahLp0dumujRl8FI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-server-header" output="nginx/1.13.5"><elem>nginx/1.13.5</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-title" output="\xD0\xA2\xD0\xB5\xD1\x85\xD0\xBD\xD0\xB8\xD1\x87\xD0\xB5\xD1\x81\xD0\xBA\xD0\xB0\xD1\x8F \xD0\xBF\xD0\xBE\xD0\xB4\xD0\xB4\xD0\xB5\xD1\x80\xD0\xB6\xD0\xBA\xD0\xB0 \xD0\x9E\xD0\x9E\xD0\x9E \xC2\xAB\xD0\xA1\xD0\xA2\xD0\x9C\xC2\xBB&#xa;Requested resource was https://ask.ctm.ru/"><elem key="title">\xD0\xA2\xD0\xB5\xD1\x85\xD0\xBD\xD0\xB8\xD1\x87\xD0\xB5\xD1\x81\xD0\xBA\xD0\xB0\xD1\x8F \xD0\xBF\xD0\xBE\xD0\xB4\xD0\xB4\xD0\xB5\xD1\x80\xD0\xB6\xD0\xBA\xD0\xB0 \xD0\x9E\xD0\x9E\xD0\x9E \xC2\xAB\xD0\xA1\xD0\xA2\xD0\x9C\xC2\xBB</elem>
+<elem key="redirect_url">https://ask.ctm.ru/</elem>
+</script></port>
+</ports>
+<times srtt="153443" rttvar="115807" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.15" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ed2.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.14.0" extrainfo="Ubuntu" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.14.0</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="http-trane-info" output="Problem with XML parsing of /evox/about"/><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script><script id="http-server-header" output="nginx/1.14.0 (Ubuntu)"><elem>nginx/1.14.0 (Ubuntu)</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" product="nginx/1.14.0 (Ubuntu)" tunnel="ssl" method="probed" conf="10"/><script id="http-title" output="400 The plain HTTP request was sent to HTTPS port"><elem key="title">400 The plain HTTP request was sent to HTTPS port</elem>
+</script><script id="http-server-header" output="nginx/1.14.0 (Ubuntu)"><elem>nginx/1.14.0 (Ubuntu)</elem>
+</script></port>
+</ports>
+<times srtt="157727" rttvar="89784" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.20" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-title" output="403 Forbidden"><elem key="title">403 Forbidden</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="http-title" output="\xD0\xA2\xD0\xB5\xD1\x85\xD0\xBD\xD0\xB8\xD1\x87\xD0\xB5\xD1\x81\xD0\xBA\xD0\xB8\xD0\xB5 \xD1\x80\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x82\xD1\x8B"><elem key="title">\xD0\xA2\xD0\xB5\xD1\x85\xD0\xBD\xD0\xB8\xD1\x87\xD0\xB5\xD1\x81\xD0\xBA\xD0\xB8\xD0\xB5 \xD1\x80\xD0\xB0\xD0\xB1\xD0\xBE\xD1\x82\xD1\x8B</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=rail-tariff.com&#xa;Subject Alternative Name: DNS:api.rail-tariff.com, DNS:crc.rail-tariff.com, DNS:d.rail-tariff.com, DNS:rail-tariff.com, DNS:www.rail-tariff.com&#xa;Not valid before: 2022-01-06T22:34:31&#xa;Not valid after:  2022-04-06T22:34:30"><table key="subject">
+<elem key="commonName">rail-tariff.com</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">R3</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">Let&apos;s Encrypt</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">CCA032F8921C23B2E00DB7BED1C238D17E7FE0DA065AEFB114762FCFF3233E63A542FFC96B878C1540DC93D18C53EE288595D1B7DA4B61CD4A782A99193A0C4B00CCFCB1602261B20FA9C89AF09EB9E9709BBBF70CF9F96A62683B61281C023A4517F2D85D36D675FCE95E49BD0BE2EAFA81DF8831C58ADD191CA7D9165542E8938D2BEEE6DC2815966C2748E67EAD93C83ADB1E51583D354FA46C636080069DAC7E85D1724D7B0C1EA684CCD9F2BB53CEE034E4E662FC8834C9E4276464E6C499B9026A739F1EE197BB7D1DA1C4A25D5A56C48D4C80B91981EA1BE2E2CBEA9F89AF1B276DF78F95B39AC815D1F5DD51BE3AFDADE540912D2691BD8F6B1D9D61</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">76:C9:3D:00:6A:7B:B9:56:05:83:63:60:80:DE:C3:1A:2F:E4:FE:CB</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://r3.o.lencr.org&#xa;CA Issuers - URI:http://r3.i.lencr.org/&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:api.rail-tariff.com, DNS:crc.rail-tariff.com, DNS:d.rail-tariff.com, DNS:rail-tariff.com, DNS:www.rail-tariff.com</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.1&#xa;Policy: 1.3.6.1.4.1.44947.1.1.1&#xa;  CPS: http://cps.letsencrypt.org&#xa;</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Jan  6 23:34:31.629 2022 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:56:2D:85:80:12:13:B7:74:0E:48:48:D3:&#xa;                6C:85:D5:E2:8F:E7:6D:7B:D6:2E:C8:32:6C:B4:D3:92:&#xa;                10:57:F0:F2:02:20:6A:03:48:06:65:1D:A8:4B:CB:DD:&#xa;                0E:31:7C:99:9D:B5:8E:3E:AE:BB:B1:6A:41:F8:48:3A:&#xa;                E5:00:7C:B0:31:8C&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Jan  6 23:34:32.077 2022 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:2E:13:24:EB:29:58:88:13:88:9D:AA:51:&#xa;                B6:A0:C8:7E:F0:8B:91:E4:40:07:CE:C0:A6:3C:5B:68:&#xa;                82:4E:71:20:02:21:00:F8:97:E7:0F:83:4D:F4:EE:A0:&#xa;                A4:B7:68:97:E9:F7:B0:5F:8F:32:52:D7:A9:FE:36:B9:&#xa;                2A:46:96:04:E6:F9:4E</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-01-06T22:34:31</elem>
+<elem key="notAfter">2022-04-06T22:34:30</elem>
+</table>
+<elem key="md5">9d06699e18b432abbcaaaaa69c56afcd</elem>
+<elem key="sha1">a5bd946e666806bcf2268aaf25e9648f5c9d7cab</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFdTCCBF2gAwIBAgISA8Y55q3NXhvURSRNBbNYhCohMA0GCSqGSIb3DQEBCwUA&#xa;MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD&#xa;EwJSMzAeFw0yMjAxMDYyMjM0MzFaFw0yMjA0MDYyMjM0MzBaMBoxGDAWBgNVBAMT&#xa;D3JhaWwtdGFyaWZmLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB&#xa;AMygMviSHCOy4A23vtHCONF+f+DaBlrvsRR2L8/zIz5jpUL/yWuHjBVA3JPRjFPu&#xa;KIWV0bfaS2HNSngqmRk6DEsAzPyxYCJhsg+pyJrwnrnpcJu79wz5+WpiaDthKBwC&#xa;OkUX8thdNtZ1/OleSb0L4ur6gd+IMcWK3Rkcp9kWVULok40r7ubcKBWWbCdI5n6t&#xa;k8g62x5RWD01T6RsY2CABp2sfoXRck17DB6mhMzZ8rtTzuA05OZi/Ig0yeQnZGTm&#xa;xJm5Ampznx7hl7t9HaHEol1aVsSNTIC5GYHqG+Liy+qfia8bJ233j5WzmsgV0fXd&#xa;Ub46/a3lQJEtJpG9j2sdnWECAwEAAaOCApswggKXMA4GA1UdDwEB/wQEAwIFoDAd&#xa;BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADAdBgNV&#xa;HQ4EFgQUdsk9AGp7uVYFg2NggN7DGi/k/sswHwYDVR0jBBgwFoAUFC6zF7dYVsuu&#xa;UAlA5h+vnYsUwsYwVQYIKwYBBQUHAQEESTBHMCEGCCsGAQUFBzABhhVodHRwOi8v&#xa;cjMuby5sZW5jci5vcmcwIgYIKwYBBQUHMAKGFmh0dHA6Ly9yMy5pLmxlbmNyLm9y&#xa;Zy8wbAYDVR0RBGUwY4ITYXBpLnJhaWwtdGFyaWZmLmNvbYITY3JjLnJhaWwtdGFy&#xa;aWZmLmNvbYIRZC5yYWlsLXRhcmlmZi5jb22CD3JhaWwtdGFyaWZmLmNvbYITd3d3&#xa;LnJhaWwtdGFyaWZmLmNvbTBMBgNVHSAERTBDMAgGBmeBDAECATA3BgsrBgEEAYLf&#xa;EwEBATAoMCYGCCsGAQUFBwIBFhpodHRwOi8vY3BzLmxldHNlbmNyeXB0Lm9yZzCC&#xa;AQMGCisGAQQB1nkCBAIEgfQEgfEA7wB1AEalVet1+pEgMLWiiWn0830RLEF0vv1J&#xa;uIWr8vxw/m1HAAABfjG+cc0AAAQDAEYwRAIgVi2FgBITt3QOSEjTbIXV4o/nbXvW&#xa;LsgybLTTkhBX8PICIGoDSAZlHahLy90OMXyZnbWOPq67sWpB+Eg65QB8sDGMAHYA&#xa;QcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF+Mb5zjQAABAMARzBF&#xa;AiAuEyTrKViIE4idqlG2oMh+8IuR5EAHzsCmPFtogk5xIAIhAPiX5w+DTfTuoKS3&#xa;aJfp97BfjzJS16n+NrkqRpYE5vlOMA0GCSqGSIb3DQEBCwUAA4IBAQCI9t6lSeQw&#xa;wIuu59KHHfEX2fD7uUL0pDz/9qxEAI88JiJCBU6CNQ3J/lZnCVe3w3dOS07UFrLe&#xa;TfnQgzq5WcdIPFFQm7iB7ZRZICtBZR+452CyCRrVNKo3Po9S7FL0mvZy76PC+ylZ&#xa;Qc3SwTLBGdHbCaWZIMxCf5XbwjTSjdY53A9F54WV/IeR2Tdua/NG+TQM5SCWj4KW&#xa;fr+eaYb9qP4iFVZivd1ye21hztrc81UI6wE5tFaaV7pQu9KpLysblabok44dQTtf&#xa;ZhpyqHb8zuu0W+XgprGDjLTEMnw3XEiSPHaVLRs8xhmi54JSmft3JQbw34U7a3wh&#xa;ClHB8SkIS1Sv&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="tls-nextprotoneg" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script></port>
+</ports>
+<times srtt="154848" rttvar="89638" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.21" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-title" output="Site doesn&apos;t have a title (text/html)."></script><script id="http-auth" output="&#xa;HTTP/1.1 401 Unauthorized&#xd;&#xa;  Basic realm=FastReport VCL Enterprise&#xa;"><table>
+<elem key="scheme">Basic</elem>
+<table key="params">
+<elem key="realm">FastReport VCL Enterprise</elem>
+</table>
+</table>
+</script></port>
+<port protocol="tcp" portid="443"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="152828" rttvar="114699" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.25" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service></port>
+<port protocol="tcp" portid="443"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="157966" rttvar="119233" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.29" addrtype="ipv4"/>
+<hostnames>
+<hostname name="r.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="157476" rttvar="88689" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.61" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="155447" rttvar="89662" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.97" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-title" output="Did not follow redirect to https://rail-locator.com/"><elem key="redirect_url">https://rail-locator.com/</elem>
+</script></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="tls-alpn" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="tls-nextprotoneg" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="http-title" output="Did not follow redirect to https://rail-locator.com/"><elem key="redirect_url">https://rail-locator.com/</elem>
+</script><script id="ssl-cert" output="Subject: commonName=rail-locator.com&#xa;Subject Alternative Name: DNS:rail-locator.com&#xa;Not valid before: 2022-01-18T22:36:44&#xa;Not valid after:  2022-04-18T22:36:43"><table key="subject">
+<elem key="commonName">rail-locator.com</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">R3</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">Let&apos;s Encrypt</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">DB8DD717416C0038B154B35513F3D0DFB64E088D9DA5E94BAECD939C1EE94D1C55E7D3BE9F0C761749E99DC7AB52D5747EBB4AD2C91F33EDD8AD4A8FB1488113059C3664EE58AD69693D44DD1C69A06F8D196CA6B066C3AD53BC912AC4DD3D3C259E1382E96F714BC5DBB154EA313766869A4C1E9D3B044CE4D83718B5B3FA7DA83BEB785381075023E9846F62162CB228BC8EADAEFAF92E196BA4651EBC251E845C7FCAA04E65637E14F4D26DE588E3D2EF85A89159BBAE18882DB52846BB7FC7BCE5FCEFE2223867A315535B84F4C2E699988C435570891A58A4E52ABBE66877C13C0E65815A5423E182DBB2443999371F9940E53CAF55E841C12A7E2E639F</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">29:6F:1B:7F:50:4B:B4:A9:D4:B4:93:9F:69:33:71:2F:06:F7:9C:A1</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://r3.o.lencr.org&#xa;CA Issuers - URI:http://r3.i.lencr.org/&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:rail-locator.com</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.1&#xa;Policy: 1.3.6.1.4.1.44947.1.1.1&#xa;  CPS: http://cps.letsencrypt.org&#xa;</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Jan 18 23:36:44.099 2022 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:52:B5:ED:91:39:18:B9:D2:7C:E8:57:BF:&#xa;                F2:6F:36:52:AC:77:24:E8:CB:FE:F9:83:49:4B:FA:6A:&#xa;                8F:08:D3:D8:02:20:54:34:32:F4:D4:96:D6:A1:14:45:&#xa;                13:F2:76:33:BA:54:94:E0:C4:EA:39:17:6C:94:36:95:&#xa;                A1:9E:BA:1B:33:7C&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Jan 18 23:36:44.075 2022 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:34:CD:9A:F8:CF:EE:95:99:95:DA:84:BD:&#xa;                E4:F7:A2:C5:CA:58:A4:6F:C2:01:89:97:15:31:C2:9D:&#xa;                8E:BF:35:7B:02:20:59:B2:67:F6:0C:8C:97:99:CF:E1:&#xa;                8F:3D:C8:2C:CD:14:BE:D6:CE:D4:A2:34:A2:EC:C2:3A:&#xa;                92:0E:7E:36:F0:06</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-01-18T22:36:44</elem>
+<elem key="notAfter">2022-04-18T22:36:43</elem>
+</table>
+<elem key="md5">96a03071105b6a5926aaaec8eb81f1b4</elem>
+<elem key="sha1">acd8ec8664c3599962a7accfac6440f879f598e9</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIFJDCCBAygAwIBAgISA3DUaALd2YhibigZp8ny/D1GMA0GCSqGSIb3DQEBCwUA&#xa;MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD&#xa;EwJSMzAeFw0yMjAxMTgyMjM2NDRaFw0yMjA0MTgyMjM2NDNaMBsxGTAXBgNVBAMT&#xa;EHJhaWwtbG9jYXRvci5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB&#xa;AQDbjdcXQWwAOLFUs1UT89Dftk4IjZ2l6UuuzZOcHulNHFXn076fDHYXSemdx6tS&#xa;1XR+u0rSyR8z7ditSo+xSIETBZw2ZO5YrWlpPUTdHGmgb40ZbKawZsOtU7yRKsTd&#xa;PTwlnhOC6W9xS8XbsVTqMTdmhppMHp07BEzk2DcYtbP6fag763hTgQdQI+mEb2IW&#xa;LLIovI6trvr5LhlrpGUevCUehFx/yqBOZWN+FPTSbeWI49LvhaiRWbuuGIgttShG&#xa;u3/HvOX87+IiOGejFVNbhPTC5pmYjENVcIkaWKTlKrvmaHfBPA5lgVpUI+GC27JE&#xa;OZk3H5lA5TyvVehBwSp+LmOfAgMBAAGjggJJMIICRTAOBgNVHQ8BAf8EBAMCBaAw&#xa;HQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYD&#xa;VR0OBBYEFClvG39QS7Sp1LSTn2kzcS8G95yhMB8GA1UdIwQYMBaAFBQusxe3WFbL&#xa;rlAJQOYfr52LFMLGMFUGCCsGAQUFBwEBBEkwRzAhBggrBgEFBQcwAYYVaHR0cDov&#xa;L3IzLm8ubGVuY3Iub3JnMCIGCCsGAQUFBzAChhZodHRwOi8vcjMuaS5sZW5jci5v&#xa;cmcvMBsGA1UdEQQUMBKCEHJhaWwtbG9jYXRvci5jb20wTAYDVR0gBEUwQzAIBgZn&#xa;gQwBAgEwNwYLKwYBBAGC3xMBAQEwKDAmBggrBgEFBQcCARYaaHR0cDovL2Nwcy5s&#xa;ZXRzZW5jcnlwdC5vcmcwggECBgorBgEEAdZ5AgQCBIHzBIHwAO4AdQBByMqx3yJG&#xa;ShDGoToJQodeTjGLGwPr60vHaPCQYpYG9gAAAX5vjMdDAAAEAwBGMEQCIFK17ZE5&#xa;GLnSfOhXv/JvNlKsdyToy/75g0lL+mqPCNPYAiBUNDL01JbWoRRFE/J2M7pUlODE&#xa;6jkXbJQ2laGeuhszfAB1ACl5vvCeOTkh8FZzn2Old+W+V32cYAr4+U1dJlwlXceE&#xa;AAABfm+MxysAAAQDAEYwRAIgNM2a+M/ulZmV2oS95PeixcpYpG/CAYmXFTHCnY6/&#xa;NXsCIFmyZ/YMjJeZz+GPPcgszRS+1s7UojSi7MI6kg5+NvAGMA0GCSqGSIb3DQEB&#xa;CwUAA4IBAQBrPjLgAeY+JTeAIus+da+SgQ0yEvhtwJJLrfFEpDroQFNopDDJ+S/F&#xa;2LRGDlgonjI5MGYDbwoBIn23MQGLSryRW0VgdNFenaV+r3L7ta/MEsZl2MzN9rhq&#xa;APA4rU59mc5Iz2yrGTMydgRCh7TO/bA4vmV24+9gqFZXVXmayIrk4cWuZHLtvMVV&#xa;vIdUep/DN4zvG4IYqyCvx4bJ+X6PZPcsxpPcZ8Lmw+K6A+2NSyW9iujmAcDNJdQ8&#xa;JXbTTCm7q1Vq9EoEo5FZolPDSUtw/Z0evR2Db2q0XjN98vky0k+ySe5aceab6d+h&#xa;X8Di5gNz/p/deqSP8kdPRwLtcQuzOkOW&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script></port>
+</ports>
+<times srtt="153955" rttvar="88517" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.99" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="158149" rttvar="89675" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.101" addrtype="ipv4"/>
+<hostnames>
+<hostname name="swd-tester.ctm.ru" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="153279" rttvar="87031" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.102" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="158228" rttvar="89602" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="91.220.57.105" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.2.22" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.2.22</cpe></service><script id="http-server-header" output="Apache/2.2.22 (Debian)"><elem>Apache/2.2.22 (Debian)</elem>
+</script><script id="http-title" output="Site doesn&apos;t have a title (text/html; charset=koi8-r)."></script></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="153854" rttvar="87387" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.107" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="157701" rttvar="90204" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.109" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" hostname="localhost" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:apache:http_server</cpe></service><script id="http-title" output="\xD0\x90\xD0\xB2\xD1\x82\xD0\xBE\xD1\x80\xD0\xB8\xD0\xB7\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F"><elem key="title">\xD0\x90\xD0\xB2\xD1\x82\xD0\xBE\xD1\x80\xD0\xB8\xD0\xB7\xD0\xB0\xD1\x86\xD0\xB8\xD1\x8F</elem>
+</script><script id="http-webdav-scan" output="&#xa;  Allowed Methods: OPTIONS,CHECKAUTH,PROPFIND,PROPPATCH,MKCOL,GET,POST,PUT,DELETE,COPY,MOVE,LOCK,UNLOCK,HEAD&#xa;  Server Date: Mon, 07 Mar 2022 18:31:08 GMT&#xa;  WebDAV type: Unknown&#xa;  Server Type: nginx"><elem key="Allowed Methods">OPTIONS,CHECKAUTH,PROPFIND,PROPPATCH,MKCOL,GET,POST,PUT,DELETE,COPY,MOVE,LOCK,UNLOCK,HEAD</elem>
+<elem key="Server Date">Mon, 07 Mar 2022 18:31:08 GMT</elem>
+<elem key="WebDAV type">Unknown</elem>
+<elem key="Server Type">nginx</elem>
+</script><script id="ssl-cert" output="Subject: commonName=*.ctm.ru&#xa;Subject Alternative Name: DNS:*.ctm.ru, DNS:ctm.ru&#xa;Not valid before: 2021-10-04T00:00:00&#xa;Not valid after:  2022-11-04T23:59:59"><table key="subject">
+<elem key="commonName">*.ctm.ru</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Sectigo RSA Domain Validation Secure Server CA</elem>
+<elem key="countryName">GB</elem>
+<elem key="localityName">Salford</elem>
+<elem key="organizationName">Sectigo Limited</elem>
+<elem key="stateOrProvinceName">Greater Manchester</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">C00F1AFA76406C6415B48760BF528CA89CE36ED8FE7C1E7755DB6769E5EC324DDD2D028CA7707CFA12FE9406AA81B2086BF6CDDA8CFA0AFCAA83C1C5E68C261ECF5B8E49F75928AF9CC4299475ACD63AC2BD57BFE5D1EA35FC5A086876C71FDF8EB7544156194F2F39B5EFAEB4DA973CA98C95CEAE576A960F9E6B566BA4A1E18E2A6179CB3218F8505D6A1C9E426639C6F5581851949048CA2C29C6B7DB93A67A181EE177BFA53E45950A559020B64056D06E7A099C9DF4DFFC0241E9E1AA1ADCD624C067425B96E1E1D4764E9DCCB1578EFC3D45730231BF9CBEB8DB711E638651FBC73BED4462EF3A2A9496E752667369BE50C1F4EE8A19FDEF2C8787D2E9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:8D:8C:5E:C4:54:AD:8A:E1:77:E9:9B:F9:9B:05:E1:B8:01:8D:61:E1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">9B:E9:A9:F0:AD:5C:17:DC:74:33:E8:25:09:FC:5E:66:5F:19:0C:F9</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 1.3.6.1.4.1.6449.1.2.2.7&#xa;  CPS: https://sectigo.com/CPS&#xa;Policy: 2.23.140.1.2.1&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">CA Issuers - URI:http://crt.sectigo.com/SectigoRSADomainValidationSecureServerCA.crt&#xa;OCSP - URI:http://ocsp.sectigo.com&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.ctm.ru, DNS:ctm.ru</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Oct  4 07:50:12.502 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:DD:3A:F0:20:93:C7:62:AB:C2:F9:AB:&#xa;                9F:88:BF:EC:DC:C2:0B:C4:10:45:FD:E2:1C:78:EF:18:&#xa;                FE:17:DD:20:F8:02:21:00:E4:EF:52:89:CC:53:45:60:&#xa;                22:73:9C:C3:EF:60:FF:CF:1D:21:23:D7:76:13:70:58:&#xa;                57:A0:75:E0:17:54:4A:F6&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Oct  4 07:50:12.439 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:5A:48:8F:7E:7D:6D:62:08:47:31:9D:FB:&#xa;                E6:55:10:8B:A2:FF:F7:E5:65:9C:41:1E:61:EC:6D:D9:&#xa;                39:8E:39:68:02:20:4E:88:BF:A2:3A:9F:D0:BE:3E:1D:&#xa;                DE:69:6C:CF:01:7B:FD:D2:58:F9:41:CB:B9:C2:EF:16:&#xa;                B3:BE:4A:C6:92:9A&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Oct  4 07:50:12.401 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:5F:92:7F:30:8F:C2:16:A0:73:95:9E:CF:&#xa;                1B:51:C3:C7:22:AD:C9:72:C7:A4:0A:13:6A:B3:40:B4:&#xa;                8E:DC:4D:4B:02:21:00:9D:0C:E5:2F:B1:E8:DF:60:29:&#xa;                C4:E4:27:52:4E:4F:EA:9F:4E:10:7D:5A:9D:36:9B:16:&#xa;                97:46:17:FA:71:4B:87</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-10-04T00:00:00</elem>
+<elem key="notAfter">2022-11-04T23:59:59</elem>
+</table>
+<elem key="md5">5a1f104f92f855ef0205d5de09e63ce1</elem>
+<elem key="sha1">60db3706b37650975fe58f0533e6cf47ccd5336d</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGIjCCBQqgAwIBAgIRAJMaKCZH8uA+ZOONtd5nojAwDQYJKoZIhvcNAQELBQAw&#xa;gY8xCzAJBgNVBAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAO&#xa;BgNVBAcTB1NhbGZvcmQxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDE3MDUGA1UE&#xa;AxMuU2VjdGlnbyBSU0EgRG9tYWluIFZhbGlkYXRpb24gU2VjdXJlIFNlcnZlciBD&#xa;QTAeFw0yMTEwMDQwMDAwMDBaFw0yMjExMDQyMzU5NTlaMBMxETAPBgNVBAMMCCou&#xa;Y3RtLnJ1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwA8a+nZAbGQV&#xa;tIdgv1KMqJzjbtj+fB53VdtnaeXsMk3dLQKMp3B8+hL+lAaqgbIIa/bN2oz6Cvyq&#xa;g8HF5owmHs9bjkn3WSivnMQplHWs1jrCvVe/5dHqNfxaCGh2xx/fjrdUQVYZTy85&#xa;te+utNqXPKmMlc6uV2qWD55rVmukoeGOKmF5yzIY+FBdahyeQmY5xvVYGFGUkEjK&#xa;LCnGt9uTpnoYHuF3v6U+RZUKVZAgtkBW0G56CZyd9N/8AkHp4aoa3NYkwGdCW5bh&#xa;4dR2Tp3MsVeO/D1FcwIxv5y+uNtxHmOGUfvHO+1EYu86KpSW51Jmc2m+UMH07ooZ&#xa;/e8sh4fS6QIDAQABo4IC8jCCAu4wHwYDVR0jBBgwFoAUjYxexFStiuF36Zv5mwXh&#xa;uAGNYeEwHQYDVR0OBBYEFJvpqfCtXBfcdDPoJQn8XmZfGQz5MA4GA1UdDwEB/wQE&#xa;AwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD&#xa;AjBJBgNVHSAEQjBAMDQGCysGAQQBsjEBAgIHMCUwIwYIKwYBBQUHAgEWF2h0dHBz&#xa;Oi8vc2VjdGlnby5jb20vQ1BTMAgGBmeBDAECATCBhAYIKwYBBQUHAQEEeDB2ME8G&#xa;CCsGAQUFBzAChkNodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3RpZ29SU0FEb21h&#xa;aW5WYWxpZGF0aW9uU2VjdXJlU2VydmVyQ0EuY3J0MCMGCCsGAQUFBzABhhdodHRw&#xa;Oi8vb2NzcC5zZWN0aWdvLmNvbTAbBgNVHREEFDASgggqLmN0bS5ydYIGY3RtLnJ1&#xa;MIIBfgYKKwYBBAHWeQIEAgSCAW4EggFqAWgAdwBGpVXrdfqRIDC1oolp9PN9ESxB&#xa;dL79SbiFq/L8cP5tRwAAAXxKSB0WAAAEAwBIMEYCIQDdOvAgk8diq8L5q5+Iv+zc&#xa;wgvEEEX94hx47xj+F90g+AIhAOTvUonMU0VgInOcw+9g/88dISPXdhNwWFegdeAX&#xa;VEr2AHUAQcjKsd8iRkoQxqE6CUKHXk4xixsD6+tLx2jwkGKWBvYAAAF8Skgc1wAA&#xa;BAMARjBEAiBaSI9+fW1iCEcxnfvmVRCLov/35WWcQR5h7G3ZOY45aAIgToi/ojqf&#xa;0L4+Hd5pbM8Be/3SWPlBy7nC7xazvkrGkpoAdgApeb7wnjk5IfBWc59jpXflvld9&#xa;nGAK+PlNXSZcJV3HhAAAAXxKSByxAAAEAwBHMEUCIF+SfzCPwhagc5WezxtRw8ci&#xa;rclyx6QKE2qzQLSO3E1LAiEAnQzlL7Ho32ApxOQnUk5P6p9OEH1anTabFpdGF/px&#xa;S4cwDQYJKoZIhvcNAQELBQADggEBAK8tmpSr8xxfE/93qrHqPw6De1XwQ+gqAs9q&#xa;tuUq8HhR5c7S7gTIycuCbj1h0sTP8DOvogEMuxGrXPMPSajiYcv8HFuy8O236qtX&#xa;tyeufTJ+VQ24fCoAvXEpFPO8Gt2QU4nbSdhBmq7ZMCE130NRy/t7VYqugzLFheEp&#xa;5r19zVWi9XWQAxnc71XlzWnnU6sCcav+3QViqIMQueNmBJcicSFwndi8inQzIkW8&#xa;ZSc1P/VupkPskG8nC0mOaebvHQoIEMYXrXit57HNzzKvs5AZNi9T3F4D7zP/e50a&#xa;XhKXhmmbBbL+D1VAtZjfpgf3lx3zeHb5NlTvahLp0dumujRl8FI=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-methods" output="&#xa;  Potentially risky methods: CHECKAUTH PROPFIND PROPPATCH MKCOL PUT DELETE COPY MOVE LOCK UNLOCK"><table key="Potentially risky methods">
+<elem>CHECKAUTH</elem>
+<elem>PROPFIND</elem>
+<elem>PROPPATCH</elem>
+<elem>MKCOL</elem>
+<elem>PUT</elem>
+<elem>DELETE</elem>
+<elem>COPY</elem>
+<elem>MOVE</elem>
+<elem>LOCK</elem>
+<elem>UNLOCK</elem>
+</table>
+</script><script id="http-server-header" output="nginx"><elem>nginx</elem>
+</script></port>
+</ports>
+<times srtt="161966" rttvar="92381" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.126" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="157718" rttvar="89059" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.130" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="154427" rttvar="88043" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.131" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="157112" rttvar="90350" to="300000"/>
+</host>
+<host starttime="1646677808" endtime="1646677918"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="91.220.57.132" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="156800" rttvar="88305" to="300000"/>
+</host>
+<runstats><finished time="1646677918" timestr="Mon Mar  7 13:31:58 2022" summary="Nmap done at Mon Mar  7 13:31:58 2022; 256 IP addresses (24 hosts up) scanned in 113.76 seconds" elapsed="113.76" exit="success"/><hosts up="24" down="232" total="256"/>
+</runstats>
+</nmaprun>
