@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.92 scan initiated Tue Mar  8 09:02:16 2022 as: nmap -T5 -A -p 20,21,22,23,25,80,110,119,143,161,194,443 -oX - 85.142.20.0/24 82.179.52.0/24 86.110.116.0/24 86.110.117.0/24 86.110.118.0/24 86.110.119.0/24 -->
+<nmaprun scanner="nmap" args="nmap -T5 -A -p 20,21,22,23,25,80,110,119,143,161,194,443 -oX - 85.142.20.0/24 82.179.52.0/24 86.110.116.0/24 86.110.117.0/24 86.110.118.0/24 86.110.119.0/24" start="1646748136" startstr="Tue Mar  8 09:02:16 2022" version="7.92" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="12" services="20-23,25,80,110,119,143,161,194,443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.1" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.11" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.22" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.251" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.254" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.21" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.10" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.2" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.253" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="86.110.118.203" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="86.110.118.1" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="96851" rttvar="6080" to="121171"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="86.110.118.2" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="8.2p1 Ubuntu 4ubuntu0.4" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:8.2p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  3072 2a:7b:c9:ee:d3:94:8c:ff:25:de:5a:c9:d9:cd:62:40 (RSA)&#xa;  256 85:65:7d:c9:c0:f7:29:48:d4:e5:e0:89:53:8b:f3:1e (ECDSA)&#xa;  256 46:44:80:18:b5:0d:e1:b7:f6:99:f1:d1:56:03:46:c4 (ED25519)"><table>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">2a7bc9eed3948cff25de5ac9d9cd6240</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABgQDg9XOgFPXU7Ej6GloALFpGAk19lPT16J6mHLUiErTNq5U147c2dfqQurKUluWTZkuFrhtlbpVeYlIqf5wlc2/lEcPsMmSSU3DlaB+ypILRvw088rf7G9DIlbzOMvmVm3/zSmFQAV7lxIS7M/W9nBIuk3Zcr8Lk1oEdEqRCgcFlPql3z/bZ7mlQe8B3ICmSoBGKTahmC83evVDZGv4V7/NsS4WXGsAa9GSR9QueEjm0q/fYQzFuucst9vWUhILCa3VsYXgdRDJxdqmNRa8TZfdVcUj9TwWlTJrWi83xpR3TnHHYvrUeBXoaOL447VRUfnCOMXpRfFTK+j02EL79TyJLSdiunk9L8jZXYDUOeYIZrqVrSI9TElj/8ESe9tnCNc5kdIAqHw/gg/s8e4k8kGtkmi0RX8x+yVQqOE8jy7mKhIOhuZvEHPAfw2GZsl8+GsufCTzVl2enwmFM5xDhMhZRJRQMNslGYcWQ5/faVJoXal+8xWNgVMWw2PwXKrd5z+s=</elem>
+<elem key="bits">3072</elem>
+</table>
+<table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">85657dc9c0f72948d4e5e089538bf31e</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM/Ri6E+ui3fMsaz/5YjSZQ2IoHxgAudXgY7fNnDOOgYQT1QokdpmB1uUbCfAB7ZhMimcqPKUmH58WOfqTlWbvk=</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">46448018b50de1b7f699f1d1560346c4</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIEJtU2BoEX15ughcZIvhttSM+GYo0Q/TQwUqo9bsyw8m</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="96597" rttvar="5313" to="117849"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="86.110.118.10" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_server:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-title" output="IIS Windows Server"><elem key="title">IIS Windows Server</elem>
+</script><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_server:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="ssl-cert" output="Subject: commonName=*.pushkin.institute/organizationName=Pushkin State Russian Language Institute/countryName=RU&#xa;Subject Alternative Name: DNS:*.pushkin.institute, DNS:pushkin.institute&#xa;Not valid before: 2021-12-07T00:00:00&#xa;Not valid after:  2023-01-03T23:59:59"><table key="subject">
+<elem key="commonName">*.pushkin.institute</elem>
+<elem key="countryName">RU</elem>
+<elem key="localityName">Moscow</elem>
+<elem key="organizationName">Pushkin State Russian Language Institute</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Thawte TLS RSA CA G1</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">DigiCert Inc</elem>
+<elem key="organizationalUnitName">www.digicert.com</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A1CF4D5390088F5632796B9484C8A7D53CEA79EA6727BBE4FCEDEB3F0534CA5C3018A41F2338D871574AEDE051A0F6956EA85992F878F12382E0B24EB19DED809B5039F817145DE9D19B32F441BEEAD4F431AB26EB47B4CB7FD4949CB0AD5D7E1452584DFF12746BFBB5F002F623A143E7DFD0CB8BC3787A212E2B26FD453F5C9A80CA51A16D7EDA7863CC1D23F2B385D1510EA73BEB5586943B8D7E02CE318EDCC5DDDBBE1B751C79E89C42091FA3EDB2E87C691D761CEE0B19C3B73DACF98112B497C4A41B33935EDB4DA224254234B1A9CE4F8A7CF060A5BDE324AAA3AF02197BDFF7D9C7F8E660DE54747BBCEB99E8AFC4B361E57868C168DADEF98A3EED</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A5:8C:FE:32:CC:EB:0F:2C:D4:19:C6:08:B8:00:24:88:5D:C3:C5:B7&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">8F:D9:37:BF:24:39:C6:03:B3:66:D1:75:49:FC:7D:9E:85:8A:F8:BA</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.pushkin.institute, DNS:pushkin.institute</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:http://cdp.thawte.com/ThawteTLSRSACAG1.crl&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.2&#xa;  CPS: http://www.digicert.com/CPS&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://status.thawte.com&#xa;CA Issuers - URI:http://cacerts.thawte.com/ThawteTLSRSACAG1.crt&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : E8:3E:D0:DA:3E:F5:06:35:32:E7:57:28:BC:89:6B:C9:&#xa;                03:D3:CB:D1:11:6B:EC:EB:69:E1:77:7D:6D:06:BD:6E&#xa;    Timestamp : Dec  7 12:24:11.128 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:23:D2:B0:32:0A:B6:C6:A0:A1:64:50:01:&#xa;                3D:FF:9B:63:F1:30:F6:7D:08:8B:73:B0:BF:DB:D0:63:&#xa;                63:BB:57:FF:02:21:00:FC:AC:AC:9A:DD:CD:ED:43:03:&#xa;                09:CD:AC:39:6F:04:EC:DA:6B:8A:49:2A:60:BE:ED:4B:&#xa;                CE:7C:63:AA:A9:59:46&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 35:CF:19:1B:BF:B1:6C:57:BF:0F:AD:4C:6D:42:CB:BB:&#xa;                B6:27:20:26:51:EA:3F:E1:2A:EF:A8:03:C3:3B:D6:4C&#xa;    Timestamp : Dec  7 12:24:11.046 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:2F:0D:D0:65:F9:C7:49:F4:F1:83:0C:B8:&#xa;                5E:AC:14:C8:69:71:30:2F:1A:FA:6B:81:A9:3A:8D:34:&#xa;                9B:91:2B:06:02:21:00:90:1D:11:67:C6:25:7B:A2:03:&#xa;                E2:F6:94:6B:57:7C:2B:D0:1E:F8:8C:CA:2F:5C:11:48:&#xa;                FD:D1:5C:AF:9F:B4:C1&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : B3:73:77:07:E1:84:50:F8:63:86:D6:05:A9:DC:11:09:&#xa;                4A:79:2D:B1:67:0C:0B:87:DC:F0:03:0E:79:36:A5:9A&#xa;    Timestamp : Dec  7 12:24:11.085 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:DA:E2:7F:CE:35:BE:A6:A3:0D:A1:D1:&#xa;                4D:4D:B4:27:EB:97:37:C6:BF:93:FC:7C:F4:4F:95:93:&#xa;                7A:E0:23:12:D5:02:20:04:0B:1B:4B:0E:DB:EC:B9:4A:&#xa;                81:99:97:E7:2B:B2:2E:C8:2D:D2:11:A8:EF:53:F3:D0:&#xa;                31:0C:0D:62:DD:D9:0C</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-12-07T00:00:00</elem>
+<elem key="notAfter">2023-01-03T23:59:59</elem>
+</table>
+<elem key="md5">7bc694244207b93e1149ae341f56dd6c</elem>
+<elem key="sha1">b677a5822d47d292c3f25b71714bc743c3a21ac4</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGfjCCBWagAwIBAgIQCDAuDxGPju5MXjNGg0Dj6jANBgkqhkiG9w0BAQsFADBe&#xa;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#xa;d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRUaGF3dGUgVExTIFJTQSBDQSBHMTAe&#xa;Fw0yMTEyMDcwMDAwMDBaFw0yMzAxMDMyMzU5NTlaMG8xCzAJBgNVBAYTAlJVMQ8w&#xa;DQYDVQQHEwZNb3Njb3cxMTAvBgNVBAoTKFB1c2hraW4gU3RhdGUgUnVzc2lhbiBM&#xa;YW5ndWFnZSBJbnN0aXR1dGUxHDAaBgNVBAMMEyoucHVzaGtpbi5pbnN0aXR1dGUw&#xa;ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChz01TkAiPVjJ5a5SEyKfV&#xa;POp56mcnu+T87es/BTTKXDAYpB8jONhxV0rt4FGg9pVuqFmS+HjxI4Lgsk6xne2A&#xa;m1A5+BcUXenRmzL0Qb7q1PQxqybrR7TLf9SUnLCtXX4UUlhN/xJ0a/u18AL2I6FD&#xa;59/Qy4vDeHohLism/UU/XJqAylGhbX7aeGPMHSPys4XRUQ6nO+tVhpQ7jX4CzjGO&#xa;3MXd274bdRx56JxCCR+j7bLofGkddhzuCxnDtz2s+YEStJfEpBszk17bTaIkJUI0&#xa;sanOT4p88GClveMkqqOvAhl73/fZx/jmYN5UdHu865nor8SzYeV4aMFo2t75ij7t&#xa;AgMBAAGjggMlMIIDITAfBgNVHSMEGDAWgBSljP4yzOsPLNQZxgi4ACSIXcPFtzAd&#xa;BgNVHQ4EFgQUj9k3vyQ5xgOzZtF1Sfx9noWK+LowMQYDVR0RBCowKIITKi5wdXNo&#xa;a2luLmluc3RpdHV0ZYIRcHVzaGtpbi5pbnN0aXR1dGUwDgYDVR0PAQH/BAQDAgWg&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA7BgNVHR8ENDAyMDCgLqAs&#xa;hipodHRwOi8vY2RwLnRoYXd0ZS5jb20vVGhhd3RlVExTUlNBQ0FHMS5jcmwwPgYD&#xa;VR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdp&#xa;Y2VydC5jb20vQ1BTMHAGCCsGAQUFBwEBBGQwYjAkBggrBgEFBQcwAYYYaHR0cDov&#xa;L3N0YXR1cy50aGF3dGUuY29tMDoGCCsGAQUFBzAChi5odHRwOi8vY2FjZXJ0cy50&#xa;aGF3dGUuY29tL1RoYXd0ZVRMU1JTQUNBRzEuY3J0MAwGA1UdEwEB/wQCMAAwggF+&#xa;BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2AOg+0No+9QY1MudXKLyJa8kD08vREWvs&#xa;62nhd31tBr1uAAABfZTZ8ngAAAQDAEcwRQIgI9KwMgq2xqChZFABPf+bY/Ew9n0I&#xa;i3Owv9vQY2O7V/8CIQD8rKya3c3tQwMJzaw5bwTs2muKSSpgvu1LznxjqqlZRgB2&#xa;ADXPGRu/sWxXvw+tTG1Cy7u2JyAmUeo/4SrvqAPDO9ZMAAABfZTZ8iYAAAQDAEcw&#xa;RQIgLw3QZfnHSfTxgwy4XqwUyGlxMC8a+muBqTqNNJuRKwYCIQCQHRFnxiV7ogPi&#xa;9pRrV3wr0B74jMovXBFI/dFcr5+0wQB2ALNzdwfhhFD4Y4bWBancEQlKeS2xZwwL&#xa;h9zwAw55NqWaAAABfZTZ8k0AAAQDAEcwRQIhANrif841vqajDaHRTU20J+uXN8a/&#xa;k/x89E+Vk3rgIxLVAiAECxtLDtvsuUqBmZfnK7IuyC3SEajvU/PQMQwNYt3ZDDAN&#xa;BgkqhkiG9w0BAQsFAAOCAQEAu4EyO+Ooy89z/cyDUbrMGBzX46YVX9zKv9j6tFLe&#xa;lGrLCX77BNXS/RfRipHsDXpek512g18PFnH+V3bjdreB0+ik5g+IhFR2LeAnGKiC&#xa;SmHmFXjf8LHLzPDE5SGmqihuC0ypnmGHoVq4odazGrplLDdYbedAlFxB4hRENDrz&#xa;Effouf9UneVMNBy+ksz2zOFcu2U4HtMSX7UCvBsLw+MXnV2a5aPa2JN14EDdNGIi&#xa;hzoERu/MJxQAlZy6pCMLX+xBl+tdNBAdrWnXCJ2wfOkfY43B011i/OyJPaFahI7r&#xa;gbpKnLy+aW8pqaTluxMHlBn8pDQtsDzO75R0+eBUW6doQw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="tls-alpn" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script><script id="http-title" output="IIS Windows Server"><elem key="title">IIS Windows Server</elem>
+</script></port>
+</ports>
+<times srtt="97000" rttvar="5226" to="117904"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="86.110.118.11" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.6p1 Ubuntu 4ubuntu0.5" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.6p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  2048 e2:dd:7d:1c:e1:0d:94:fe:0e:0e:05:c2:ff:ee:9b:2e (RSA)&#xa;  256 3b:d3:83:f1:ef:9b:8d:58:06:36:24:7b:2a:f2:5f:e9 (ECDSA)&#xa;  256 8c:07:03:a4:80:4d:9b:45:56:7f:c5:ce:4e:bc:4d:1c (ED25519)"><table>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">e2dd7d1ce10d94fe0e0e05c2ffee9b2e</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQDIuu7GlI5Ljov0fzzO6m2i+Cv/2VjiDi2ts7G2quAijIojD+3KVsV2O/rAzVPgVI9EKe1RHb2wtQ5Q1iEY/vZct+JNjKy2OK+JfAhYY8GkQYxwBtVZXiRRmbpLPAUyLMbmTSHmZsP1aArDdzaxfVBG0/4C979/lPb/yCwKztNYppbagXsqC9KeuzeNyTMSgl3BOHnExPRWPBPt/2YZUoz73C05XBrbvI/pnvwDTbNqTlxVZ9XLbs0Kewi2CEGP2vJsWF3mLBApS6ZKC8lqXs79GFazP3o4AClWb+Wjnw69CasHwIdDA5M9uVTQFDNRvNX4u1/ySdxjMC9g0oQ7Bt8X</elem>
+<elem key="bits">2048</elem>
+</table>
+<table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">3bd383f1ef9b8d580636247b2af25fe9</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBC7XcydY5UnGygLPEYNl7XofDegQgjKy8OBbkwsfgByfEMjJ3k+ArQ5AdbYtNizQURKgjAjHld/OPW+C95Nq3Xs=</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">8c0703a4804d9b45567fc5ce4ebc4d1c</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIBP+R6DOrW5NtohLMG+7Kt250HA4/D219Ikqs68oTwSG</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="23"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="http-title" output="Welcome to nginx!"><elem key="title">Welcome to nginx!</elem>
+</script></port>
+<port protocol="tcp" portid="110"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx</cpe></service><script id="ssl-cert" output="Subject: commonName=bbb.pushkin.institute&#xa;Subject Alternative Name: DNS:bbb.pushkin.institute&#xa;Not valid before: 2022-01-27T19:36:38&#xa;Not valid after:  2022-04-27T19:36:37"><table key="subject">
+<elem key="commonName">bbb.pushkin.institute</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">R3</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">Let&apos;s Encrypt</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">4096</elem>
+<elem key="modulus">C00E5E34F51B8475BB323ECA917137F0D58819428B9CDC2032A5EA9F4AF1C32554547D0CB83E255EDC827DD427B93DC6CFA0B894BDA5C47E7EEAC672BADD571FCB6972716532B47772F6AFE36D793E32EA7BFA69C9058F056065A50AECCF3A1C03ABF87694C43D027C075F9F25E5E0BCD53676144346262BE0FDB532277C72B806FBBCA1FF36AB7EB467068E57D09CEEAE79B5AE16F993B4C32FCC47298D9FAB5CBDB727F910345611DFE71DBA8694EA9F3DEDEF6A0B0D15DB7E795DCF2B39518BA0667372D40F2C78772029B8AAF040578D03BB0B1C7CEC2B405A0AA3F623A2B68617CF2AAAD4E65470EE8973CC39455FA611BBF5B44BA881210FED7CDC6AF363584ADB278AD2049AEEEE0F2B8FE5A55692204B509FC28E21EA06CD020B665A8F66C71AEC3E75AF12382AC21BCF76700545CF0AD9CE15F89408CACE498EFC9DDF95F0B3599D04E16655B79F4463F3CA994A2EC066FF82E6A64B9A25215A57B40D355A7A5EF443AE7884C64D6420CAAE59EA0AAA78A42900FD492E5A99F74D6A68B68E275542BE0A7B3C15057F35177EAB32835FF26D80FDC3AA542A683BF6F75E8BA673F147F2BCA28ECD0C05A73C4ED90373768D0D94164813171DCB28CB5F572DF125E56BD90C9A93980047669799A203DF8B607E49F3B1AF4C1A1E89C2A47CA1397EAF6B8B53AC6306E2E9356584C305194929F8C85E302475DA6843DE57</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">E2:85:C2:65:A7:18:20:77:E5:00:9C:05:42:DA:1E:CC:4A:55:59:05</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://r3.o.lencr.org&#xa;CA Issuers - URI:http://r3.i.lencr.org/&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:bbb.pushkin.institute</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.1&#xa;Policy: 1.3.6.1.4.1.44947.1.1.1&#xa;  CPS: http://cps.letsencrypt.org&#xa;</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 29:79:BE:F0:9E:39:39:21:F0:56:73:9F:63:A5:77:E5:&#xa;                BE:57:7D:9C:60:0A:F8:F9:4D:5D:26:5C:25:5D:C7:84&#xa;    Timestamp : Jan 27 20:36:38.485 2022 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:87:07:DB:2A:92:E4:EB:DB:62:9B:B9:&#xa;                05:D2:80:7F:FA:21:94:42:54:EB:F2:1D:6D:CE:23:93:&#xa;                B0:82:C7:58:A5:02:20:1F:FB:D1:1C:86:94:6B:E2:76:&#xa;                06:55:8D:86:89:A6:D0:1B:E9:65:9D:77:23:C7:8A:E4:&#xa;                CA:41:59:AB:1D:28:96&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 6F:53:76:AC:31:F0:31:19:D8:99:00:A4:51:15:FF:77:&#xa;                15:1C:11:D9:02:C1:00:29:06:8D:B2:08:9A:37:D9:13&#xa;    Timestamp : Jan 27 20:36:38.771 2022 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:49:3A:BA:C0:F7:B7:01:C5:EC:BD:29:CB:&#xa;                E3:78:FD:69:0C:84:2D:1C:CE:9F:8D:58:B4:09:89:03:&#xa;                D4:6C:47:DD:02:20:2D:5B:4E:83:E1:A4:0B:7A:4A:2B:&#xa;                EE:E9:12:E8:0B:5B:80:CD:34:BA:30:5B:76:5D:CF:59:&#xa;                CB:D7:E0:3A:56:A9</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-01-27T19:36:38</elem>
+<elem key="notAfter">2022-04-27T19:36:37</elem>
+</table>
+<elem key="md5">4bfac708c44bdccd99dd5b06dd3bf793</elem>
+<elem key="sha1">9a17e46f85ae61d5bf1a970c534a3250b193cd54</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGLzCCBRegAwIBAgISBGlq54Lq39ZH/onjBUfZ/rjiMA0GCSqGSIb3DQEBCwUA&#xa;MDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQD&#xa;EwJSMzAeFw0yMjAxMjcxOTM2MzhaFw0yMjA0MjcxOTM2MzdaMCAxHjAcBgNVBAMT&#xa;FWJiYi5wdXNoa2luLmluc3RpdHV0ZTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC&#xa;AgoCggIBAMAOXjT1G4R1uzI+ypFxN/DViBlCi5zcIDKl6p9K8cMlVFR9DLg+JV7c&#xa;gn3UJ7k9xs+guJS9pcR+furGcrrdVx/LaXJxZTK0d3L2r+NteT4y6nv6ackFjwVg&#xa;ZaUK7M86HAOr+HaUxD0CfAdfnyXl4LzVNnYUQ0YmK+D9tTInfHK4Bvu8of82q360&#xa;ZwaOV9Cc7q55ta4W+ZO0wy/MRymNn6tcvbcn+RA0VhHf5x26hpTqnz3t72oLDRXb&#xa;fnldzys5UYugZnNy1A8seHcgKbiq8EBXjQO7Cxx87CtAWgqj9iOitoYXzyqq1OZU&#xa;cO6Jc8w5RV+mEbv1tEuogSEP7XzcavNjWErbJ4rSBJru7g8rj+WlVpIgS1Cfwo4h&#xa;6gbNAgtmWo9mxxrsPnWvEjgqwhvPdnAFRc8K2c4V+JQIys5Jjvyd35Xws1mdBOFm&#xa;VbefRGPzyplKLsBm/4LmpkuaJSFaV7QNNVp6XvRDrniExk1kIMquWeoKqnikKQD9&#xa;SS5amfdNami2jidVQr4KezwVBX81F36rMoNf8m2A/cOqVCpoO/b3Xoumc/FH8ryi&#xa;js0MBac8TtkDc3aNDZQWSBMXHcsoy19XLfEl5WvZDJqTmABHZpeZogPfi2B+SfOx&#xa;r0waHonCpHyhOX6va4tTrGMG4uk1ZYTDBRlJKfjIXjAkddpoQ95XAgMBAAGjggJP&#xa;MIICSzAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUF&#xa;BwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFOKFwmWnGCB35QCcBULaHsxKVVkF&#xa;MB8GA1UdIwQYMBaAFBQusxe3WFbLrlAJQOYfr52LFMLGMFUGCCsGAQUFBwEBBEkw&#xa;RzAhBggrBgEFBQcwAYYVaHR0cDovL3IzLm8ubGVuY3Iub3JnMCIGCCsGAQUFBzAC&#xa;hhZodHRwOi8vcjMuaS5sZW5jci5vcmcvMCAGA1UdEQQZMBeCFWJiYi5wdXNoa2lu&#xa;Lmluc3RpdHV0ZTBMBgNVHSAERTBDMAgGBmeBDAECATA3BgsrBgEEAYLfEwEBATAo&#xa;MCYGCCsGAQUFBwIBFhpodHRwOi8vY3BzLmxldHNlbmNyeXB0Lm9yZzCCAQMGCisG&#xa;AQQB1nkCBAIEgfQEgfEA7wB2ACl5vvCeOTkh8FZzn2Old+W+V32cYAr4+U1dJlwl&#xa;XceEAAABfp1BIdUAAAQDAEcwRQIhAIcH2yqS5OvbYpu5BdKAf/ohlEJU6/Idbc4j&#xa;k7CCx1ilAiAf+9EchpRr4nYGVY2GiabQG+llnXcjx4rkykFZqx0olgB1AG9Tdqwx&#xa;8DEZ2JkApFEV/3cVHBHZAsEAKQaNsgiaN9kTAAABfp1BIvMAAAQDAEYwRAIgSTq6&#xa;wPe3AcXsvSnL43j9aQyELRzOn41YtAmJA9RsR90CIC1bToPhpAt6Sivu6RLoC1uA&#xa;zTS6MFt2Xc9Zy9fgOlapMA0GCSqGSIb3DQEBCwUAA4IBAQB7ID+4sT/w3ASsxwBt&#xa;mqo7Khu3GYUL8jOJBEz10K066apG9NgoVO/TXTbVoGXZMmNhokLQuF+6IV1VJorX&#xa;+YQ9PStiivog/+R2DGe5+rzySVCWdRWbHHa/PM0YwOYfzFzRLtwbBwv7KjOUqTwL&#xa;Metu8NcSMO+8MJc+MrQ6VzpGodqjXxLPZpThsORAnFhY2fHBpbZTfWa9U1GrWtbX&#xa;I+bykr2/jgU8s9MY5ZMZQ7EtpQbGlzbLvsA6ZZ7ZQmdGKzr3Pl9/fPBZ8sO4pRxr&#xa;mxQafA0kKKSYsLe15BUj4L+StQD2hppIUsonEatYhfzsRFuqbaKxifRa/68O43xu&#xa;cJBP&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-title" output="Site doesn&apos;t have a title (text/plain).&#xa;Requested resource was https://86.110.118.11/b"><elem key="redirect_url">https://86.110.118.11/b</elem>
+</script><script id="http-robots.txt" output="1 disallowed entry &#xa;/"/></port>
+</ports>
+<times srtt="98617" rttvar="42821" to="269901"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="86.110.118.21" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="6.6.1p1 Ubuntu 2ubuntu2.10" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:6.6.1p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  1024 2d:6d:00:79:b7:8e:d5:52:ab:38:ac:12:d5:6c:17:89 (DSA)&#xa;  2048 7a:85:83:11:b3:08:f0:26:73:1b:b2:35:11:c9:4c:af (RSA)&#xa;  256 b5:37:ea:05:56:6e:4a:94:a0:1e:65:38:03:e8:c1:0d (ECDSA)&#xa;  256 72:fb:f9:e1:bc:87:5d:32:aa:b5:20:8b:73:13:7a:4c (ED25519)"><table>
+<elem key="type">ssh-dss</elem>
+<elem key="fingerprint">2d6d0079b78ed552ab38ac12d56c1789</elem>
+<elem key="key">AAAAB3NzaC1kc3MAAACBAKk8tGTuO0wJ9xSujJ4MrPOmgNUceoCHc9zdV4UsXYx5cQH0HVDvBiBIH0cWD4VomiYaNcHkrrmP8/xuy9xnI137w0lLKq0RiwVdmz8E41/UP/Ua2PXziltCjnkPtA7VJZC+0s665TmM+LVIQBn+Q/yojPpei5BfN0t4DXJ6bGuLAAAAFQCsPMwKnIv4cfVr+818BKpPe8oVPwAAAIBMqvdEMbcEAu9LRpdg9mQr0geeyccqgYMNNaLN83RcfCEov0hk/85LAXMlZvACAEwTNjlmiwmyhMK/J8EaEJ32nCoM94hhMheMXQ2b9TZoLiMZlKqGYk9JYVVuo+I3J8Tg5cixMZiJYOA5PLKj9PND24wX86sZ3oeSPhQWgyeejgAAAIEAqS/M+qfUvB0adeil1nIaXcoVhGD8ZedENbS+srR0rH0vCVX6OWhJuptDtKAtLm4SAr+t5OS+Ih67LTcN9R2g+vnJE7qskvBRs7FewFAjuU1bCVHeD2zPB5Y4B6mHZt3Qz6sDD77z1nNa+98Uvo+pmlLiwA1qG7PSQRU58R+Ie+0=</elem>
+<elem key="bits">1024</elem>
+</table>
+<table>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">7a858311b308f026731bb23511c94caf</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQChOYD3kgH8Olw5BwglvxR4b8mU7Zzpuf/WgRNQIoPZ0QRWYZ8KEihN0BfBYaw9ePglCfTQPVrIKl9ScDD2lXrdy8SgjyR9Alh3HvhjTsHCR9R+zwn0FxdG41Z3Kg8DvPnUNMma3XBzjIyIAqoAyTcd4zNJuxBQdiM9pgVlAa+fZnBL0WDGmjeJa6vE5uXXkjVB8mMm4OZj2zM/foZkkEZXpAr8xIt+GVY/AYMVooBZUagTnix/22N83g3nyvSMy7diX08afNumufDQ/qrVLIYC890YzilnNqWKlyoTrKoQAgTkgJ2PkEac1MWDVes6UwYoB4p8BmiU9SiqRuviBqyv</elem>
+<elem key="bits">2048</elem>
+</table>
+<table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">b537ea05566e4a94a01e653803e8c10d</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFLYZKAKRG+YVNyXAtz7yrli1S4upbFND73iXYssaOCVnSic2oJSZ2Agm2J67YOU3Xezp7KY8l+9kbnKXPIlgHU=</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">72fbf9e1bc875d32aab5208b73137a4c</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIJGXw58f4oasYurQAHk7nYNM7ZH1CwbDdeS3ZbXgVv0v</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.14.0" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.14.0</cpe></service><script id="http-server-header" output="nginx/1.14.0"><elem>nginx/1.14.0</elem>
+</script><script id="http-title" output="Welcome to nginx!"><elem key="title">Welcome to nginx!</elem>
+</script></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.14.0" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.14.0</cpe></service><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="ssl-cert" output="Subject: commonName=*.pushkininstitute.ru/organizationName=Pushkin State Russian Language Institute/countryName=RU&#xa;Subject Alternative Name: DNS:*.pushkininstitute.ru, DNS:pushkininstitute.ru&#xa;Not valid before: 2021-08-25T00:00:00&#xa;Not valid after:  2022-09-03T23:59:59"><table key="subject">
+<elem key="commonName">*.pushkininstitute.ru</elem>
+<elem key="countryName">RU</elem>
+<elem key="localityName">Moscow</elem>
+<elem key="organizationName">Pushkin State Russian Language Institute</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Thawte TLS RSA CA G1</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">DigiCert Inc</elem>
+<elem key="organizationalUnitName">www.digicert.com</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">B6AEC84F9557F91548B1F9467DFA388695F6DF9ACB17B0A079FBA252659B582C7CCB25E25FBD5ACD087282F95A3606A7ACE75549BCB3AD7DB602ACCC8C52B489C39C4FCB7B3835CF2A1BEA6BE9F6E4E8C8E5965A79402BB0CD8A662B0F6652D20EB2E71E0773B4778049278430BBD11C92DFB3B7D281D8C76B7C6EDFB6B29D4B77A90E1295C2F7E01D18574A89C65794AA709C0E6253F7003E5D5C22A1FCE399304911A71828C2A371FAD794471BFB142AA59FCD5597BABF7F9983C6522069356250A30349C13A910CC5E1C095BCE2B650B2C057346245A584B8320413C233569B674055AC9153D9B3AFEBEA82017131C6B8D944747661A8550DBC9A92666B45</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A5:8C:FE:32:CC:EB:0F:2C:D4:19:C6:08:B8:00:24:88:5D:C3:C5:B7&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">A6:06:14:CF:C4:20:C9:C8:0D:7A:1A:4E:BE:27:C9:D8:52:D4:4C:12</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.pushkininstitute.ru, DNS:pushkininstitute.ru</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:http://cdp.thawte.com/ThawteTLSRSACAG1.crl&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.2&#xa;  CPS: http://www.digicert.com/CPS&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://status.thawte.com&#xa;CA Issuers - URI:http://cacerts.thawte.com/ThawteTLSRSACAG1.crt&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:&#xa;                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47&#xa;    Timestamp : Aug 25 14:41:07.034 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:42:54:63:89:4D:32:12:44:89:09:B7:23:&#xa;                F7:A5:97:62:7F:4E:81:55:70:CD:0F:F7:4D:3A:40:D8:&#xa;                BD:5C:81:EB:02:20:77:7E:63:C4:EE:A5:76:5D:5A:DA:&#xa;                4A:D6:04:65:73:B1:2B:A0:18:54:B6:DD:D0:C1:E9:59:&#xa;                D3:CA:F8:AE:0A:65&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 51:A3:B0:F5:FD:01:79:9C:56:6D:B8:37:78:8F:0C:A4:&#xa;                7A:CC:1B:27:CB:F7:9E:88:42:9A:0D:FE:D4:8B:05:E5&#xa;    Timestamp : Aug 25 14:41:07.047 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:44:02:20:15:E7:B1:CC:A6:B3:73:8B:2D:5E:05:3C:&#xa;                D3:89:47:39:C4:BF:55:1A:9F:8C:55:7A:1B:91:D9:28:&#xa;                0F:F9:23:2D:02:20:30:F4:0A:4C:F4:4C:3E:8D:58:E3:&#xa;                36:C8:80:03:AE:67:98:97:E6:EF:09:BC:08:B8:3C:85:&#xa;                2D:9E:23:B1:59:A9&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:&#xa;                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6&#xa;    Timestamp : Aug 25 14:41:06.912 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:46:02:21:00:D1:70:58:5D:3B:80:5A:1D:16:72:87:&#xa;                B2:BA:18:7E:D7:A7:8B:77:E3:D0:BC:AD:36:8D:3C:76:&#xa;                A8:30:21:97:B7:02:21:00:A4:5E:05:F9:4D:B0:A7:30:&#xa;                59:9A:B0:E4:89:68:B9:C5:70:97:2A:8F:B2:BA:EF:F8:&#xa;                C3:04:18:BB:8B:25:93:06</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-08-25T00:00:00</elem>
+<elem key="notAfter">2022-09-03T23:59:59</elem>
+</table>
+<elem key="md5">633b1c0ff3efed1ea7b25f9180ce419b</elem>
+<elem key="sha1">5117d00997c156fcaf3a7eb848d3346090ab90f3</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGgzCCBWugAwIBAgIQAovaN5uZSgWyabDS0pn0UTANBgkqhkiG9w0BAQsFADBe&#xa;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#xa;d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRUaGF3dGUgVExTIFJTQSBDQSBHMTAe&#xa;Fw0yMTA4MjUwMDAwMDBaFw0yMjA5MDMyMzU5NTlaMHExCzAJBgNVBAYTAlJVMQ8w&#xa;DQYDVQQHEwZNb3Njb3cxMTAvBgNVBAoTKFB1c2hraW4gU3RhdGUgUnVzc2lhbiBM&#xa;YW5ndWFnZSBJbnN0aXR1dGUxHjAcBgNVBAMMFSoucHVzaGtpbmluc3RpdHV0ZS5y&#xa;dTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALauyE+VV/kVSLH5Rn36&#xa;OIaV9t+ayxewoHn7olJlm1gsfMsl4l+9Ws0IcoL5WjYGp6znVUm8s619tgKszIxS&#xa;tInDnE/Lezg1zyob6mvp9uToyOWWWnlAK7DNimYrD2ZS0g6y5x4Hc7R3gEknhDC7&#xa;0RyS37O30oHYx2t8bt+2sp1Ld6kOEpXC9+AdGFdKicZXlKpwnA5iU/cAPl1cIqH8&#xa;45kwSRGnGCjCo3H615RHG/sUKqWfzVWXur9/mYPGUiBpNWJQowNJwTqRDMXhwJW8&#xa;4rZQssBXNGJFpYS4MgQTwjNWm2dAVayRU9mzr+vqggFxMca42UR0dmGoVQ28mpJm&#xa;a0UCAwEAAaOCAygwggMkMB8GA1UdIwQYMBaAFKWM/jLM6w8s1BnGCLgAJIhdw8W3&#xa;MB0GA1UdDgQWBBSmBhTPxCDJyA16Gk6+J8nYUtRMEjA1BgNVHREELjAsghUqLnB1&#xa;c2hraW5pbnN0aXR1dGUucnWCE3B1c2hraW5pbnN0aXR1dGUucnUwDgYDVR0PAQH/&#xa;BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA7BgNVHR8ENDAy&#xa;MDCgLqAshipodHRwOi8vY2RwLnRoYXd0ZS5jb20vVGhhd3RlVExTUlNBQ0FHMS5j&#xa;cmwwPgYDVR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3&#xa;dy5kaWdpY2VydC5jb20vQ1BTMHAGCCsGAQUFBwEBBGQwYjAkBggrBgEFBQcwAYYY&#xa;aHR0cDovL3N0YXR1cy50aGF3dGUuY29tMDoGCCsGAQUFBzAChi5odHRwOi8vY2Fj&#xa;ZXJ0cy50aGF3dGUuY29tL1RoYXd0ZVRMU1JTQUNBRzEuY3J0MAwGA1UdEwEB/wQC&#xa;MAAwggF9BgorBgEEAdZ5AgQCBIIBbQSCAWkBZwB1AEalVet1+pEgMLWiiWn0830R&#xa;LEF0vv1JuIWr8vxw/m1HAAABe33B79oAAAQDAEYwRAIgQlRjiU0yEkSJCbcj96WX&#xa;Yn9OgVVwzQ/3TTpA2L1cgesCIHd+Y8TupXZdWtpK1gRlc7EroBhUtt3QwelZ08r4&#xa;rgplAHUAUaOw9f0BeZxWbbg3eI8MpHrMGyfL956IQpoN/tSLBeUAAAF7fcHv5wAA&#xa;BAMARjBEAiAV57HMprNziy1eBTzTiUc5xL9VGp+MVXobkdkoD/kjLQIgMPQKTPRM&#xa;Po1Y4zbIgAOuZ5iX5u8JvAi4PIUtniOxWakAdwBByMqx3yJGShDGoToJQodeTjGL&#xa;GwPr60vHaPCQYpYG9gAAAXt9we9gAAAEAwBIMEYCIQDRcFhdO4BaHRZyh7K6GH7X&#xa;p4t349C8rTaNPHaoMCGXtwIhAKReBflNsKcwWZqw5IloucVwlyqPsrrv+MMEGLuL&#xa;JZMGMA0GCSqGSIb3DQEBCwUAA4IBAQC5iRwP+g2GS2eddyjBzMqx4nkC1jtfgboS&#xa;4uBm6yPzIwTsZ6EKI2lpyzhDuQQLmJ5J+7kVx0DjDvmelcw8yf4Of/xeVDR7/ge7&#xa;/oIcEV0shqZeS+9BBHHdEaTmeHknf8MmzW1mBjizVSjHr7ZytUo5dqqhrNLbmQOB&#xa;Oo5/oQXxBOgxXIzMqUhUdkCRlPViU2ocn2K8uj4WqSFRbnSVRMkOEHZuTRYncyKg&#xa;2tsqooc/Vlpa/fDdWWD0zZ2M2QGt/ZXKuzxYYE3drrwvDof032qR72wSOkEDIU/H&#xa;/Sa+M8hasrpRWCKFMsfo9lQJT4M62Fe9JHMhCoRfT3oM234h6yjS&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="tls-nextprotoneg" output="&#xa;  h2&#xa;  http/1.1"><elem>h2</elem>
+<elem>http/1.1</elem>
+</script><script id="http-server-header" output="nginx/1.14.0"><elem>nginx/1.14.0</elem>
+</script><script id="http-title" output="1917. \xD0\xA0\xD0\xB5\xD0\xB2\xD0\xBE\xD0\xBB\xD1\x8E\xD1\x86\xD0\xB8\xD1\x8F \xD0\xB2 \xD1\x8F\xD0\xB7\xD1\x8B\xD0\xBA\xD0\xB5"><elem key="title">1917. \xD0\xA0\xD0\xB5\xD0\xB2\xD0\xBE\xD0\xBB\xD1\x8E\xD1\x86\xD0\xB8\xD1\x8F \xD0\xB2 \xD1\x8F\xD0\xB7\xD1\x8B\xD0\xBA\xD0\xB5</elem>
+</script></port>
+</ports>
+<times srtt="96926" rttvar="5064" to="117182"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="86.110.118.22" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="6.6.1p1 Ubuntu 2ubuntu2.7" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:6.6.1p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  1024 93:f0:51:f8:d9:19:85:40:37:e1:77:47:d6:b1:b9:23 (DSA)&#xa;  2048 8a:e3:16:48:dd:4f:cf:a9:4d:b1:83:a0:75:3f:90:2c (RSA)&#xa;  256 b2:c2:b2:13:53:8b:6f:b3:f6:8f:20:a3:0e:ef:48:c0 (ECDSA)&#xa;  256 fe:d2:48:19:6b:b8:8d:a7:c6:dd:87:42:df:d5:9d:df (ED25519)"><table>
+<elem key="type">ssh-dss</elem>
+<elem key="fingerprint">93f051f8d919854037e17747d6b1b923</elem>
+<elem key="key">AAAAB3NzaC1kc3MAAACBANjLSzEyN6uh1gfb894DGZbSe1nVBHDD6A/14nIemQ4cSHO9oJ2iShAi3arsS6MXpD0/5s5ZpsIuXfvzXAws3FpTKnMhN8xSbUagOFjr2oUhKjA+dPa2jfYT7zMLn1abcZrv9iv2cYyo8m55stVnIcEDgxAB2eWmlrSVNo8TILGbAAAAFQDd6xE5AV8gw1N660qx7MeUf8YLoQAAAIBGZWHTroPElW4KqPS+ILrYRlp9K44EnB3cw4hIwtbsV/8xSVD5UC5p6E5xyoC19uVt8bUImVDxiLrrlYX6vWYkJ9hVwDljdQLHPhy2XaFoWUtPwyz9yrY0+ZZJz3HBDcnVjVQK97ox+RyIBqExUC1vaTcmVkkXtEC9OJ9ENX6zJwAAAIA3wfRofiU92wT14XPpQE8ViE/VoNHOztHipFpYbkM7ilay+NQKQr5JMloPAk3Egjb/0eFGR+llhWvnEZO2Q0SCLly4zvvjC8sRgYWOaMZumvgOyw5xjAC68C0syac8xiST5m3Mcr1dVvZvFme9IfYubA0OFr/xWBnQQSc+PtBcMQ==</elem>
+<elem key="bits">1024</elem>
+</table>
+<table>
+<elem key="type">ssh-rsa</elem>
+<elem key="fingerprint">8ae31648dd4fcfa94db183a0753f902c</elem>
+<elem key="key">AAAAB3NzaC1yc2EAAAADAQABAAABAQDmMC9KSpM9dX6KfIieTxBvl2AISykgUJDANxR2Q9sTKgqA4s3WE/FvDlfTYKdnUeYkbMluglUHr0sjyAiVCW2yZQlQAf8BjKixH1uTFI2kD3l9ujs0qQUFtMxrrxsHz9h2Ps7bUhyep0GcWrTkA8pVxZQmmHXrhRVI4w7aUVWIuLe9AnbAaJSSyi4LiSHbWUHR60/tLmY4sWEF6QzjJzD9vbMP6FjGVnPZTZ3UEzF8xrWMT5TiJHYkd1JDuPMAEh1LhyjOvv0lY9LoASnEKC2jsjIAaAQNxJF6muxM3R/qfWkHKfH1Qzxe7UWqI0WS6bnqpyOiEuCSLloDNGUNM7cd</elem>
+<elem key="bits">2048</elem>
+</table>
+<table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="fingerprint">b2c2b213538b6fb3f68f20a30eef48c0</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLpAO/cwtMjPILPB+K6HdKhLIBwxXF/XM1eGJg8l4/pT4rxJfiogmwCUqhcwJ/tm8rhm2xw5Ga5jTflisAPBt/Q=</elem>
+<elem key="bits">256</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="fingerprint">fed248196bb88da7c6dd8742dfd59ddf</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIBgrZQ3k/jD88qoefnpdfOBhcTBXBaOaf/RixAlR7hos</elem>
+<elem key="bits">256</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.10.1" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.10.1</cpe></service><script id="http-robots.txt" output="20 disallowed entries (15 shown)&#xa;/about /desktop_app /bitrix.pushkin.institute /bitrix &#xa;/login /forms /include /search /test /upload /workflow &#xa;/.htaccess /web.config /.access.php /.bottom.menu.php"/><script id="http-title" output="\xC3\xEB\xE0\xE2\xED\xE0\xFF \xF1\xF2\xF0\xE0\xED\xE8\xF6\xE0 | \xC3\xEE\xF1\xF3\xE4\xE0\xF0\xF1\xF2\xE2\xE5\xED\xED\xFB\xE9 \xE8\xED\xF1\xF2\xE8\xF2\xF3\xF2 \xF0\xF3\xF1\xF1\xEA\xEE\xE3\xEE \xFF\xE7\xFB\xEA\xE0 \xE8\xEC...."><elem key="title">\xC3\xEB\xE0\xE2\xED\xE0\xFF \xF1\xF2\xF0\xE0\xED\xE8\xF6\xE0 | \xC3\xEE\xF1\xF3\xE4\xE0\xF0\xF1\xF2\xE2\xE5\xED\xED\xFB\xE9 \xE8\xED\xF1\xF2\xE8\xF2\xF3\xF2 \xF0\xF3\xF1\xF1\xEA\xEE\xE3\xEE \xFF\xE7\xFB\xEA\xE0 \xE8\xEC. \xC0.\xD1. \xCF\xF3\xF8\xEA\xE8\xED\xE0</elem>
+</script><script id="http-server-header" output="nginx/1.10.1"><elem>nginx/1.10.1</elem>
+</script><script id="http-methods" output="&#xa;  Potentially risky methods: TRACE"><table key="Potentially risky methods">
+<elem>TRACE</elem>
+</table>
+</script></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="nginx" version="1.10.1" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:igor_sysoev:nginx:1.10.1</cpe></service><script id="http-title" output="403 Forbidden"><elem key="title">403 Forbidden</elem>
+</script><script id="ssl-cert" output="Subject: commonName=*.pushkin.institute/organizationName=Pushkin State Russian Language Institute/countryName=RU&#xa;Subject Alternative Name: DNS:*.pushkin.institute, DNS:pushkin.institute&#xa;Not valid before: 2021-12-07T00:00:00&#xa;Not valid after:  2023-01-03T23:59:59"><table key="subject">
+<elem key="commonName">*.pushkin.institute</elem>
+<elem key="countryName">RU</elem>
+<elem key="localityName">Moscow</elem>
+<elem key="organizationName">Pushkin State Russian Language Institute</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Thawte TLS RSA CA G1</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">DigiCert Inc</elem>
+<elem key="organizationalUnitName">www.digicert.com</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A1CF4D5390088F5632796B9484C8A7D53CEA79EA6727BBE4FCEDEB3F0534CA5C3018A41F2338D871574AEDE051A0F6956EA85992F878F12382E0B24EB19DED809B5039F817145DE9D19B32F441BEEAD4F431AB26EB47B4CB7FD4949CB0AD5D7E1452584DFF12746BFBB5F002F623A143E7DFD0CB8BC3787A212E2B26FD453F5C9A80CA51A16D7EDA7863CC1D23F2B385D1510EA73BEB5586943B8D7E02CE318EDCC5DDDBBE1B751C79E89C42091FA3EDB2E87C691D761CEE0B19C3B73DACF98112B497C4A41B33935EDB4DA224254234B1A9CE4F8A7CF060A5BDE324AAA3AF02197BDFF7D9C7F8E660DE54747BBCEB99E8AFC4B361E57868C168DADEF98A3EED</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A5:8C:FE:32:CC:EB:0F:2C:D4:19:C6:08:B8:00:24:88:5D:C3:C5:B7&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">8F:D9:37:BF:24:39:C6:03:B3:66:D1:75:49:FC:7D:9E:85:8A:F8:BA</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.pushkin.institute, DNS:pushkin.institute</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:http://cdp.thawte.com/ThawteTLSRSACAG1.crl&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.2&#xa;  CPS: http://www.digicert.com/CPS&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://status.thawte.com&#xa;CA Issuers - URI:http://cacerts.thawte.com/ThawteTLSRSACAG1.crt&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : E8:3E:D0:DA:3E:F5:06:35:32:E7:57:28:BC:89:6B:C9:&#xa;                03:D3:CB:D1:11:6B:EC:EB:69:E1:77:7D:6D:06:BD:6E&#xa;    Timestamp : Dec  7 12:24:11.128 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:23:D2:B0:32:0A:B6:C6:A0:A1:64:50:01:&#xa;                3D:FF:9B:63:F1:30:F6:7D:08:8B:73:B0:BF:DB:D0:63:&#xa;                63:BB:57:FF:02:21:00:FC:AC:AC:9A:DD:CD:ED:43:03:&#xa;                09:CD:AC:39:6F:04:EC:DA:6B:8A:49:2A:60:BE:ED:4B:&#xa;                CE:7C:63:AA:A9:59:46&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 35:CF:19:1B:BF:B1:6C:57:BF:0F:AD:4C:6D:42:CB:BB:&#xa;                B6:27:20:26:51:EA:3F:E1:2A:EF:A8:03:C3:3B:D6:4C&#xa;    Timestamp : Dec  7 12:24:11.046 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:2F:0D:D0:65:F9:C7:49:F4:F1:83:0C:B8:&#xa;                5E:AC:14:C8:69:71:30:2F:1A:FA:6B:81:A9:3A:8D:34:&#xa;                9B:91:2B:06:02:21:00:90:1D:11:67:C6:25:7B:A2:03:&#xa;                E2:F6:94:6B:57:7C:2B:D0:1E:F8:8C:CA:2F:5C:11:48:&#xa;                FD:D1:5C:AF:9F:B4:C1&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : B3:73:77:07:E1:84:50:F8:63:86:D6:05:A9:DC:11:09:&#xa;                4A:79:2D:B1:67:0C:0B:87:DC:F0:03:0E:79:36:A5:9A&#xa;    Timestamp : Dec  7 12:24:11.085 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:DA:E2:7F:CE:35:BE:A6:A3:0D:A1:D1:&#xa;                4D:4D:B4:27:EB:97:37:C6:BF:93:FC:7C:F4:4F:95:93:&#xa;                7A:E0:23:12:D5:02:20:04:0B:1B:4B:0E:DB:EC:B9:4A:&#xa;                81:99:97:E7:2B:B2:2E:C8:2D:D2:11:A8:EF:53:F3:D0:&#xa;                31:0C:0D:62:DD:D9:0C</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-12-07T00:00:00</elem>
+<elem key="notAfter">2023-01-03T23:59:59</elem>
+</table>
+<elem key="md5">7bc694244207b93e1149ae341f56dd6c</elem>
+<elem key="sha1">b677a5822d47d292c3f25b71714bc743c3a21ac4</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGfjCCBWagAwIBAgIQCDAuDxGPju5MXjNGg0Dj6jANBgkqhkiG9w0BAQsFADBe&#xa;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#xa;d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRUaGF3dGUgVExTIFJTQSBDQSBHMTAe&#xa;Fw0yMTEyMDcwMDAwMDBaFw0yMzAxMDMyMzU5NTlaMG8xCzAJBgNVBAYTAlJVMQ8w&#xa;DQYDVQQHEwZNb3Njb3cxMTAvBgNVBAoTKFB1c2hraW4gU3RhdGUgUnVzc2lhbiBM&#xa;YW5ndWFnZSBJbnN0aXR1dGUxHDAaBgNVBAMMEyoucHVzaGtpbi5pbnN0aXR1dGUw&#xa;ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChz01TkAiPVjJ5a5SEyKfV&#xa;POp56mcnu+T87es/BTTKXDAYpB8jONhxV0rt4FGg9pVuqFmS+HjxI4Lgsk6xne2A&#xa;m1A5+BcUXenRmzL0Qb7q1PQxqybrR7TLf9SUnLCtXX4UUlhN/xJ0a/u18AL2I6FD&#xa;59/Qy4vDeHohLism/UU/XJqAylGhbX7aeGPMHSPys4XRUQ6nO+tVhpQ7jX4CzjGO&#xa;3MXd274bdRx56JxCCR+j7bLofGkddhzuCxnDtz2s+YEStJfEpBszk17bTaIkJUI0&#xa;sanOT4p88GClveMkqqOvAhl73/fZx/jmYN5UdHu865nor8SzYeV4aMFo2t75ij7t&#xa;AgMBAAGjggMlMIIDITAfBgNVHSMEGDAWgBSljP4yzOsPLNQZxgi4ACSIXcPFtzAd&#xa;BgNVHQ4EFgQUj9k3vyQ5xgOzZtF1Sfx9noWK+LowMQYDVR0RBCowKIITKi5wdXNo&#xa;a2luLmluc3RpdHV0ZYIRcHVzaGtpbi5pbnN0aXR1dGUwDgYDVR0PAQH/BAQDAgWg&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA7BgNVHR8ENDAyMDCgLqAs&#xa;hipodHRwOi8vY2RwLnRoYXd0ZS5jb20vVGhhd3RlVExTUlNBQ0FHMS5jcmwwPgYD&#xa;VR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdp&#xa;Y2VydC5jb20vQ1BTMHAGCCsGAQUFBwEBBGQwYjAkBggrBgEFBQcwAYYYaHR0cDov&#xa;L3N0YXR1cy50aGF3dGUuY29tMDoGCCsGAQUFBzAChi5odHRwOi8vY2FjZXJ0cy50&#xa;aGF3dGUuY29tL1RoYXd0ZVRMU1JTQUNBRzEuY3J0MAwGA1UdEwEB/wQCMAAwggF+&#xa;BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2AOg+0No+9QY1MudXKLyJa8kD08vREWvs&#xa;62nhd31tBr1uAAABfZTZ8ngAAAQDAEcwRQIgI9KwMgq2xqChZFABPf+bY/Ew9n0I&#xa;i3Owv9vQY2O7V/8CIQD8rKya3c3tQwMJzaw5bwTs2muKSSpgvu1LznxjqqlZRgB2&#xa;ADXPGRu/sWxXvw+tTG1Cy7u2JyAmUeo/4SrvqAPDO9ZMAAABfZTZ8iYAAAQDAEcw&#xa;RQIgLw3QZfnHSfTxgwy4XqwUyGlxMC8a+muBqTqNNJuRKwYCIQCQHRFnxiV7ogPi&#xa;9pRrV3wr0B74jMovXBFI/dFcr5+0wQB2ALNzdwfhhFD4Y4bWBancEQlKeS2xZwwL&#xa;h9zwAw55NqWaAAABfZTZ8k0AAAQDAEcwRQIhANrif841vqajDaHRTU20J+uXN8a/&#xa;k/x89E+Vk3rgIxLVAiAECxtLDtvsuUqBmZfnK7IuyC3SEajvU/PQMQwNYt3ZDDAN&#xa;BgkqhkiG9w0BAQsFAAOCAQEAu4EyO+Ooy89z/cyDUbrMGBzX46YVX9zKv9j6tFLe&#xa;lGrLCX77BNXS/RfRipHsDXpek512g18PFnH+V3bjdreB0+ik5g+IhFR2LeAnGKiC&#xa;SmHmFXjf8LHLzPDE5SGmqihuC0ypnmGHoVq4odazGrplLDdYbedAlFxB4hRENDrz&#xa;Effouf9UneVMNBy+ksz2zOFcu2U4HtMSX7UCvBsLw+MXnV2a5aPa2JN14EDdNGIi&#xa;hzoERu/MJxQAlZy6pCMLX+xBl+tdNBAdrWnXCJ2wfOkfY43B011i/OyJPaFahI7r&#xa;gbpKnLy+aW8pqaTluxMHlBn8pDQtsDzO75R0+eBUW6doQw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-server-header" output="nginx/1.10.1"><elem>nginx/1.10.1</elem>
+</script><script id="tls-nextprotoneg" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script></port>
+</ports>
+<times srtt="96639" rttvar="4628" to="115151"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="86.110.118.203" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Microsoft IIS httpd" version="10.0" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:internet_information_server:10.0</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="imap" product="Microsoft Exchange 2007-2010 imapd" ostype="Windows" method="probed" conf="10"><cpe>cpe:/a:microsoft:exchange_server</cpe><cpe>cpe:/o:microsoft:windows</cpe></service><script id="ssl-cert" output="Subject: commonName=*.pushkin.institute/organizationName=Pushkin State Russian Language Institute/countryName=RU&#xa;Subject Alternative Name: DNS:*.pushkin.institute, DNS:pushkin.institute&#xa;Not valid before: 2021-12-07T00:00:00&#xa;Not valid after:  2023-01-03T23:59:59"><table key="subject">
+<elem key="commonName">*.pushkin.institute</elem>
+<elem key="countryName">RU</elem>
+<elem key="localityName">Moscow</elem>
+<elem key="organizationName">Pushkin State Russian Language Institute</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Thawte TLS RSA CA G1</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">DigiCert Inc</elem>
+<elem key="organizationalUnitName">www.digicert.com</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A1CF4D5390088F5632796B9484C8A7D53CEA79EA6727BBE4FCEDEB3F0534CA5C3018A41F2338D871574AEDE051A0F6956EA85992F878F12382E0B24EB19DED809B5039F817145DE9D19B32F441BEEAD4F431AB26EB47B4CB7FD4949CB0AD5D7E1452584DFF12746BFBB5F002F623A143E7DFD0CB8BC3787A212E2B26FD453F5C9A80CA51A16D7EDA7863CC1D23F2B385D1510EA73BEB5586943B8D7E02CE318EDCC5DDDBBE1B751C79E89C42091FA3EDB2E87C691D761CEE0B19C3B73DACF98112B497C4A41B33935EDB4DA224254234B1A9CE4F8A7CF060A5BDE324AAA3AF02197BDFF7D9C7F8E660DE54747BBCEB99E8AFC4B361E57868C168DADEF98A3EED</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A5:8C:FE:32:CC:EB:0F:2C:D4:19:C6:08:B8:00:24:88:5D:C3:C5:B7&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">8F:D9:37:BF:24:39:C6:03:B3:66:D1:75:49:FC:7D:9E:85:8A:F8:BA</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.pushkin.institute, DNS:pushkin.institute</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:http://cdp.thawte.com/ThawteTLSRSACAG1.crl&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.2&#xa;  CPS: http://www.digicert.com/CPS&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://status.thawte.com&#xa;CA Issuers - URI:http://cacerts.thawte.com/ThawteTLSRSACAG1.crt&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : E8:3E:D0:DA:3E:F5:06:35:32:E7:57:28:BC:89:6B:C9:&#xa;                03:D3:CB:D1:11:6B:EC:EB:69:E1:77:7D:6D:06:BD:6E&#xa;    Timestamp : Dec  7 12:24:11.128 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:23:D2:B0:32:0A:B6:C6:A0:A1:64:50:01:&#xa;                3D:FF:9B:63:F1:30:F6:7D:08:8B:73:B0:BF:DB:D0:63:&#xa;                63:BB:57:FF:02:21:00:FC:AC:AC:9A:DD:CD:ED:43:03:&#xa;                09:CD:AC:39:6F:04:EC:DA:6B:8A:49:2A:60:BE:ED:4B:&#xa;                CE:7C:63:AA:A9:59:46&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 35:CF:19:1B:BF:B1:6C:57:BF:0F:AD:4C:6D:42:CB:BB:&#xa;                B6:27:20:26:51:EA:3F:E1:2A:EF:A8:03:C3:3B:D6:4C&#xa;    Timestamp : Dec  7 12:24:11.046 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:2F:0D:D0:65:F9:C7:49:F4:F1:83:0C:B8:&#xa;                5E:AC:14:C8:69:71:30:2F:1A:FA:6B:81:A9:3A:8D:34:&#xa;                9B:91:2B:06:02:21:00:90:1D:11:67:C6:25:7B:A2:03:&#xa;                E2:F6:94:6B:57:7C:2B:D0:1E:F8:8C:CA:2F:5C:11:48:&#xa;                FD:D1:5C:AF:9F:B4:C1&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : B3:73:77:07:E1:84:50:F8:63:86:D6:05:A9:DC:11:09:&#xa;                4A:79:2D:B1:67:0C:0B:87:DC:F0:03:0E:79:36:A5:9A&#xa;    Timestamp : Dec  7 12:24:11.085 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:DA:E2:7F:CE:35:BE:A6:A3:0D:A1:D1:&#xa;                4D:4D:B4:27:EB:97:37:C6:BF:93:FC:7C:F4:4F:95:93:&#xa;                7A:E0:23:12:D5:02:20:04:0B:1B:4B:0E:DB:EC:B9:4A:&#xa;                81:99:97:E7:2B:B2:2E:C8:2D:D2:11:A8:EF:53:F3:D0:&#xa;                31:0C:0D:62:DD:D9:0C</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-12-07T00:00:00</elem>
+<elem key="notAfter">2023-01-03T23:59:59</elem>
+</table>
+<elem key="md5">7bc694244207b93e1149ae341f56dd6c</elem>
+<elem key="sha1">b677a5822d47d292c3f25b71714bc743c3a21ac4</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGfjCCBWagAwIBAgIQCDAuDxGPju5MXjNGg0Dj6jANBgkqhkiG9w0BAQsFADBe&#xa;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#xa;d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRUaGF3dGUgVExTIFJTQSBDQSBHMTAe&#xa;Fw0yMTEyMDcwMDAwMDBaFw0yMzAxMDMyMzU5NTlaMG8xCzAJBgNVBAYTAlJVMQ8w&#xa;DQYDVQQHEwZNb3Njb3cxMTAvBgNVBAoTKFB1c2hraW4gU3RhdGUgUnVzc2lhbiBM&#xa;YW5ndWFnZSBJbnN0aXR1dGUxHDAaBgNVBAMMEyoucHVzaGtpbi5pbnN0aXR1dGUw&#xa;ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChz01TkAiPVjJ5a5SEyKfV&#xa;POp56mcnu+T87es/BTTKXDAYpB8jONhxV0rt4FGg9pVuqFmS+HjxI4Lgsk6xne2A&#xa;m1A5+BcUXenRmzL0Qb7q1PQxqybrR7TLf9SUnLCtXX4UUlhN/xJ0a/u18AL2I6FD&#xa;59/Qy4vDeHohLism/UU/XJqAylGhbX7aeGPMHSPys4XRUQ6nO+tVhpQ7jX4CzjGO&#xa;3MXd274bdRx56JxCCR+j7bLofGkddhzuCxnDtz2s+YEStJfEpBszk17bTaIkJUI0&#xa;sanOT4p88GClveMkqqOvAhl73/fZx/jmYN5UdHu865nor8SzYeV4aMFo2t75ij7t&#xa;AgMBAAGjggMlMIIDITAfBgNVHSMEGDAWgBSljP4yzOsPLNQZxgi4ACSIXcPFtzAd&#xa;BgNVHQ4EFgQUj9k3vyQ5xgOzZtF1Sfx9noWK+LowMQYDVR0RBCowKIITKi5wdXNo&#xa;a2luLmluc3RpdHV0ZYIRcHVzaGtpbi5pbnN0aXR1dGUwDgYDVR0PAQH/BAQDAgWg&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA7BgNVHR8ENDAyMDCgLqAs&#xa;hipodHRwOi8vY2RwLnRoYXd0ZS5jb20vVGhhd3RlVExTUlNBQ0FHMS5jcmwwPgYD&#xa;VR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdp&#xa;Y2VydC5jb20vQ1BTMHAGCCsGAQUFBwEBBGQwYjAkBggrBgEFBQcwAYYYaHR0cDov&#xa;L3N0YXR1cy50aGF3dGUuY29tMDoGCCsGAQUFBzAChi5odHRwOi8vY2FjZXJ0cy50&#xa;aGF3dGUuY29tL1RoYXd0ZVRMU1JTQUNBRzEuY3J0MAwGA1UdEwEB/wQCMAAwggF+&#xa;BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2AOg+0No+9QY1MudXKLyJa8kD08vREWvs&#xa;62nhd31tBr1uAAABfZTZ8ngAAAQDAEcwRQIgI9KwMgq2xqChZFABPf+bY/Ew9n0I&#xa;i3Owv9vQY2O7V/8CIQD8rKya3c3tQwMJzaw5bwTs2muKSSpgvu1LznxjqqlZRgB2&#xa;ADXPGRu/sWxXvw+tTG1Cy7u2JyAmUeo/4SrvqAPDO9ZMAAABfZTZ8iYAAAQDAEcw&#xa;RQIgLw3QZfnHSfTxgwy4XqwUyGlxMC8a+muBqTqNNJuRKwYCIQCQHRFnxiV7ogPi&#xa;9pRrV3wr0B74jMovXBFI/dFcr5+0wQB2ALNzdwfhhFD4Y4bWBancEQlKeS2xZwwL&#xa;h9zwAw55NqWaAAABfZTZ8k0AAAQDAEcwRQIhANrif841vqajDaHRTU20J+uXN8a/&#xa;k/x89E+Vk3rgIxLVAiAECxtLDtvsuUqBmZfnK7IuyC3SEajvU/PQMQwNYt3ZDDAN&#xa;BgkqhkiG9w0BAQsFAAOCAQEAu4EyO+Ooy89z/cyDUbrMGBzX46YVX9zKv9j6tFLe&#xa;lGrLCX77BNXS/RfRipHsDXpek512g18PFnH+V3bjdreB0+ik5g+IhFR2LeAnGKiC&#xa;SmHmFXjf8LHLzPDE5SGmqihuC0ypnmGHoVq4odazGrplLDdYbedAlFxB4hRENDrz&#xa;Effouf9UneVMNBy+ksz2zOFcu2U4HtMSX7UCvBsLw+MXnV2a5aPa2JN14EDdNGIi&#xa;hzoERu/MJxQAlZy6pCMLX+xBl+tdNBAdrWnXCJ2wfOkfY43B011i/OyJPaFahI7r&#xa;gbpKnLy+aW8pqaTluxMHlBn8pDQtsDzO75R0+eBUW6doQw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="imap-ntlm-info" output="&#xa;  Target_Name: PUSHKIN&#xa;  NetBIOS_Domain_Name: PUSHKIN&#xa;  NetBIOS_Computer_Name: MAIL22&#xa;  DNS_Domain_Name: pushkin.institute&#xa;  DNS_Computer_Name: mail22.pushkin.institute&#xa;  DNS_Tree_Name: pushkin.institute&#xa;  Product_Version: 10.0.17763"><elem key="Target_Name">PUSHKIN</elem>
+<elem key="NetBIOS_Domain_Name">PUSHKIN</elem>
+<elem key="NetBIOS_Computer_Name">MAIL22</elem>
+<elem key="DNS_Domain_Name">pushkin.institute</elem>
+<elem key="DNS_Computer_Name">mail22.pushkin.institute</elem>
+<elem key="DNS_Tree_Name">pushkin.institute</elem>
+<elem key="Product_Version">10.0.17763</elem>
+</script><script id="imap-capabilities" output="completed IMAP4rev1 UNSELECT LITERAL+A0001 NAMESPACE UIDPLUS SASL-IR ID CAPABILITY OK IMAP4 STARTTLS IDLE LOGINDISABLED CHILDREN MOVE"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" tunnel="ssl" method="probed" conf="10"/><script id="http-server-header" output="Microsoft-IIS/10.0"><elem>Microsoft-IIS/10.0</elem>
+</script><script id="ssl-cert" output="Subject: commonName=*.pushkin.institute/organizationName=Pushkin State Russian Language Institute/countryName=RU&#xa;Subject Alternative Name: DNS:*.pushkin.institute, DNS:pushkin.institute&#xa;Not valid before: 2021-12-07T00:00:00&#xa;Not valid after:  2023-01-03T23:59:59"><table key="subject">
+<elem key="commonName">*.pushkin.institute</elem>
+<elem key="countryName">RU</elem>
+<elem key="localityName">Moscow</elem>
+<elem key="organizationName">Pushkin State Russian Language Institute</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">Thawte TLS RSA CA G1</elem>
+<elem key="countryName">US</elem>
+<elem key="organizationName">DigiCert Inc</elem>
+<elem key="organizationalUnitName">www.digicert.com</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A1CF4D5390088F5632796B9484C8A7D53CEA79EA6727BBE4FCEDEB3F0534CA5C3018A41F2338D871574AEDE051A0F6956EA85992F878F12382E0B24EB19DED809B5039F817145DE9D19B32F441BEEAD4F431AB26EB47B4CB7FD4949CB0AD5D7E1452584DFF12746BFBB5F002F623A143E7DFD0CB8BC3787A212E2B26FD453F5C9A80CA51A16D7EDA7863CC1D23F2B385D1510EA73BEB5586943B8D7E02CE318EDCC5DDDBBE1B751C79E89C42091FA3EDB2E87C691D761CEE0B19C3B73DACF98112B497C4A41B33935EDB4DA224254234B1A9CE4F8A7CF060A5BDE324AAA3AF02197BDFF7D9C7F8E660DE54747BBCEB99E8AFC4B361E57868C168DADEF98A3EED</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:A5:8C:FE:32:CC:EB:0F:2C:D4:19:C6:08:B8:00:24:88:5D:C3:C5:B7&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">8F:D9:37:BF:24:39:C6:03:B3:66:D1:75:49:FC:7D:9E:85:8A:F8:BA</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">DNS:*.pushkin.institute, DNS:pushkin.institute</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">X509v3 Extended Key Usage</elem>
+<elem key="value">TLS Web Server Authentication, TLS Web Client Authentication</elem>
+</table>
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:http://cdp.thawte.com/ThawteTLSRSACAG1.crl&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Certificate Policies</elem>
+<elem key="value">Policy: 2.23.140.1.2.2&#xa;  CPS: http://www.digicert.com/CPS&#xa;</elem>
+</table>
+<table>
+<elem key="name">Authority Information Access</elem>
+<elem key="value">OCSP - URI:http://status.thawte.com&#xa;CA Issuers - URI:http://cacerts.thawte.com/ThawteTLSRSACAG1.crt&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+<elem key="critical">true</elem>
+</table>
+<table>
+<elem key="name">CT Precertificate SCTs</elem>
+<elem key="value">Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : E8:3E:D0:DA:3E:F5:06:35:32:E7:57:28:BC:89:6B:C9:&#xa;                03:D3:CB:D1:11:6B:EC:EB:69:E1:77:7D:6D:06:BD:6E&#xa;    Timestamp : Dec  7 12:24:11.128 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:23:D2:B0:32:0A:B6:C6:A0:A1:64:50:01:&#xa;                3D:FF:9B:63:F1:30:F6:7D:08:8B:73:B0:BF:DB:D0:63:&#xa;                63:BB:57:FF:02:21:00:FC:AC:AC:9A:DD:CD:ED:43:03:&#xa;                09:CD:AC:39:6F:04:EC:DA:6B:8A:49:2A:60:BE:ED:4B:&#xa;                CE:7C:63:AA:A9:59:46&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : 35:CF:19:1B:BF:B1:6C:57:BF:0F:AD:4C:6D:42:CB:BB:&#xa;                B6:27:20:26:51:EA:3F:E1:2A:EF:A8:03:C3:3B:D6:4C&#xa;    Timestamp : Dec  7 12:24:11.046 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:20:2F:0D:D0:65:F9:C7:49:F4:F1:83:0C:B8:&#xa;                5E:AC:14:C8:69:71:30:2F:1A:FA:6B:81:A9:3A:8D:34:&#xa;                9B:91:2B:06:02:21:00:90:1D:11:67:C6:25:7B:A2:03:&#xa;                E2:F6:94:6B:57:7C:2B:D0:1E:F8:8C:CA:2F:5C:11:48:&#xa;                FD:D1:5C:AF:9F:B4:C1&#xa;Signed Certificate Timestamp:&#xa;    Version   : v1 (0x0)&#xa;    Log ID    : B3:73:77:07:E1:84:50:F8:63:86:D6:05:A9:DC:11:09:&#xa;                4A:79:2D:B1:67:0C:0B:87:DC:F0:03:0E:79:36:A5:9A&#xa;    Timestamp : Dec  7 12:24:11.085 2021 GMT&#xa;    Extensions: none&#xa;    Signature : ecdsa-with-SHA256&#xa;                30:45:02:21:00:DA:E2:7F:CE:35:BE:A6:A3:0D:A1:D1:&#xa;                4D:4D:B4:27:EB:97:37:C6:BF:93:FC:7C:F4:4F:95:93:&#xa;                7A:E0:23:12:D5:02:20:04:0B:1B:4B:0E:DB:EC:B9:4A:&#xa;                81:99:97:E7:2B:B2:2E:C8:2D:D2:11:A8:EF:53:F3:D0:&#xa;                31:0C:0D:62:DD:D9:0C</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2021-12-07T00:00:00</elem>
+<elem key="notAfter">2023-01-03T23:59:59</elem>
+</table>
+<elem key="md5">7bc694244207b93e1149ae341f56dd6c</elem>
+<elem key="sha1">b677a5822d47d292c3f25b71714bc743c3a21ac4</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIGfjCCBWagAwIBAgIQCDAuDxGPju5MXjNGg0Dj6jANBgkqhkiG9w0BAQsFADBe&#xa;MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3&#xa;d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRUaGF3dGUgVExTIFJTQSBDQSBHMTAe&#xa;Fw0yMTEyMDcwMDAwMDBaFw0yMzAxMDMyMzU5NTlaMG8xCzAJBgNVBAYTAlJVMQ8w&#xa;DQYDVQQHEwZNb3Njb3cxMTAvBgNVBAoTKFB1c2hraW4gU3RhdGUgUnVzc2lhbiBM&#xa;YW5ndWFnZSBJbnN0aXR1dGUxHDAaBgNVBAMMEyoucHVzaGtpbi5pbnN0aXR1dGUw&#xa;ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChz01TkAiPVjJ5a5SEyKfV&#xa;POp56mcnu+T87es/BTTKXDAYpB8jONhxV0rt4FGg9pVuqFmS+HjxI4Lgsk6xne2A&#xa;m1A5+BcUXenRmzL0Qb7q1PQxqybrR7TLf9SUnLCtXX4UUlhN/xJ0a/u18AL2I6FD&#xa;59/Qy4vDeHohLism/UU/XJqAylGhbX7aeGPMHSPys4XRUQ6nO+tVhpQ7jX4CzjGO&#xa;3MXd274bdRx56JxCCR+j7bLofGkddhzuCxnDtz2s+YEStJfEpBszk17bTaIkJUI0&#xa;sanOT4p88GClveMkqqOvAhl73/fZx/jmYN5UdHu865nor8SzYeV4aMFo2t75ij7t&#xa;AgMBAAGjggMlMIIDITAfBgNVHSMEGDAWgBSljP4yzOsPLNQZxgi4ACSIXcPFtzAd&#xa;BgNVHQ4EFgQUj9k3vyQ5xgOzZtF1Sfx9noWK+LowMQYDVR0RBCowKIITKi5wdXNo&#xa;a2luLmluc3RpdHV0ZYIRcHVzaGtpbi5pbnN0aXR1dGUwDgYDVR0PAQH/BAQDAgWg&#xa;MB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjA7BgNVHR8ENDAyMDCgLqAs&#xa;hipodHRwOi8vY2RwLnRoYXd0ZS5jb20vVGhhd3RlVExTUlNBQ0FHMS5jcmwwPgYD&#xa;VR0gBDcwNTAzBgZngQwBAgIwKTAnBggrBgEFBQcCARYbaHR0cDovL3d3dy5kaWdp&#xa;Y2VydC5jb20vQ1BTMHAGCCsGAQUFBwEBBGQwYjAkBggrBgEFBQcwAYYYaHR0cDov&#xa;L3N0YXR1cy50aGF3dGUuY29tMDoGCCsGAQUFBzAChi5odHRwOi8vY2FjZXJ0cy50&#xa;aGF3dGUuY29tL1RoYXd0ZVRMU1JTQUNBRzEuY3J0MAwGA1UdEwEB/wQCMAAwggF+&#xa;BgorBgEEAdZ5AgQCBIIBbgSCAWoBaAB2AOg+0No+9QY1MudXKLyJa8kD08vREWvs&#xa;62nhd31tBr1uAAABfZTZ8ngAAAQDAEcwRQIgI9KwMgq2xqChZFABPf+bY/Ew9n0I&#xa;i3Owv9vQY2O7V/8CIQD8rKya3c3tQwMJzaw5bwTs2muKSSpgvu1LznxjqqlZRgB2&#xa;ADXPGRu/sWxXvw+tTG1Cy7u2JyAmUeo/4SrvqAPDO9ZMAAABfZTZ8iYAAAQDAEcw&#xa;RQIgLw3QZfnHSfTxgwy4XqwUyGlxMC8a+muBqTqNNJuRKwYCIQCQHRFnxiV7ogPi&#xa;9pRrV3wr0B74jMovXBFI/dFcr5+0wQB2ALNzdwfhhFD4Y4bWBancEQlKeS2xZwwL&#xa;h9zwAw55NqWaAAABfZTZ8k0AAAQDAEcwRQIhANrif841vqajDaHRTU20J+uXN8a/&#xa;k/x89E+Vk3rgIxLVAiAECxtLDtvsuUqBmZfnK7IuyC3SEajvU/PQMQwNYt3ZDDAN&#xa;BgkqhkiG9w0BAQsFAAOCAQEAu4EyO+Ooy89z/cyDUbrMGBzX46YVX9zKv9j6tFLe&#xa;lGrLCX77BNXS/RfRipHsDXpek512g18PFnH+V3bjdreB0+ik5g+IhFR2LeAnGKiC&#xa;SmHmFXjf8LHLzPDE5SGmqihuC0ypnmGHoVq4odazGrplLDdYbedAlFxB4hRENDrz&#xa;Effouf9UneVMNBy+ksz2zOFcu2U4HtMSX7UCvBsLw+MXnV2a5aPa2JN14EDdNGIi&#xa;hzoERu/MJxQAlZy6pCMLX+xBl+tdNBAdrWnXCJ2wfOkfY43B011i/OyJPaFahI7r&#xa;gbpKnLy+aW8pqaTluxMHlBn8pDQtsDzO75R0+eBUW6doQw==&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-title" output="Outlook&#xa;Requested resource was https://86.110.118.203/owa/auth/logon.aspx?url=https%3a%2f%2f86.110.118.203%2fowa%2f&amp;reason=0"><elem key="title">Outlook</elem>
+<elem key="redirect_url">https://86.110.118.203/owa/auth/logon.aspx?url=https%3a%2f%2f86.110.118.203%2fowa%2f&amp;reason=0</elem>
+</script></port>
+</ports>
+<hostscript><script id="clock-skew" output="-1s"><elem key="median">-1</elem>
+<elem key="mean">-1</elem>
+<elem key="stddev">0</elem>
+<elem key="count">1</elem>
+</script></hostscript><times srtt="97917" rttvar="5660" to="120557"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="86.110.118.251" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="23"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Check Point NGX Firewall-1" method="probed" conf="10"><cpe>cpe:/a:checkpoint:firewall-1</cpe></service></port>
+<port protocol="tcp" portid="110"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="https" product="Check Point SVN foundation" servicefp="SF-Port443-TCP:V=7.92%T=SSL%I=7%D=3/8%Time=622761FF%P=x86_64-pc-linux-gnu%r(GetRequest,21B,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20Tue,\x2008\x20Mar\x202022\x2014:02:51\x20GMT\r\nServer:\x20Check\x20Point\x20SVN\x20foundation\r\nContent-Type:\x20text/html\r\nX-UA-Compatible:\x20IE=EmulateIE7\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nStrict-Transport-Security:\x20max-age=31536000;\x20includeSubDomains\r\nLast-Modified:\x20Mon,\x2027\x20Jan\x202020\x2016:26:24\x20GMT\r\nContent-Length:\x20204\r\n\r\n&lt;!DOCTYPE\x20HTML\x20PUBLIC\x20\&quot;-//W3C//DTD\x20HTML\x204\.0\x20Transitional//EN\&quot;&gt;\n&lt;HTML&gt;\n&lt;HEAD&gt;\n&lt;TITLE&gt;\x20404\x20File\x20Not\x20Found\x20&lt;/TITLE&gt;\n&lt;/HEAD&gt;\n\n&lt;BODY&gt;\n\nThe\x20URL\x20you\x20requested\x20could\x20not\x20be\x20found\x20on\x20this\x20server\.\n\n&lt;/BODY&gt;\n&lt;/HTML&gt;\n&quot;)%r(HTTPOptions,21B,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20Tue,\x2008\x20Mar\x202022\x2014:02:51\x20GMT\r\nServer:\x20Check\x20Point\x20SVN\x20foundation\r\nContent-Type:\x20text/html\r\nX-UA-Compatible:\x20IE=EmulateIE7\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nStrict-Transport-Security:\x20max-age=31536000;\x20includeSubDomains\r\nLast-Modified:\x20Mon,\x2027\x20Jan\x202020\x2016:26:24\x20GMT\r\nContent-Length:\x20204\r\n\r\n&lt;!DOCTYPE\x20HTML\x20PUBLIC\x20\&quot;-//W3C//DTD\x20HTML\x204\.0\x20Transitional//EN\&quot;&gt;\n&lt;HTML&gt;\n&lt;HEAD&gt;\n&lt;TITLE&gt;\x20404\x20File\x20Not\x20Found\x20&lt;/TITLE&gt;\n&lt;/HEAD&gt;\n\n&lt;BODY&gt;\n\nThe\x20URL\x20you\x20requested\x20could\x20not\x20be\x20found\x20on\x20this\x20server\.\n\n&lt;/BODY&gt;\n&lt;/HTML&gt;\n&quot;)%r(FourOhFourRequest,21B,&quot;HTTP/1\.1\x20404\x20Not\x20Found\r\nDate:\x20Tue,\x2008\x20Mar\x202022\x2014:02:51\x20GMT\r\nServer:\x20Check\x20Point\x20SVN\x20foundation\r\nContent-Type:\x20text/html\r\nX-UA-Compatible:\x20IE=EmulateIE7\r\nConnection:\x20close\r\nX-Frame-Options:\x20SAMEORIGIN\r\nStrict-Transport-Security:\x20max-age=31536000;\x20includeSubDomains\r\nLast-Modified:\x20Mon,\x2027\x20Jan\x202020\x2016:26:24\x20GMT\r\nContent-Length:\x20204\r\n\r\n&lt;!DOCTYPE\x20HTML\x20PUBLIC\x20\&quot;-//W3C//DTD\x20HTML\x204\.0\x20Transitional//EN\&quot;&gt;\n&lt;HTML&gt;\n&lt;HEAD&gt;\n&lt;TITLE&gt;\x20404\x20File\x20Not\x20Found\x20&lt;/TITLE&gt;\n&lt;/HEAD&gt;\n\n&lt;BODY&gt;\n\nThe\x20URL\x20you\x20requested\x20could\x20not\x20be\x20found\x20on\x20this\x20server\.\n\n&lt;/BODY&gt;\n&lt;/HTML&gt;\n&quot;);" tunnel="ssl" method="probed" conf="10"/><script id="ssl-date" output="2022-03-08T14:03:51+00:00; +12s from scanner time."><elem key="date">2022-03-08T14:03:51+00:00</elem>
+<elem key="delta">12.0</elem>
+</script><script id="http-title" output=" 404 File Not Found "><elem key="title"> 404 File Not Found </elem>
+</script><script id="ssl-cert" output="Subject: commonName=Pushkin-HA VPN Certificate/organizationName=CheckPointSMS.pushkin.institute.sjzohq&#xa;Subject Alternative Name: IP Address:10.100.24.200&#xa;Not valid before: 2022-02-20T12:27:56&#xa;Not valid after:  2027-02-20T12:27:56"><table key="subject">
+<elem key="commonName">Pushkin-HA VPN Certificate</elem>
+<elem key="organizationName">CheckPointSMS.pushkin.institute.sjzohq</elem>
+</table>
+<table key="issuer">
+<elem key="organizationName">CheckPointSMS.pushkin.institute.sjzohq</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">2048</elem>
+<elem key="modulus">A2E926150898665FBC47265F80322470EA2A73CF904E10FA9107F22073372470352A024B6858E760DCF25E87852B3A10C7EC5E51298EF4F6AF6F360D8D49549091AA2EC1A8C9CA3E0ECC803AF86F92C7C921C80B99530D383684A46D227925D32B18593FA27087E18E8B2BDD5A1BFE38E15C9B9649FE40078CFC9ACD9F223589CAFC07FAAD396464E69C9282BFE7BF035DD3C5BB3A85863FED3BCC9DDB1C61B626B3DD3CB6CAE348787423E13D76CDE5FC0D494973C72DC26FE210568C75F617B3E62812EA641B2AD5E16C6B834FD96D8F6DB8F2C1A3BBA9EA650AFED4A2A37DAE44C89EF2FF786CCCD59C15DE5D4FF96F84F4C12F4140E104A9706CD0140907</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 CRL Distribution Points</elem>
+<elem key="value">&#xa;Full Name:&#xa;  URI:http://CheckPointSMS:18264/ICA_CRL1.crl&#xa;  DirName:O = CheckPointSMS.pushkin.institute.sjzohq, CN = ICA_CRL1&#xa;</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:FALSE</elem>
+</table>
+<table>
+<elem key="name">X509v3 Subject Alternative Name</elem>
+<elem key="value">IP Address:10.100.24.200</elem>
+</table>
+<table>
+<elem key="name">X509v3 Key Usage</elem>
+<elem key="value">Digital Signature, Key Encipherment</elem>
+</table>
+</table>
+<elem key="sig_algo">sha256WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2022-02-20T12:27:56</elem>
+<elem key="notAfter">2027-02-20T12:27:56</elem>
+</table>
+<elem key="md5">caec04e7d9289c8cda5d3433806cf992</elem>
+<elem key="sha1">fb35be01caa2e3f8ba42ff25f87b4a6265fc1b21</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIDszCCApugAwIBAgICPLEwDQYJKoZIhvcNAQELBQAwMTEvMC0GA1UEChMmQ2hl&#xa;Y2tQb2ludFNNUy5wdXNoa2luLmluc3RpdHV0ZS5zanpvaHEwHhcNMjIwMjIwMTIy&#xa;NzU2WhcNMjcwMjIwMTIyNzU2WjBWMS8wLQYDVQQKEyZDaGVja1BvaW50U01TLnB1&#xa;c2hraW4uaW5zdGl0dXRlLnNqem9ocTEjMCEGA1UEAxMaUHVzaGtpbi1IQSBWUE4g&#xa;Q2VydGlmaWNhdGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCi6SYV&#xa;CJhmX7xHJl+AMiRw6ipzz5BOEPqRB/IgczckcDUqAktoWOdg3PJeh4UrOhDH7F5R&#xa;KY709q9vNg2NSVSQkaouwajJyj4OzIA6+G+Sx8khyAuZUw04NoSkbSJ5JdMrGFk/&#xa;onCH4Y6LK91aG/444Vyblkn+QAeM/JrNnyI1icr8B/qtOWRk5pySgr/nvwNd08W7&#xa;OoWGP+07zJ3bHGG2JrPdPLbK40h4dCPhPXbN5fwNSUlzxy3Cb+IQVox19hez5igS&#xa;6mQbKtXhbGuDT9ltj2248sGju6nqZQr+1KKjfa5EyJ7y/3hszNWcFd5dT/lvhPTB&#xa;L0FA4QSpcGzQFAkHAgMBAAGjga8wgawwgYAGA1UdHwR5MHcwdaBzoHGGJ2h0dHA6&#xa;Ly9DaGVja1BvaW50U01TOjE4MjY0L0lDQV9DUkwxLmNybKRGMEQxLzAtBgNVBAoT&#xa;JkNoZWNrUG9pbnRTTVMucHVzaGtpbi5pbnN0aXR1dGUuc2p6b2hxMREwDwYDVQQD&#xa;DAhJQ0FfQ1JMMTAJBgNVHRMEAjAAMA8GA1UdEQQIMAaHBApkGMgwCwYDVR0PBAQD&#xa;AgWgMA0GCSqGSIb3DQEBCwUAA4IBAQCR7X+cZEGlIs2irYJvm6Fg6Cj4bnEwgmbx&#xa;ir6ZzfCvcrh84kA8fJWWQs4G6YPYEENaCMcCh4qtrjAaboXaTfP/Y+yi85lMg+N3&#xa;Kk/u4qpX1keJJvbmLCYLH5POR4TzQ1aVVd4LhRZz+2Sh06x7kXCd1qsz+xE2aViS&#xa;n2BRJr2vqKHmdpp4kCDKTV8+jRr7VEeB06tMgH+CeKKxNsNOfeiGbGxbSYjMFLIl&#xa;fbuZGF4LwpXukEQJiAYPu0yuZfNpWTI69JZO/zZsXXoYbRujnbPcCCDBqWEmQuHh&#xa;eK65HUy04nmRj0j94FS63Zff7pMufe461r6LpEIpBPLPN1SNJ2iS&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-server-header" output="Check Point SVN foundation"><elem>Check Point SVN foundation</elem>
+</script><script id="fingerprint-strings" output="&#xa;  FourOhFourRequest, GetRequest, HTTPOptions: &#xa;    HTTP/1.1 404 Not Found&#xa;    Date: Tue, 08 Mar 2022 14:02:51 GMT&#xa;    Server: Check Point SVN foundation&#xa;    Content-Type: text/html&#xa;    X-UA-Compatible: IE=EmulateIE7&#xa;    Connection: close&#xa;    X-Frame-Options: SAMEORIGIN&#xa;    Strict-Transport-Security: max-age=31536000; includeSubDomains&#xa;    Last-Modified: Mon, 27 Jan 2020 16:26:24 GMT&#xa;    Content-Length: 204&#xa;    &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;&#xa;    &lt;HTML&gt;&#xa;    &lt;HEAD&gt;&#xa;    &lt;TITLE&gt; 404 File Not Found &lt;/TITLE&gt;&#xa;    &lt;/HEAD&gt;&#xa;    &lt;BODY&gt;&#xa;    requested could not be found on this server.&#xa;    &lt;/BODY&gt;&#xa;    &lt;/HTML&gt;"><elem key="FourOhFourRequest, GetRequest, HTTPOptions">&#xa;    HTTP/1.1 404 Not Found&#xa;    Date: Tue, 08 Mar 2022 14:02:51 GMT&#xa;    Server: Check Point SVN foundation&#xa;    Content-Type: text/html&#xa;    X-UA-Compatible: IE=EmulateIE7&#xa;    Connection: close&#xa;    X-Frame-Options: SAMEORIGIN&#xa;    Strict-Transport-Security: max-age=31536000; includeSubDomains&#xa;    Last-Modified: Mon, 27 Jan 2020 16:26:24 GMT&#xa;    Content-Length: 204&#xa;    &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;&#xa;    &lt;HTML&gt;&#xa;    &lt;HEAD&gt;&#xa;    &lt;TITLE&gt; 404 File Not Found &lt;/TITLE&gt;&#xa;    &lt;/HEAD&gt;&#xa;    &lt;BODY&gt;&#xa;    requested could not be found on this server.&#xa;    &lt;/BODY&gt;&#xa;    &lt;/HTML&gt;</elem>
+</script></port>
+</ports>
+<hostscript><script id="clock-skew" output="11s"><elem key="median">11</elem>
+<elem key="mean">11</elem>
+<elem key="stddev">0</elem>
+<elem key="count">1</elem>
+</script></hostscript><times srtt="98533" rttvar="56104" to="300000"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="86.110.118.253" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="tcpwrapped" method="probed" conf="8"/><script id="ssh-hostkey" output="ERROR: Script execution failed (use -d to debug)"/></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="97467" rttvar="4811" to="116711"/>
+</host>
+<host starttime="1646748144" endtime="1646748221"><status state="up" reason="conn-refused" reason_ttl="0"/>
+<address addr="86.110.118.254" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="20"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp-data" method="table" conf="3"/></port>
+<port protocol="tcp" portid="21"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="ftp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="tcpwrapped" method="probed" conf="8"/><script id="ssh-hostkey" output="ERROR: Script execution failed (use -d to debug)"/></port>
+<port protocol="tcp" portid="23"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="telnet" method="table" conf="3"/></port>
+<port protocol="tcp" portid="25"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="smtp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="110"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="pop3" method="table" conf="3"/></port>
+<port protocol="tcp" portid="119"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="nntp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="143"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="imap" method="table" conf="3"/></port>
+<port protocol="tcp" portid="161"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="snmp" method="table" conf="3"/></port>
+<port protocol="tcp" portid="194"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="irc" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+</ports>
+<times srtt="96308" rttvar="4802" to="115516"/>
+</host>
+<runstats><finished time="1646748221" timestr="Tue Mar  8 09:03:41 2022" summary="Nmap done at Tue Mar  8 09:03:41 2022; 1536 IP addresses (10 hosts up) scanned in 85.09 seconds" elapsed="85.09" exit="success"/><hosts up="10" down="1526" total="1536"/>
+</runstats>
+</nmaprun>

@@ -269,10 +269,12 @@ function debounce(func, timeout = 300){
 
 $searchTerm = $('#search-term')
 $searchResults = $('#search-results')
+$searchResultsNum = $('#search-results-num')
 
 function renderSearchResults(rows) {
   console.log(rows)
   const $newInner = document.createElement('div')
+  $searchResultsNum.innerText = rows.length + " results"
 
   rows.forEach((row) => {
     const $row = document.createElement('div')
@@ -283,6 +285,11 @@ function renderSearchResults(rows) {
 
     const $hostname = document.createElement('div')
     $hostname.innerText = row.hostname
+    $hostname.title = row.hostname
+    $hostname.style.maxWidth = '175px'
+    $hostname.style.maxHeight = '19px'
+    $hostname.style.overflow = 'hidden'
+    $hostname.style.textOverflow = 'ellipsis'
 
     const $port = document.createElement('div')
     $port.innerText = ":" + row.port
@@ -298,11 +305,16 @@ function renderSearchResults(rows) {
     $newInner.appendChild($row)
   })
 
+  console.log('Replacing')
   $searchResults.innerHTML = $newInner.innerHTML
 }
 
 function performSearch(term) {
   console.log('searching for', term)
+  if (term === "") {
+    renderSearchResults([])
+    return
+  }
   const query = encodeURIComponent(term)
   const url = `/api/search/query/${query}`
   fetch(url, {

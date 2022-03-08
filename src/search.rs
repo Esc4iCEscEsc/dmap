@@ -159,7 +159,7 @@ pub async fn query_index(
     );
 
     let query = query_parser.parse_query(&query).unwrap();
-    let top_docs = searcher.search(&query, &TopDocs::with_limit(100)).unwrap();
+    let top_docs = searcher.search(&query, &TopDocs::with_limit(1000)).unwrap();
 
     let mut docs_to_return = vec![];
 
