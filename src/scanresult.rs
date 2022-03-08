@@ -11,64 +11,64 @@ use std::io;
 use std::fs;
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
-struct Address {
-    addr: String,
+pub struct Address {
+    pub addr: String,
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
-struct Hostname {
-    name: String,
-    r#type: String,
+pub struct Hostname {
+    pub name: String,
+    pub r#type: String,
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
-struct Service {
-    name: String,
-    method: String,
-    version: String,
-    product: String,
-    extrainfo: String,
+pub struct Service {
+    pub name: String,
+    pub method: String,
+    pub version: String,
+    pub product: String,
+    pub extrainfo: String,
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
-struct Port {
-    protocol: String,
-    port: u16,
-    state: String,
-    state_reason: String,
+pub struct Port {
+    pub protocol: String,
+    pub port: u16,
+    pub state: String,
+    pub state_reason: String,
     // TODO skipping service for now
     // service: Service,
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
-struct Host {
-    status: String,
-    status_reason: String,
-    addresses: Vec<Address>,
-    hostnames: Vec<Hostname>,
-    ports: Vec<Port>,
+pub struct Host {
+    pub status: String,
+    pub status_reason: String,
+    pub addresses: Vec<Address>,
+    pub hostnames: Vec<Hostname>,
+    pub ports: Vec<Port>,
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
-struct ScanInfo {
-    r#type: String,
-    protocol: String,
-    numservices: u8,
-    services: String
+pub struct ScanInfo {
+    pub r#type: String,
+    pub protocol: String,
+    pub numservices: u8,
+    pub services: String
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
 pub struct ScanResult {
-    scanner: String,
-    args: String,
-    started: u32,
-    finished: u32,
-    summary: String,
-    exit: String,
-    nmap_version: String,
-    xml_version: String,
-    scaninfo: ScanInfo,
-    hosts: Vec<Host>
+    pub scanner: String,
+    pub args: String,
+    pub started: u32,
+    pub finished: u32,
+    pub summary: String,
+    pub exit: String,
+    pub nmap_version: String,
+    pub xml_version: String,
+    pub scaninfo: ScanInfo,
+    pub hosts: Vec<Host>
 }
 
 pub fn create_raw_data_dir() {
@@ -93,6 +93,14 @@ pub fn create_scans_data_dir() {
     .iter()
     .collect();
   mkdirp(p.clone()).expect("Impossible to create storage path");
+}
+
+pub fn scan_data_dir_pathbuf() -> PathBuf {
+  let dir = data_dir().unwrap();
+  let p: PathBuf = [dir, PathBuf::from("joint-nmap"), PathBuf::from("scans")]
+    .iter()
+    .collect();
+  p
 }
 
 pub fn get_scans_data_dir(id: String) -> String {

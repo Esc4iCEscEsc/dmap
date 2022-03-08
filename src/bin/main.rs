@@ -13,11 +13,25 @@ use actix_web_httpauth::extractors::AuthenticationError;
 use actix_web_httpauth::middleware::HttpAuthentication;
 use std::env;
 
-// use dmap::search;
+use dmap::search;
 use dmap::scanresult;
 
 use std::fs::File;
 use std::io::Write;
+
+#[post("/search/rebuild-index")]
+async fn post_rebuild_index() -> Result<HttpResponse, Error> {
+    search::create_index().await.unwrap();
+    Ok(HttpResponse::Ok().into())
+}
+
+
+#[get("/search/query/{term}")]
+async fn get_query_index(search_term: web::Path<String>) -> Result<impl Responder> {
+  let term = search_term.to_string();
+  let results = search::query_index(term).await.unwrap();
+  Ok(web::Json(results))
+}
 
 #[post("/submit")]
 async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
@@ -174,6 +188,7 @@ async fn bearer_auth_validator(req: ServiceRequest, credentials: BearerAuth) -> 
 async fn main() -> std::io::Result<()> {
     scanresult::create_raw_data_dir();
     scanresult::create_scans_data_dir();
+    search::create_search_data_dir();
 
     HttpServer::new(|| {
         let auth = HttpAuthentication::bearer(bearer_auth_validator);
@@ -184,6 +199,8 @@ async fn main() -> std::io::Result<()> {
                     .service(post_submit)
                     .service(get_scan)
                     .service(get_scans)
+                    .service(post_rebuild_index)
+                    .service(get_query_index)
             )
             .service(get_index)
             .service(get_app_js)
