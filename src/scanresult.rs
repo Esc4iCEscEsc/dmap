@@ -165,7 +165,7 @@ pub fn load_all_scans() -> HashMap<String, ScanResult> {
 }
 
 
-pub fn parse_xml_bytes(xml_info: actix_web::web::Bytes) -> BoxResult<rust_nmap::nmap_run> {
+pub fn parse_xml_bytes(xml_info: Vec<u8>) -> BoxResult<rust_nmap::nmap_run> {
     let mut deserializer = serde_xml_rs::Deserializer::new_from_reader(&*xml_info)
         .non_contiguous_seq_elements(true);
     // let nmap_run_info = match serde_xml_rs::from_reader(&*xml_info) {

@@ -6,7 +6,6 @@ use tantivy::schema::Schema;
 use dirs::data_dir;
 use mkdirp::mkdirp;
 use std::io;
-use std::collections::HashMap;
 use serde::Serialize;
 use std::fs;
 

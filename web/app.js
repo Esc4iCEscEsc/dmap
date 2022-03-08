@@ -177,11 +177,15 @@ function onHashChange() {
     $searcher.style.display = 'flex'
 
     $$('#menu a.active').forEach(el => el.classList = '')
-
     $('#menu a[href="#searcher"]').classList = 'active'
     
     return
   }
+
+  $viewer.style.display = 'flex'
+  $searcher.style.display = 'none'
+  $$('#menu a.active').forEach(el => el.classList = '')
+  $('#menu a[href="#viewer"]').classList = 'active'
 
   if (window.location.hash !== currentHash) {
     console.log('Hash changed')
@@ -271,38 +275,50 @@ $searchTerm = $('#search-term')
 $searchResults = $('#search-results')
 $searchResultsNum = $('#search-results-num')
 
+function createRow($parent_el, row) {
+  const $row = document.createElement('div')
+  $row.classList = 'search-result-row'
+
+  const $ip = document.createElement('div')
+  $ip.innerText = row.ip
+
+  const $hostname = document.createElement('div')
+  $hostname.innerText = row.hostname
+  $hostname.title = row.hostname
+  $hostname.style.maxWidth = '175px'
+  $hostname.style.maxHeight = '19px'
+  $hostname.style.overflow = 'hidden'
+  $hostname.style.textOverflow = 'ellipsis'
+  $hostname.style.wordBreak = 'break-all'
+
+  const $port = document.createElement('div')
+  $port.innerText = ":" + row.port
+
+  const $state = document.createElement('div')
+  $state.innerText = row.state
+
+  $row.appendChild($ip)
+  $row.appendChild($hostname)
+  $row.appendChild($port)
+  $row.appendChild($state)
+
+  $parent_el.appendChild($row)
+}
+
 function renderSearchResults(rows) {
   console.log(rows)
   const $newInner = document.createElement('div')
   $searchResultsNum.innerText = rows.length + " results"
 
+  createRow($newInner, {
+    ip: "ip",
+    hostname: "hostname",
+    port: "port",
+    state: "state"
+  })
+
   rows.forEach((row) => {
-    const $row = document.createElement('div')
-    $row.classList = 'search-result-row'
-
-    const $ip = document.createElement('div')
-    $ip.innerText = row.ip
-
-    const $hostname = document.createElement('div')
-    $hostname.innerText = row.hostname
-    $hostname.title = row.hostname
-    $hostname.style.maxWidth = '175px'
-    $hostname.style.maxHeight = '19px'
-    $hostname.style.overflow = 'hidden'
-    $hostname.style.textOverflow = 'ellipsis'
-
-    const $port = document.createElement('div')
-    $port.innerText = ":" + row.port
-
-    const $state = document.createElement('div')
-    $state.innerText = row.state
-
-    $row.appendChild($ip)
-    $row.appendChild($hostname)
-    $row.appendChild($port)
-    $row.appendChild($state)
-
-    $newInner.appendChild($row)
+    createRow($newInner, row)
   })
 
   console.log('Replacing')
@@ -329,6 +345,68 @@ $searchTerm.onkeyup = function searchTermKeypress(ev) {
   console.log('changed')
   const val = ev.target.value.trim()
   search(val)
+}
+
+$('form').onsubmit = async function submitForm(ev) {
+  ev.preventDefault()
+  console.log('submitting form')
+
+  $('form button').disabled = true
+  $('form button').innerText = 'Uploading...'
+
+  const form = ev.currentTarget
+
+  const formData = new FormData(form)
+
+  const request = new XMLHttpRequest();
+  request.open('POST', '/api/submit')
+
+  request.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('token'))
+
+  request.upload.addEventListener('progress', function(e) {
+    const completed = (e.loaded / e.total) * 100;
+    console.log(completed)
+    $('form button').innerText = 'Uploading ('+Math.floor(completed)+'%)'
+    if (completed === 100) {
+      $('form button').innerText = 'Processing...'
+    }
+  })
+
+  request.addEventListener('load', (res) => {
+    console.log(res)
+    if (request.status !== 201) {
+      window.alert(request.status + ' - ' + request.statusText)
+      return
+    }
+
+    const newHash = request.response
+    
+    // Too fast and no one realizes it has changed
+    setTimeout(() => {
+      $('form input[type="file"]').value = ''
+      $('form button').disabled = false
+
+      $('form button').innerText = 'Completed!'
+      setTimeout(() => {
+        $('form button').innerText = 'Upload'
+      }, 1000)
+    }, 500)
+
+    window.location.hash = newHash
+  })
+
+  request.send(formData)
+
+  // const res = await fetch(request)
+  // const request = new Request('/api/submit', {
+  //   method: 'POST',
+  //   // headers: headers,
+  //   body: formData,
+  // })
+  // request.headers.append('Authorization', 'Bearer ' + localStorage.getItem('token'))
+
+
+  return false
 }
 
 if (localStorage.getItem('token')) {

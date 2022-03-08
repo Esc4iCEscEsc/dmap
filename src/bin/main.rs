@@ -33,47 +33,71 @@ async fn get_query_index(search_term: web::Path<String>) -> Result<impl Responde
   Ok(web::Json(results))
 }
 
+use actix_web::web::Bytes;
+
 #[post("/submit")]
 async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
+    let mut hex_hash: String = "".to_string();
+
     while let Some(item) = payload.next().await {
         let mut field = item?;
+
+        let mut chunks: Vec<Bytes> = vec!{};
+
+        println!("Receiving chunks");
 
         // Field in turn is stream of *Bytes* object
         while let Some(chunk) = field.next().await {
             let chunk = chunk?;
 
-            let mut hasher = Sha256::new();
-            hasher.update(chunk.clone());
-            let hash = hasher.finalize();
-            let hex_hash = base16ct::lower::encode_string(&hash);
+            chunks.push(chunk.clone());
 
-            // persist actual file too, in case we get better at something in the future
-            let mut file = File::create(scanresult::get_raw_data_dir(hex_hash.clone())).unwrap();
-
-            file.write(&chunk.clone()).unwrap();
-
-            match scanresult::parse_xml_bytes(chunk.clone()) {
-                Ok(result) => {
-                    let nice_res = scanresult::to_saveable_struct(result);
-
-                    println!("{:#?}", nice_res);
-
-
-                    scanresult::save_scanresult(hex_hash.clone(), &nice_res);
-                    break;
-                },
-                Err(err) => {
-                    println!("Error parsing XML");
-                    println!("{:#?}", err)
-                }
-            }
-            break;
+            // break;
         }
+
+        println!("Concat chunks");
+        let res: Vec<u8> = chunks.concat();
+
+        println!("Calculating hash");
+        let mut hasher = Sha256::new();
+        hasher.update(res.clone());
+        let hash = hasher.finalize();
+        hex_hash = base16ct::lower::encode_string(&hash);
+
+        println!("Writing to disk");
+
+        // persist actual file too, in case we get better at something in the future
+        let mut file = File::create(scanresult::get_raw_data_dir(hex_hash.clone())).unwrap();
+
+        file.write(&res).unwrap();
+
+        println!("Parsing XML");
+        match scanresult::parse_xml_bytes(res) {
+            Ok(result) => {
+                println!("Creating ScanResult");
+                let nice_res = scanresult::to_saveable_struct(result);
+
+                println!("{:#?}", nice_res);
+
+
+                println!("Writing ScanResult to disk");
+                scanresult::save_scanresult(hex_hash.clone(), &nice_res);
+                println!("Processing done!");
+                break;
+            },
+            Err(err) => {
+                println!("Error parsing XML");
+                println!("{:#?}", err)
+            }
+        }
+
+        println!("Done");
+
         break;
     }
 
     // Ok(hex_hash)
-    Ok(HttpResponse::Ok().into())
+    Ok(HttpResponse::Created().body(hex_hash).into())
     // println!("{:#?}", file);
 
 }
@@ -96,43 +120,55 @@ async fn hello() -> impl Responder {
     HttpResponse::Ok().body("Hello world!")
 }
 
+#[cfg(debug_assertions)]
 #[get("/")]
 async fn get_index(_req: HttpRequest) -> Result<impl Responder> {
     Ok(NamedFile::open("./web/index.html"))
-
-    // let bytes = include_bytes!("../web/index.html");
-    // Ok(
-    // HttpResponse::Ok()
-    //     .content_type("text/html")
-    //     .append_header(("Cache-Control", "max-age=86400"))
-    //     .body(String::from_utf8(bytes.to_vec()).unwrap())
-    // )
 }
 
+#[cfg(not(debug_assertions))]
+#[get("/")]
+async fn get_index(_req: HttpRequest) -> Result<impl Responder> {
+    let bytes = include_bytes!("../../web/index.html");
+    Ok(
+    HttpResponse::Ok()
+        .content_type("text/html")
+        .body(String::from_utf8(bytes.to_vec()).unwrap())
+    )
+}
+
+#[cfg(debug_assertions)]
 #[get("/app.js")]
 async fn get_app_js(_req: HttpRequest) -> Result<impl Responder> {
     Ok(NamedFile::open("./web/app.js"))
-
-    // let bytes = include_bytes!("../web/index.html");
-    // Ok(
-    // HttpResponse::Ok()
-    //     .content_type("text/html")
-    //     .append_header(("Cache-Control", "max-age=86400"))
-    //     .body(String::from_utf8(bytes.to_vec()).unwrap())
-    // )
 }
 
+#[cfg(not(debug_assertions))]
+#[get("/app.js")]
+async fn get_app_js(_req: HttpRequest) -> Result<impl Responder> {
+    let bytes = include_bytes!("../../web/app.js");
+    Ok(
+    HttpResponse::Ok()
+        .content_type("application/javascript")
+        .body(String::from_utf8(bytes.to_vec()).unwrap())
+    )
+}
+
+#[cfg(debug_assertions)]
 #[get("/app.css")]
 async fn get_app_css(_req: HttpRequest) -> Result<impl Responder> {
     Ok(NamedFile::open("./web/app.css"))
+}
 
-    // let bytes = include_bytes!("../web/index.html");
-    // Ok(
-    // HttpResponse::Ok()
-    //     .content_type("text/html")
-    //     .append_header(("Cache-Control", "max-age=86400"))
-    //     .body(String::from_utf8(bytes.to_vec()).unwrap())
-    // )
+#[cfg(not(debug_assertions))]
+#[get("/app.css")]
+async fn get_app_css(_req: HttpRequest) -> Result<impl Responder> {
+    let bytes = include_bytes!("../../web/app.css");
+    Ok(
+    HttpResponse::Ok()
+        .content_type("text/css")
+        .body(String::from_utf8(bytes.to_vec()).unwrap())
+    )
 }
 
 lazy_static! {
