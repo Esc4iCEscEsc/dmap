@@ -98,8 +98,55 @@ function renderScan(scan) {
 
   $el.appendChild($pre)
 
-  const $hosts = document.createElement('pre')
-  $hosts.innerText = JSON.stringify(scan.hosts, null, 2)
+  // const $hosts = document.createElement('pre')
+  // $hosts.innerText = JSON.stringify(scan.hosts, null, 2)
+  // $el.appendChild($hosts)
+  const $hosts = document.createElement('div')
+
+  scan.hosts.forEach((host) => {
+    const $host = document.createElement('div')
+    $host.style.border = '1px solid lightblue'
+    $host.style.margin = '3px'
+    $host.style.padding = '3px'
+
+    // const $hostAddress = document.createElement('div')
+    // $hostAddress.innerText = host.addresses[0].addr
+    const $hostAddress = document.createElement('div')
+    $hostAddress.innerText = host.addresses.map(el => el.addr).join(', ')
+
+    const $hostStatus = document.createElement('div')
+    $hostStatus.innerText = host.status
+
+    const $hostNames = document.createElement('div')
+    $hostNames.innerText = host.hostnames.map(el => el.type + ' ' + el.name).join(', ')
+
+    const $ports = document.createElement('div')
+    $ports.style.border = '1px solid lightblue'
+    $ports.style.margin = '3px'
+    $ports.style.padding = '3px'
+    host.ports.forEach((port) => {
+      const $port = document.createElement('div')
+      $port.innerText = port.protocol + ' ' + port.port + ' = ' + port.state + ' (' + port.state_reason + ')'
+      if (port.state === 'open') {
+        $port.style.color = 'green'
+      }
+      if (port.state === 'filtered') {
+        $port.style.color = 'orange'
+      }
+      if (port.state === 'closed') {
+        $port.style.color = 'red'
+      }
+
+      $ports.appendChild($port)
+    })
+
+    $host.appendChild($hostAddress)
+    $host.appendChild($hostStatus)
+    // $host.appendChild($hostAddresses)
+    $host.appendChild($hostNames)
+    $host.appendChild($ports)
+    $hosts.appendChild($host)
+  })
   $el.appendChild($hosts)
 
   $scan.innerHTML = $el.innerHTML
