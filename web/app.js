@@ -9,6 +9,9 @@ function $$(selector) {
 $scans = $('#scans')
 $scan = $('#scan-result')
 
+$searcher = $('#searcher')
+$viewer = $('#viewer')
+
 function renderScans(scans) {
   const arr = Object.keys(scans).reduce((acc, curr) => {
     acc.push(Object.assign(
@@ -156,16 +159,40 @@ function renderScan(scan) {
 
 var currentHash = ""
 function onHashChange() {
+  const hashContent = window.location.hash.substr(1)
+
+  if (hashContent === 'viewer') {
+    $viewer.style.display = 'flex'
+    $searcher.style.display = 'none'
+
+    $$('#menu a.active').forEach(el => el.classList = '')
+
+    $('#menu a[href="#viewer"]').classList = 'active'
+
+    return
+  }
+
+  if (hashContent === 'searcher') {
+    $viewer.style.display = 'none'
+    $searcher.style.display = 'flex'
+
+    $$('#menu a.active').forEach(el => el.classList = '')
+
+    $('#menu a[href="#searcher"]').classList = 'active'
+    
+    return
+  }
+
   if (window.location.hash !== currentHash) {
     console.log('Hash changed')
     currentHash = window.location.hash
     $scan.innerText = 'Loading...'
 
 
-    const scanID = currentHash.substr(1)
+    const scanID = hashContent
 
     const $scanListItem = $('#scan-' + scanID)
-    Array.from($$('.active')).forEach(($el) => {
+    Array.from($$('#scans .active')).forEach(($el) => {
       $el.classList = ''
     })
     if ($scanListItem) {
@@ -231,6 +258,66 @@ $authToken.onkeypress = function tokenChange(ev) {
 }
 
 $loginBtn.onclick = tryAuth
+
+function debounce(func, timeout = 300){
+  let timer;
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => { func.apply(this, args) }, timeout);
+  }
+}
+
+$searchTerm = $('#search-term')
+$searchResults = $('#search-results')
+
+function renderSearchResults(rows) {
+  console.log(rows)
+  const $newInner = document.createElement('div')
+
+  rows.forEach((row) => {
+    const $row = document.createElement('div')
+    $row.classList = 'search-result-row'
+
+    const $ip = document.createElement('div')
+    $ip.innerText = row.ip
+
+    const $hostname = document.createElement('div')
+    $hostname.innerText = row.hostname
+
+    const $port = document.createElement('div')
+    $port.innerText = ":" + row.port
+
+    const $state = document.createElement('div')
+    $state.innerText = row.state
+
+    $row.appendChild($ip)
+    $row.appendChild($hostname)
+    $row.appendChild($port)
+    $row.appendChild($state)
+
+    $newInner.appendChild($row)
+  })
+
+  $searchResults.innerHTML = $newInner.innerHTML
+}
+
+function performSearch(term) {
+  console.log('searching for', term)
+  const query = encodeURIComponent(term)
+  const url = `/api/search/query/${query}`
+  fetch(url, {
+    headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
+  }).then(res => res.json())
+    .then(res => renderSearchResults(res))
+}
+
+const search = debounce(performSearch, 300)
+
+$searchTerm.onkeyup = function searchTermKeypress(ev) {
+  console.log('changed')
+  const val = ev.target.value.trim()
+  search(val)
+}
 
 if (localStorage.getItem('token')) {
   $authToken.value = localStorage.getItem('token')

@@ -21,6 +21,16 @@
           <button type="submit">Upload</button>
         </form>
       </div>
+      <div id="menu">
+        <a href="#viewer" class="active">Viewer</a>
+        <a href="#searcher">Searcher</a>
+      </div>
+      <div id="searcher" style="display: none;">
+        <h3>Search for whatever here, glhf</h3>
+        <div>Indexed fields are: ip, hostname, port, state. You can search for `port:443` to see scans for port 443, or just freeform `443` to see any field matching that. Same for the rest of the fields. Have fun!</div>
+        <input type="text" id="search-term" placeholder="Search term"/>
+        <div id="search-results"></div>
+      </div>
       <div id="viewer">
         <div id="scan-result">
         </div>

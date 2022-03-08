@@ -23,6 +23,29 @@ html, body {
   align-items: center;
 }
 
+#searcher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px
+}
+
+#search-results {
+  width: 100%;
+}
+
+.search-result-row {
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(200, 200, 255, 0.8)
+}
+
+.search-result-row div {
+  width: 100%;
+}
+
 #submission {
   border: 3px solid lightblue;
   color: lightblue;
@@ -126,4 +149,18 @@ html, body {
   min-width: 600px;
   max-width: 600px;
   overflow-x: scroll;
+}
+
+#menu {
+  margin-top: 20px;
+}
+
+#menu a {
+  color: lightblue;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+#menu a.active {
+  border: 1px solid lightblue;
 }
