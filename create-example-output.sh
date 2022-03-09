@@ -32,3 +32,8 @@ fi
 if [ ! -f "$OUT_DIR/subnets.xml" ]; then
 	nmap -T5 -A -p 20,21,22,23,25,80,110,119,143,161,194,443 -oX - 85.142.20.0/24 82.179.52.0/24 86.110.116.0/24 86.110.117.0/24 86.110.118.0/24 86.110.119.0/24 > $OUT_DIR/subnets.xml
 fi
+
+if [ ! -f "$OUT_DIR/masscan.xml" ]; then
+	echo "Next command requires root as we're using masscan"
+  sudo masscan --top-ports 100 --rate 100 -oX $OUT_DIR/masscan.xml $(dig +short scanme.nmap.org)
+fi

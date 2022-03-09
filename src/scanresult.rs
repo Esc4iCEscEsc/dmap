@@ -53,8 +53,8 @@ pub struct Host {
 pub struct ScanInfo {
     pub r#type: String,
     pub protocol: String,
-    pub numservices: u8,
-    pub services: String
+    // pub numservices: u8,
+    // pub services: String
 }
 
 #[derive(Savefile, Debug, Serialize, Deserialize)]
@@ -182,8 +182,8 @@ pub fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
     let scaninfo = ScanInfo {
         r#type: nmap_scaninfo.r#type.unwrap(),
         protocol: nmap_scaninfo.protocol.unwrap(),
-        numservices: nmap_scaninfo.numservices.unwrap() as u8,
-        services: nmap_scaninfo.services.unwrap(),
+        // numservices: nmap_scaninfo.numservices.unwrap() as u8,
+        // services: nmap_scaninfo.services.unwrap(),
     };
 
     let hosts = match from.host {
@@ -196,16 +196,20 @@ pub fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
                 }).collect();
                 // Confusing/janky hostname/hostnames setup here
                 // Blame author of rust_nmap
-                let hostnames = host.hostnames.unwrap();
-                let hostname = hostnames.hostname;
-                let hostnames = match hostname{
-                    Some(hostname) => {
-                        hostname.into_iter().map(|hostname| {
-                            Hostname {
-                                name: hostname.name.unwrap(),
-                                r#type: hostname.r#type.unwrap(),
-                            }
-                        }).collect()
+                let hostnames = match host.hostnames {
+                    Some(hostnames) => {
+                        let hostname = hostnames.hostname;
+                        match hostname{
+                            Some(hostname) => {
+                                hostname.into_iter().map(|hostname| {
+                                    Hostname {
+                                        name: hostname.name.unwrap(),
+                                        r#type: hostname.r#type.unwrap(),
+                                    }
+                                }).collect()
+                            },
+                            None => vec![]
+                        }
                     },
                     None => vec![]
                 };
@@ -218,13 +222,25 @@ pub fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
                         state_reason: state.reason.unwrap(),
                     }
                 }).collect();
-                let status = host.status.unwrap();
-                Host {
-                    status: status.state.unwrap(),
-                    status_reason: status.reason.unwrap(),
-                    addresses,
-                    hostnames,
-                    ports
+                match host.status {
+                    Some(status) => {
+                        Host {
+                            status: status.state.unwrap(),
+                            status_reason: status.reason.unwrap(),
+                            addresses,
+                            hostnames,
+                            ports
+                        }
+                    },
+                    None => {
+                        Host {
+                            status: "unknown".to_string(),
+                            status_reason: "not-provided".to_string(),
+                            addresses,
+                            hostnames,
+                            ports
+                        }
+                    }
                 }
             }).collect()
         },
@@ -233,13 +249,28 @@ pub fn to_saveable_struct(from: rust_nmap::nmap_run) -> ScanResult {
 
     let runstats = from.runstats.unwrap().finished.unwrap();
 
+    let args = match from.args {
+        Some(args) => args,
+        None => "not-provided".to_string()
+    };
+
+    let summary = match runstats.summary {
+        Some(summary) => summary,
+        None => "".to_string()
+    };
+
+    let exit = match runstats.exit {
+        Some(exit) => exit,
+        None => "unknown".to_string()
+    };
+
     let scanresult = ScanResult {
         scanner: from.scanner.unwrap(),
-        args: from.args.unwrap(),
+        args,
         started: from.start.unwrap() as u32,
         finished: runstats.time.unwrap() as u32,
-        summary: runstats.summary.unwrap(),
-        exit: runstats.exit.unwrap(),
+        summary,
+        exit,
         nmap_version: from.version.unwrap(),
         xml_version: from.xmloutputversion.unwrap(),
         scaninfo,
