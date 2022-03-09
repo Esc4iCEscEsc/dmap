@@ -6,6 +6,10 @@ html, body {
   font-family: sans-serif;
 }
 
+a {
+  color: lightblue;
+}
+
 #auth {
   position: absolute;
   top: 0px; right: 0px; bottom: 0px; left: 0px;
@@ -23,7 +27,7 @@ html, body {
   align-items: center;
 }
 
-#searcher {
+#search {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,26 +50,32 @@ html, body {
   width: 100%;
 }
 
-#submission {
+#upload {
   border: 3px solid lightblue;
   color: lightblue;
   padding: 10px;
   box-sizing: border-box;
 }
 
-#submission form {
+#upload code {
+  color: lightgrey;
+  font-size: 0.9em;
+
+}
+
+#upload form {
   margin: 10px;
 }
 
-#submission form input, #submission form button{
+#upload form input, #upload form button{
   display: block;
 }
 
-#submission form input {
+#upload form input {
   margin-bottom: 10px;
 }
 
-#submission form button {
+#upload form button {
   border: 1px solid lightblue;
   color: lightblue;
   background-color: black;
@@ -74,7 +84,7 @@ html, body {
   border-radius: 3px;
 }
 
-#submission form button:hover {
+#upload form button:hover {
   border: 1px solid white;
   background-color: white;
   color: black;
@@ -153,6 +163,7 @@ html, body {
 
 #menu {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #menu a {
@@ -163,4 +174,8 @@ html, body {
 
 #menu a.active {
   border: 1px solid lightblue;
+}
+
+#about {
+  max-width: 600px;
 }

@@ -6,11 +6,10 @@ function $$(selector) {
   return document.querySelectorAll(selector)
 }
 
-$scans = $('#scans')
+$scansList = $('#scans-list')
 $scan = $('#scan-result')
 
 $searcher = $('#searcher')
-$viewer = $('#viewer')
 
 function renderScans(scans) {
   const arr = Object.keys(scans).reduce((acc, curr) => {
@@ -45,7 +44,7 @@ function renderScans(scans) {
 
     $el.id = 'scan-' + scan.id
 
-    $scans.appendChild($el)
+    $scansList.appendChild($el)
   })
   onHashChange()
 }
@@ -86,12 +85,13 @@ function renderScan(scan) {
 
   $el.appendChild($title)
 
+  $info($el, 'Scanner', scan.scanner)
   $info($el, 'Arguments', scan.args)
   $info($el, 'Started', scan.started)
   $info($el, 'Finished', scan.finished)
   $info($el, 'Summary', scan.summary)
   $info($el, 'Exit Status', scan.exit)
-  $info($el, 'nmap version', scan.nmap_version)
+  $info($el, 'Scanner version', scan.nmap_version)
   $info($el, 'XML version', scan.xml_version)
 
   const $scaninfo = document.createElement('div')
@@ -158,34 +158,64 @@ function renderScan(scan) {
 }
 
 var currentHash = ""
+
+$menuScans = $('#menu #scans')
+$menuUpload = $('#menu #upload')
+$menuSearch = $('#menu #search')
+$menuAbout = $('#menu #about')
+
+$pageScans = $('#scans')
+$pageUpload = $('#upload')
+$pageSearch = $('#search')
+$pageAbout = $('#about')
+
+const pages = [$pageScans, $pageUpload, $pageSearch, $pageAbout]
+
+function changeToPage(pageName) {
+  $$('#menu a.active').forEach(el => el.classList = '')
+  $('#menu a[href="#'+pageName+'"]').classList = 'active'
+  pages.forEach(el => el.style.display = 'none')
+  $('#' + pageName).style.display = 'flex'
+}
+
+function isPage(pageName) {
+  return pageName === 'scans' ||
+         pageName === 'upload' ||
+         pageName === 'search' ||
+         pageName === 'about'
+}
+
 function onHashChange() {
   const hashContent = window.location.hash.substr(1)
 
-  if (hashContent === 'viewer') {
-    $viewer.style.display = 'flex'
-    $searcher.style.display = 'none'
-
-    $$('#menu a.active').forEach(el => el.classList = '')
-
-    $('#menu a[href="#viewer"]').classList = 'active'
-
+  if (isPage(hashContent)) {
+    changeToPage(hashContent)
     return
   }
+  // if (hashContent === 'scans') {
+  //   $scans.style.display = 'flex'
+  //   $searcher.style.display = 'none'
 
-  if (hashContent === 'searcher') {
-    $viewer.style.display = 'none'
-    $searcher.style.display = 'flex'
+  //   $$('#menu a.active').forEach(el => el.classList = '')
+  //   $('#menu a[href="#scans"]').classList = 'active'
 
-    $$('#menu a.active').forEach(el => el.classList = '')
-    $('#menu a[href="#searcher"]').classList = 'active'
-    
-    return
-  }
+  //   return
+  // }
 
-  $viewer.style.display = 'flex'
-  $searcher.style.display = 'none'
+  // if (hashContent === 'searcher') {
+  //   $scans.style.display = 'none'
+  //   $searcher.style.display = 'flex'
+
+  //   $$('#menu a.active').forEach(el => el.classList = '')
+  //   $('#menu a[href="#searcher"]').classList = 'active'
+  //   
+  //   return
+  // }
+
+  pages.forEach(el => el.style.display = 'none')
+  $pageScans.style.display = 'flex'
   $$('#menu a.active').forEach(el => el.classList = '')
-  $('#menu a[href="#viewer"]').classList = 'active'
+  $('#menu a[href="#scans"]').classList = 'active'
 
   if (window.location.hash !== currentHash) {
     console.log('Hash changed')

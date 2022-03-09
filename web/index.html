@@ -8,37 +8,70 @@
       <div>
         <h1>dmap - Distributed nmap scanning</h1>
       </div>
-      <div id="submission">
-        <h3>Scan submissions</h3>
-        <p>Example nmap command to get output:</p>
-        <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
-        <p>
-          First, select the .xml file you want to upload.<br/>
-          Second, press "Upload"
-        </p>
-        <form enctype="multipart/form-data">
-          <input type="file" name="file" accept=".xml"/>
-          <button type="submit">Upload</button>
-        </form>
-      </div>
       <div id="menu">
-        <a href="#viewer" class="active">Viewer</a>
-        <a href="#searcher">Searcher</a>
+        <a href="#scans" class="active">Scans</a>
+        <a href="#upload">Upload</a>
+        <a href="#search">Search</a>
+        <a href="#about">About</a>
       </div>
-      <div id="searcher" style="display: none;">
-        <h3>Search for whatever here, glhf</h3>
-        <div>Indexed fields are: ip, hostname, port, state. You can search for `port:443` to see scans for port 443, or just freeform `443` to see any field matching that. Same for the rest of the fields. Have fun!</div>
-        <input type="text" id="search-term" placeholder="Search term"/>
-        <div id="search-results-num"></div>
-        <div id="search-results"></div>
-      </div>
-      <div id="viewer">
+      <div id="scans" style="display: none;">
         <div id="scan-result">
+          <br/> <br/> <br/> <br/>
+          Select scan on the right >
         </div>
         <div id="scans-wrapper">
           <h3>Uploaded scans</h3>
-          <div id="scans">
+          <div id="scans-list">
           </div>
+        </div>
+      </div>
+      <div id="upload" style="display: none;">
+        <div>
+          <h2>Upload Scans</h2>
+          <h4>Creating scan output</h4>
+          <p>Example nmap command to get output:</p>
+          <code>nmap -T4 -A -p 80,443 -oX - scanme.nmap.org > scanme.nmap.org.xml</code>
+          <p>Example masscan command to get output:</p>
+          <code>masscan --top-ports 100 -oX scanme.nmap.org.xml 45.33.32.156</code>
+          <h4>Uploading scan output</h4>
+          <p>Example upload via cURL:</p>
+          <code>
+            curl -v -X POST \ <br/>&nbsp;
+            -H "Authorization: Bearer <script>document.write(localStorage.getItem('token'))</script>" \<br/>&nbsp;
+            -F file=@scanme.nmap.org.xml \<br/>&nbsp;
+            https://dmap.chockchocschoirchoke.com/api/submit</code>
+          <p>Example upload of all XML files in current directory:</p>
+          <code>
+            ls *.xml | xargs -P 4 -I{} curl -v -X POST \ <br/>&nbsp;
+            -H "Authorization: Bearer <script>document.write(localStorage.getItem('token'))</script>" \ <br/>&nbsp;
+            -F file=@{} \ <br/>&nbsp;
+            https://dmap.chockchocschoirchoke.com/api/submit
+          </code>
+          <h3>Web Upload</h3>
+          <p>
+            First, select the .xml file you want to upload.<br/>
+            Second, press "Upload"
+          </p>
+          <form enctype="multipart/form-data">
+            <input type="file" name="file" accept=".xml"/>
+            <button type="submit">Upload</button>
+          </form>
+        </div>
+      </div>
+      <div id="search" style="display: none;">
+        <div>
+          <h3>Search for whatever here, glhf</h3>
+          <div>Indexed fields are: ip, hostname, port, state. You can search for `port:443` to see scans for port 443, or just freeform `443` to see any field matching that. Same for the rest of the fields. Have fun!</div>
+          <input type="text" id="search-term" placeholder="Search term"/>
+          <div id="search-results-num"></div>
+          <div id="search-results"></div>
+        </div>
+      </div>
+      <div id="about" style="display: none;">
+        <div>
+          <h3>About dmap</h3>
+          <p>Created for operations that require a large amount of scans from different entities/individuals with a need of aggregating information.</p>
+          <p>Source code: <a href="https://github.com/Esc4iCEscEsc/dmap" target="_blank">https://github.com/Esc4iCEscEsc/dmap</a></p>
         </div>
       </div>
     </div>
