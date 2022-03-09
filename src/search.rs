@@ -157,23 +157,28 @@ pub async fn query_index(
         ],
     );
 
-    let query = query_parser.parse_query(&query).unwrap();
-    let top_docs = searcher.search(&query, &TopDocs::with_limit(1000)).unwrap();
+    // Reject invalid queries by returning none
+    match query_parser.parse_query(&query) {
+        Ok(query) => {
+            let top_docs = searcher.search(&query, &TopDocs::with_limit(1000)).unwrap();
 
-    let mut docs_to_return = vec![];
+            let mut docs_to_return = vec![];
 
-    for (score, doc_address) in top_docs {
-        let retrieved_doc = searcher.doc(doc_address).unwrap();
-        println!("{:#?}", retrieved_doc);
+            for (score, doc_address) in top_docs {
+                let retrieved_doc = searcher.doc(doc_address).unwrap();
+                // println!("{:#?}", retrieved_doc);
 
-        let search_result = SearchResult {
-            ip: get_text_from_field(&retrieved_doc, ip_field).unwrap(),
-            hostname: get_text_from_field(&retrieved_doc, hostname_field).unwrap(),
-            port: get_text_from_field(&retrieved_doc, port_field).unwrap(),
-            state: get_text_from_field(&retrieved_doc, state_field).unwrap(),
-            score
-        };
-        docs_to_return.push(search_result);
+                let search_result = SearchResult {
+                    ip: get_text_from_field(&retrieved_doc, ip_field).unwrap(),
+                    hostname: get_text_from_field(&retrieved_doc, hostname_field).unwrap(),
+                    port: get_text_from_field(&retrieved_doc, port_field).unwrap(),
+                    state: get_text_from_field(&retrieved_doc, state_field).unwrap(),
+                    score
+                };
+                docs_to_return.push(search_result);
+            }
+            Some(docs_to_return)
+        },
+        Err(_) => Some(vec![])
     }
-    Some(docs_to_return)
 }

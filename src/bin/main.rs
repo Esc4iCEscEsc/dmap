@@ -226,6 +226,7 @@ async fn main() -> std::io::Result<()> {
     scanresult::create_scans_data_dir();
     search::create_search_data_dir();
 
+    println!("Starting server at 127.0.0.1:2625");
     HttpServer::new(|| {
         let auth = HttpAuthentication::bearer(bearer_auth_validator);
         App::new()
