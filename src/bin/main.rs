@@ -6,7 +6,6 @@ use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder, Result
 use actix_multipart::Multipart;
 use futures_util::stream::StreamExt as _;
 use actix_web::HttpRequest;
-use actix_files::NamedFile;
 use actix_web::dev::ServiceRequest;
 use actix_web_httpauth::extractors::bearer::{BearerAuth, Config};
 use actix_web_httpauth::extractors::AuthenticationError;
@@ -119,6 +118,10 @@ async fn get_scan(id: web::Path<String>) -> Result<impl Responder> {
 async fn hello() -> impl Responder {
     HttpResponse::Ok().body("Hello world!")
 }
+
+// Only include for debug builds
+#[cfg(debug_assertions)]
+use actix_files::NamedFile;
 
 #[cfg(debug_assertions)]
 #[get("/")]
