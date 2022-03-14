@@ -104,7 +104,7 @@ async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
 #[get("/scans")]
 async fn get_scans(_req: HttpRequest) -> Result<impl Responder> {
     // let auth = Authorization::<Bearer>::parse(&req).unwrap();
-    let scans = scanresult::load_all_scans();
+    let scans = scanresult::small_load_all_scans();
     Ok(web::Json(scans))
 }
 

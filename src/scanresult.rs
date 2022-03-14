@@ -71,6 +71,18 @@ pub struct ScanResult {
     pub hosts: Vec<Host>
 }
 
+#[derive(Debug, Serialize)]
+pub struct SmallScanResult {
+    pub scanner: String,
+    pub args: String,
+    pub started: u32,
+    pub finished: u32,
+    pub summary: String,
+    pub exit: String,
+    pub nmap_version: String,
+    pub xml_version: String,
+}
+
 pub fn create_raw_data_dir() {
   let dir = data_dir().unwrap();
   let p: PathBuf = [dir, PathBuf::from("joint-nmap"), PathBuf::from("raw")]
@@ -164,6 +176,27 @@ pub fn load_all_scans() -> HashMap<String, ScanResult> {
     return hm
 }
 
+pub fn small_load_all_scans() -> HashMap<String, SmallScanResult> {
+    let scan_map = load_all_scans();
+
+    let mut hm: HashMap<String, SmallScanResult> = HashMap::new();
+
+    for (key, scan) in scan_map {
+        let small_scan = SmallScanResult {
+            args: scan.args,
+            exit: scan.exit,
+            finished: scan.finished,
+            nmap_version: scan.nmap_version,
+            scanner: scan.scanner,
+            started: scan.started,
+            summary: scan.summary,
+            xml_version: scan.xml_version
+        };
+        hm.insert(key, small_scan);
+    }
+
+    hm
+}
 
 pub fn parse_xml_bytes(xml_info: Vec<u8>) -> BoxResult<rust_nmap::nmap_run> {
     let mut deserializer = serde_xml_rs::Deserializer::new_from_reader(&*xml_info)
