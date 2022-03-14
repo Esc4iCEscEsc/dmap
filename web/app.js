@@ -11,6 +11,27 @@ $scan = $('#scan-result')
 
 $searcher = $('#searcher')
 
+$statsTotal = $('#stats #total .value')
+$statsOpen = $('#stats #open .value')
+$statsClosed = $('#stats #closed .value')
+$statsFiltered = $('#stats #filtered .value')
+$statsHostnames = $('#stats #hostnames .value')
+function updateStats() {
+    fetch('/api/stats', {
+        headers: {'Authorization': 'Bearer ' + localStorage.getItem('token')}
+    })
+    .then(res => res.json())
+    .then((res) => {
+        $statsTotal.innerText = res.total_ports;
+        $statsOpen.innerText = res.open_ports;
+        $statsClosed.innerText = res.closed_ports;
+        $statsFiltered.innerText = res.filtered_ports;
+        $statsHostnames.innerText = res.hostnames;
+        console.log(res)
+    })
+}
+updateStats();
+
 function renderScans(scans) {
   const arr = Object.keys(scans).reduce((acc, curr) => {
     acc.push(Object.assign(

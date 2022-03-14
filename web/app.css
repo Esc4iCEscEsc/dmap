@@ -179,3 +179,25 @@ a {
 #about {
   max-width: 600px;
 }
+
+#stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.column h3 {
+    font-size: 12px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.column .value {
+    text-align: center;
+}

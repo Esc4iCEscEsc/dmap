@@ -1,5 +1,5 @@
 // use std::{fs, io};
-use tantivy::{collector::TopDocs, query::QueryParser, schema::*, Index, ReloadPolicy};
+use tantivy::{collector::TopDocs, collector::Count, query::QueryParser, query::RegexQuery, schema::*, Index, ReloadPolicy};
 use std::path::PathBuf;
 use tantivy::schema::Schema;
 
@@ -121,8 +121,10 @@ pub fn get_search_data_dir() -> PathBuf {
 }
 
 fn get_text_from_field(doc: &tantivy::Document, field: tantivy::schema::Field) -> Option<String> {
-    let val = doc.get_first(field)?.text()?;
-    Some(val.to_string())
+    match doc.get_first(field)? {
+        tantivy::schema::Value::Str(v) => Some(v.to_string()),
+        _ => None
+    }
 }
 
 pub async fn query_index(
@@ -181,4 +183,129 @@ pub async fn query_index(
         },
         Err(_) => Some(vec![])
     }
+}
+
+pub async fn query_index_count(
+    query: String,
+    ) -> u32 {
+    let index_path = get_search_data_dir();
+
+    let schema = get_tantivy_schema();
+    let index = get_tantivy_index(&index_path, schema.clone()).unwrap();
+
+    let reader = index
+        .reader_builder()
+        .reload_policy(ReloadPolicy::OnCommit)
+        .try_into()
+        .unwrap();
+
+    let searcher = reader.searcher();
+
+    let ip_field = schema.get_field("ip").unwrap();
+    let hostname_field = schema.get_field("hostname").unwrap();
+    let port_field = schema.get_field("port").unwrap();
+    let state_field = schema.get_field("state").unwrap();
+
+    let query_parser = QueryParser::for_index(
+        &index,
+        vec![
+            ip_field,
+            hostname_field,
+            port_field,
+            state_field
+        ],
+    );
+
+    // Reject invalid queries by returning none
+    let query = query_parser.parse_query(&query).unwrap();
+
+    let weight = query.weight(&searcher, false).unwrap();
+
+    let segment_readers = searcher.segment_readers();
+
+    let mut count = 0;
+
+    for reader in segment_readers {
+        // let mut scorer = weight.scorer(reader, 1.0).unwrap();
+        // let mut last_id = 0;
+        // while scorer.advance() != last_id {
+        //     let doc = scorer.doc();
+        //     last_id = doc;
+        //     println!("{:#?}", doc);
+        // }
+        let new_count = weight.count(&reader).unwrap();
+        count = count + new_count;
+    }
+
+    // for (score, doc_address) in top_docs {
+    //     let retrieved_doc = searcher.doc(doc_address).unwrap();
+    //     // println!("{:#?}", retrieved_doc);
+
+    //     let search_result = SearchResult {
+    //         ip: get_text_from_field(&retrieved_doc, ip_field).unwrap(),
+    //         hostname: get_text_from_field(&retrieved_doc, hostname_field).unwrap(),
+    //         port: get_text_from_field(&retrieved_doc, port_field).unwrap(),
+    //         state: get_text_from_field(&retrieved_doc, state_field).unwrap(),
+    //         score
+    //     };
+    //     docs_to_return.push(search_result);
+    // }
+    count
+}
+
+pub async fn query_hostname_count() -> u32 {
+    let index_path = get_search_data_dir();
+
+    let schema = get_tantivy_schema();
+    let index = get_tantivy_index(&index_path, schema.clone()).unwrap();
+
+    let reader = index
+        .reader_builder()
+        .reload_policy(ReloadPolicy::OnCommit)
+        .try_into()
+        .unwrap();
+
+    let searcher = reader.searcher();
+
+    let hostname_field = schema.get_field("hostname").unwrap();
+
+    let query = RegexQuery::from_pattern(".*", hostname_field).unwrap();
+
+    let count: u32 = searcher.search(&query, &Count).unwrap().try_into().unwrap();
+
+    // Reject invalid queries by returning none
+    // let query = query_parser.parse_query(&query).unwrap();
+
+    // let weight = query.weight(&searcher, false).unwrap();
+
+    // let segment_readers = searcher.segment_readers();
+
+    // let mut count = 0;
+
+    // for reader in segment_readers {
+    //     // let mut scorer = weight.scorer(reader, 1.0).unwrap();
+    //     // let mut last_id = 0;
+    //     // while scorer.advance() != last_id {
+    //     //     let doc = scorer.doc();
+    //     //     last_id = doc;
+    //     //     println!("{:#?}", doc);
+    //     // }
+    //     let new_count = weight.count(&reader).unwrap();
+    //     count = count + new_count;
+    // }
+
+    // // for (score, doc_address) in top_docs {
+    // //     let retrieved_doc = searcher.doc(doc_address).unwrap();
+    // //     // println!("{:#?}", retrieved_doc);
+
+    // //     let search_result = SearchResult {
+    // //         ip: get_text_from_field(&retrieved_doc, ip_field).unwrap(),
+    // //         hostname: get_text_from_field(&retrieved_doc, hostname_field).unwrap(),
+    // //         port: get_text_from_field(&retrieved_doc, port_field).unwrap(),
+    // //         state: get_text_from_field(&retrieved_doc, state_field).unwrap(),
+    // //         score
+    //     };
+    //     docs_to_return.push(search_result);
+    // }
+    count
 }

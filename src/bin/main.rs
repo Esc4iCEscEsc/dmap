@@ -114,9 +114,33 @@ async fn get_scan(id: web::Path<String>) -> Result<impl Responder> {
     Ok(web::Json(scan))
 }
 
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
+use serde::Serialize;
+
+#[derive(Serialize)]
+pub struct Stats {
+    total_ports: u32,
+    open_ports: u32,
+    filtered_ports: u32,
+    closed_ports: u32,
+    hostnames: u32,
+}
+
+#[get("/stats")]
+async fn get_stats() -> Result<impl Responder> {
+    let total_ports: u32 = search::query_index_count("*".to_string()).await;
+    let open_ports: u32 = search::query_index_count("state:open".to_string()).await;
+    let filtered_ports: u32 = search::query_index_count("state:filtered".to_string()).await;
+    let closed_ports: u32 = search::query_index_count("state:closed".to_string()).await;
+    let hostnames: u32 = search::query_hostname_count().await;
+
+    let stats = Stats {
+        total_ports,
+        open_ports,
+        filtered_ports,
+        closed_ports,
+        hostnames
+    };
+    Ok(web::Json(stats))
 }
 
 // Only include for debug builds
@@ -241,6 +265,7 @@ async fn main() -> std::io::Result<()> {
                     .service(get_scans)
                     .service(post_rebuild_index)
                     .service(get_query_index)
+                    .service(get_stats)
             )
             .service(get_index)
             .service(get_app_js)
