@@ -76,7 +76,7 @@ async fn post_submit(mut payload: Multipart) -> Result<HttpResponse, Error> {
                 println!("Creating ScanResult");
                 let nice_res = scanresult::to_saveable_struct(result);
 
-                println!("{:#?}", nice_res);
+                // println!("{:#?}", nice_res);
 
 
                 println!("Writing ScanResult to disk");
@@ -224,7 +224,7 @@ fn validate_token(token: &str) -> Result<bool, std::io::Error> {
 }
 
 async fn bearer_auth_validator(req: ServiceRequest, credentials: BearerAuth) -> Result<ServiceRequest, Error> {
-    println!("Bearer auth validator");
+    // println!("Bearer auth validator");
     let config = req
         .app_data::<Config>()
         .map(|data| data.clone())
