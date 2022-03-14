@@ -176,6 +176,8 @@ pub fn load_all_scans() -> HashMap<String, ScanResult> {
     return hm
 }
 
+// TODO kind of inefficient implementation, since first we load the full ScanResult and then
+// we scale it down, so we still load the full thing from disk which is a bit wasteful.
 pub fn small_load_all_scans() -> HashMap<String, SmallScanResult> {
     let scan_map = load_all_scans();
 

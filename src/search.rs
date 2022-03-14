@@ -89,7 +89,7 @@ pub async fn create_index() -> Result<u64, io::Error> {
                 new_doc.add_text(hostname_field, hostname.clone());
                 new_doc.add_text(port_field, port.port as u64);
                 new_doc.add_text(state_field, port.state);
-                index_writer.add_document(new_doc);
+                index_writer.add_document(new_doc).unwrap();
             }
         }
         // match item.title {
