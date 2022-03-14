@@ -49,6 +49,7 @@ function renderScans(scans) {
     const $el = document.createElement('a')
     const hash = scan.id.substr(0,8)
     $el.href = '#' + scan.id
+    $el.title = JSON.stringify(scan, null, 2)
 
     $link = document.createElement('span')
     $link.classList = 'link'
