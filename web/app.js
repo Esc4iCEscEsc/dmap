@@ -274,7 +274,7 @@ $loginBtn = $('#login-btn')
 function tryAuth() {
   let tokenToTry = $authToken.value
   console.log(tokenToTry)
-  fetch('/api/scans', {
+  fetch('/api/stats', {
     headers: {"Authorization": "Bearer " + tokenToTry}
   })
     .then((res) => {
