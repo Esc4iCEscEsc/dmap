@@ -33,7 +33,7 @@ function updateStats() {
 updateStats();
 
 function renderScans(scans) {
-  const arr = Object.keys(scans).reduce((acc, curr) => {
+  const arr = Object.keys(scans).slice(0, 10).reduce((acc, curr) => {
     acc.push(Object.assign(
       scans[curr],
       {id: curr}
@@ -58,7 +58,11 @@ function renderScans(scans) {
     $summary.classList = 'summary'
     $summary.style.fontStyle = 'italic'
     $summary.style.marginLeft = '10px'
-    $summary.innerText = scan.args
+
+    var newDate = new Date()
+    newDate.setTime(scan.finished*1000)
+    dateString = newDate.toUTCString()
+    $summary.innerText = dateString
 
     $el.appendChild($link)
     $el.appendChild($summary)
